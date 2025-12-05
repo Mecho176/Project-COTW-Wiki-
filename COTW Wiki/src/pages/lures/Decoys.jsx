@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import { decoys } from '../../data/decoys';
+import { Link } from 'react-router-dom';
+
+function animalLink(name) {
+  return `/animals/${encodeURIComponent(name.replace(/\s+/g, '-'))}`;
+}
 
 export default function DecoysPage() {
   const [search, setSearch] = useState('');
@@ -11,6 +16,22 @@ export default function DecoysPage() {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6 text-green-800">Decoys</h1>
+
+      <div className="mb-4 text-gray-700 bg-gray-50 p-4 rounded">
+              <p>
+                Decoys are a special kind of lure. They mimic animals during different activities such as feeding or
+                watching to trick the animal into believing the place is safe. Currently, full-body decoys for the hunting
+                of <Link to={animalLink('Canada Goose')} state={{ from: '/lures/decoys' }} className="text-green-800 hover:underline">Canada Geese</Link>,{' '}
+                <Link to={animalLink('Cinnamon Teal')} state={{ from: '/lures/decoys' }} className="text-green-800 hover:underline">Cinnamon Teals</Link>,{' '}
+                <Link to={animalLink('Harlequin Duck')} state={{ from: '/lures/decoys' }} className="text-green-800 hover:underline">Harlequin Ducks</Link>,{' '}
+                <Link to={animalLink('Mallard')} state={{ from: '/lures/decoys' }} className="text-green-800 hover:underline">Mallards</Link>,{' '}
+                <Link to={animalLink('Eastern Wild Turkey')} state={{ from: '/lures/decoys' }} className="text-green-800 hover:underline">Eastern Wild Turkeys</Link>,{' '}
+                <Link to={animalLink('Merriam Turkey')} state={{ from: '/lures/decoys' }} className="text-green-800 hover:underline">Merriam Turkeys</Link>, and{' '}
+                <Link to={animalLink('Rio Grande Turkey')} state={{ from: '/lures/decoys' }} className="text-green-800 hover:underline">Rio Grande Turkeys</Link> are available. Multiple decoys can be used at once to increase efficacy, however only up to a
+                limit of 20. Most decoys have a caller you can use simultaneously to further increase the chances of birds
+                landing.
+              </p>
+            </div>
 
       <div className="mb-4">
         <input

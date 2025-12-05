@@ -12,6 +12,15 @@ export default function ScentsPage() {
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6 text-green-800">Scents & Lures</h1>
 
+      <div className="mb-4 text-gray-700 bg-gray-50 p-4 rounded">
+        <p>
+          Scents are a type of lure that uses the olfactory senses of the animals for attraction. Usually, most
+          scents contain urine of the respective animal which functions as a natural attractant. The effective range
+          of a scent depends on wind conditions. High wind speeds give a longer but narrower effective cone, while a
+          low wind speed will give a shorter but wider cone. All scents cost 1500 for 10 uses, and they all weight 0.5.
+        </p>
+      </div>
+
       {/* Search */}
       <div className="mb-4">
         <input

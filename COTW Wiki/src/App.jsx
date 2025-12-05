@@ -1,8 +1,9 @@
+import React from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AppRouter from './router/AppRouter';
 
-function App() {
+export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -13,5 +14,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
