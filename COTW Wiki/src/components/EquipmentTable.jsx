@@ -76,7 +76,7 @@ export default function EquipmentTable() {
                               <img 
                                 src={item.icon} 
                                 alt="" 
-                                className="w-5 h-5 mr-1 object-contain" 
+                                className="w-[50px] h-[25px] mr-1 object-contain" 
                               />
                             )}
                             
