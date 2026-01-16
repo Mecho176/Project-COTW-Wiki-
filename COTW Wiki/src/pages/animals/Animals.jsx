@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { animals } from '../../data/animals';
 import { useState } from 'react';
+import AnimalsTable from '../../components/AnimalsTable';
 
 export default function AnimalsListPage() {
     const [search, setSearch] = useState('');
@@ -64,23 +65,7 @@ export default function AnimalsListPage() {
                 </p>
             </div>
 
-            {/* Animal Names List (click to view details) */}
-            <ul className="list-disc list-inside text-gray-800">
-                {filteredAnimals.map((animal) => (
-                    <li key={animal.id} className="py-2">
-                        <Link
-                            to={`/animals/${encodeURIComponent(animal.name.replace(/\s+/g, '-'))}`}
-                            className="text-green-800 hover:underline"
-                        >
-                            {animal.name}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-
-            {filteredAnimals.length === 0 && (
-                <p className="text-gray-500 mt-4">No animals found.</p>
-            )}
+            <AnimalsTable />
 
             {/* Animals species in multiple reserves table (from user-provided data) */}
             <section className="mt-8">

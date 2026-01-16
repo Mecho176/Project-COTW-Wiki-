@@ -80,11 +80,11 @@ export default function App() {
                 <div className="text-sm bg-white">
                     <div className="grid grid-cols-2 border-b border-gray-200 p-2">
                         <div className="font-bold text-gray-700">Value</div>
-                        <div className="text-green-800">75000</div>
+                        <div className="text-green-800">0</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-200 p-2 bg-gray-50">
                         <div className="font-bold text-gray-700">Weight</div>
-                        <div className="text-green-800">4.5</div>
+                        <div className="text-green-800">4</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-200 p-2">
                         <div className="font-bold text-gray-700">Score</div>
@@ -117,7 +117,7 @@ export default function App() {
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-200 p-2">
                         <div className="font-bold text-gray-700">Magazine</div>
-                        <div className="text-green-800">3</div>
+                        <div className="text-green-800">4</div>
                     </div>
                 </div>
             </div>

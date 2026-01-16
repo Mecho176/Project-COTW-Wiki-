@@ -73,11 +73,11 @@ export default function App() {
                 <div className="text-sm bg-white">
                     <div className="grid grid-cols-2 border-b border-gray-200 p-2">
                         <div className="font-bold text-gray-700">Value</div>
-                        <div className="text-gray-700">75000</div>
+                        <div className="text-gray-700">0</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-200 p-2 bg-gray-50">
                         <div className="font-bold text-gray-700">Weight</div>
-                        <div className="text-gray-700">4.8</div>
+                        <div className="text-gray-700">5</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-200 p-2">
                         <div className="font-bold text-gray-700">Score</div>

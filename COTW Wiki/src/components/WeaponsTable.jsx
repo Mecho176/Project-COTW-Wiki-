@@ -116,16 +116,16 @@ export default function WeaponsTable({ activeItem }) {
     {
       category: "Handguns",
       items: [
-        { name: ".243 R. Cuomo", img: cuomo243 },
-        { name: ".44 Panther Magnum", img: panther44 },
-        { name: ".45 Rolleston", img: rolleston45 },
-        { name: ".45-70 Jernberg Superior", img: jernberg4570 },
-        { name: "10mm Davani", img: davani10mm },
-        { name: "Andersson .22LR", img: andersson22lr },
-        { name: "Focoso 357", img: focoso357 },
-        { name: "Mangiafico 410/45 Colt", img: mangiafico410 },
-        { name: "Rhino 454", img: rhino454 },
-        { name: "Sundberg 454", img: sundberg454 }
+        { name: ".243 R. Cuomo", img: cuomo243, link: "/weapons/handguns/243-r-cuomo" },
+        { name: ".44 Panther Magnum", img: panther44, link: "/weapons/handguns/44-panther-magnum" },
+        { name: ".45 Rolleston", img: rolleston45, link: "/weapons/handguns/45-rolleston" },
+        { name: ".45-70 Jernberg Superior", img: jernberg4570, link: "/weapons/handguns/45-70-jernberg-superior" },
+        { name: "10mm Davani", img: davani10mm, link: "/weapons/handguns/10mm-davani" },
+        { name: "Andersson .22LR", img: andersson22lr, link: "/weapons/handguns/andersson-22lr" },
+        { name: "Focoso 357", img: focoso357, link: "/weapons/handguns/focoso-357" },
+        { name: "Mangiafico 410/45 Colt", img: mangiafico410, link: "/weapons/handguns/mangiafico-410-45-colt" },
+        { name: "Rhino 454", img: rhino454, link: "/weapons/handguns/rhino-454" },
+        { name: "Sundberg 454", img: sundberg454, link: "/weapons/handguns/sundberg-454" }
       ]
     },
     {
@@ -133,26 +133,26 @@ export default function WeaponsTable({ activeItem }) {
       items: [
         { name: "Cacciatore 12G", img: cacciatore12g },
         { name: "Caversham Steward 12G", img: caversham12g },
-        { name: "Couso Model 1897", img: couso1897 },
+        { name: "Couso Model 1897", img: couso1897, link: "/weapons/shotguns/couso-model-1897" },
         { name: "Gopi 10G Grand", img: gopi10g },
         { name: "Grelck Drilling Rifle", img: grelck },
         { name: "Miller Model 1891", img: miller1891 },
-        { name: "Nordin 20SA", img: nordin20sa },
+        { name: "Nordin 20SA", img: nordin20sa, link: "/weapons/shotguns/nordin-20sa" },
         { name: "Strandberg 10SA Executive", img: strandberg10sa },
-        { name: "Strecker SxS 20G", img: strecker20g }
+        { name: "Strecker SxS 20G", img: strecker20g, link: "/weapons/shotguns/strecker-sxs-20g" }
       ]
     },
     {
       category: "Bows",
       items: [
-        { name: "Alexander Longbow", img: alexander },
-        { name: "Bearclaw Lite CB-60", img: bearclaw },
-        { name: "Crosspoint CB-165", img: crosspoint },
-        { name: "Hawk Edge CB-70", img: hawkedge },
+        { name: "Alexander Longbow", img: alexander, link: "/weapons/bows/alexander-longbow" },
+        { name: "Bearclaw Lite CB-60", img: bearclaw, link: "/weapons/bows/bearclaw-lite-cb-60" },
+        { name: "Crosspoint CB-165", img: crosspoint, link: "/weapons/bows/crosspoint-cb-165" },
+        { name: "Hawk Edge CB-70", img: hawkedge, link: "/weapons/bows/hawk-edge-cb-70" },
         { name: "Houyi Recurve Bow", img: houyi },
         { name: "Koter CB-65 Bow", img: koter },
         { name: "Razorback Lite CB-60", img: razorback },
-        { name: "Stenberg Takedown Recurve Bow", img: stenberg }
+        { name: "Stenberg Takedown Recurve Bow", img: stenberg, link: "/weapons/bows/stenberg-takedown-recurve-bow" }
       ]
     }
   ];

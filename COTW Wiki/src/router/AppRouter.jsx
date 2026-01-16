@@ -43,6 +43,31 @@ import Perry308 from '../pages/loadouts/weapons/rifles/Perry308';
 import QuistReaper762x39 from '../pages/loadouts/weapons/rifles/QuistReaper762x39';
 import Cacciatore12G from '../pages/loadouts/weapons/shotguns/Cacciatore12G';
 import CavershamSteward12G from '../pages/loadouts/weapons/shotguns/CavershamSteward12G';
+import CousoModel1897 from '../pages/loadouts/weapons/shotguns/CousoModel1897';
+import MillerModel1891 from '../pages/loadouts/weapons/shotguns/MillerModel1891';
+import StreckerSxS20G from '../pages/loadouts/weapons/shotguns/StreckerSxS20G';
+import Nordin20SA from '../pages/loadouts/weapons/shotguns/Nordin20SA';
+import Strandberg10SA from '../pages/loadouts/weapons/shotguns/Strandberg10SA';
+import Gopi10GGrand from '../pages/loadouts/weapons/shotguns/Gopi10GGrand';
+import GrelckDrillingRifle from '../pages/loadouts/weapons/shotguns/GrelckDrillingRifle';
+import AlexanderLongbow from '../pages/loadouts/weapons/bows/AlexanderLongbow';
+import BearclawLiteCB60 from '../pages/loadouts/weapons/bows/BearclawLiteCB60';
+import CrosspointCB165 from '../pages/loadouts/weapons/bows/CrosspointCB165';
+import HawkEdgeCB70 from '../pages/loadouts/weapons/bows/HawkEdgeCB70';
+import HouyiRecurveBow from '../pages/loadouts/weapons/bows/HouyiRecurveBow';
+import KoterCB65 from '../pages/loadouts/weapons/bows/KoterCB65';
+import RazorbackLiteCB60 from '../pages/loadouts/weapons/bows/RazorbackLiteCB60';
+import StandbergTakedownRecurveBow from '../pages/loadouts/weapons/bows/StandbergTakedownRecurveBow';
+import RCuomo243 from '../pages/loadouts/weapons/handguns/243RCuomo';
+import PantherMagnum44 from '../pages/loadouts/weapons/handguns/44PantherMagnum';
+import Rolleston45 from '../pages/loadouts/weapons/handguns/45Rolleston';
+import Davani10mm from '../pages/loadouts/weapons/handguns/10mmDavani';
+import Andersson22LR from '../pages/loadouts/weapons/handguns/Andersson22LR';
+import Focoso357 from '../pages/loadouts/weapons/handguns/Focoso357';
+import Mangiafico41045Colt from '../pages/loadouts/weapons/handguns/Mangiafico41045Colt';
+import Rhino454 from '../pages/loadouts/weapons/handguns/Rhino454';
+import Sundberg454 from '../pages/loadouts/weapons/handguns/Sundberg454';
+import Jernberg4570Superior from '../pages/loadouts/weapons/handguns/4570JernbergSuperior';
 import AmmunitionPage from '../pages/loadouts/ammunition/Ammunition';
 import AmmoDetail from '../pages/loadouts/ammunition/AmmoDetail';
 import SightsPage from '../pages/loadouts/sights/SightsPage';
@@ -54,7 +79,6 @@ import PlaceablesPage from '../pages/loadouts/Placeables';
 import AnimalsListPage from '../pages/animals/Animals';
 import FurTypesPage from '../pages/animals/AnimalsFurTypes';
 import IntegrityPage from '../pages/animals/Integrity';
-import AnimalDetailPage from '../pages/animals/AnimalDetailPage';
 import NeedZones from '../pages/animals/NeedZones';
 import TracksPage from '../pages/animals/Tracks';
 import CallsPage from '../pages/animals/Calls';
@@ -171,6 +195,47 @@ import LandmarksPage from '../pages/huntClub/Landmarks';
 import WhistlingPage from '../pages/hunter/Whistling';
 import HuntingLodgePage from '../pages/huntClub/HuntingLodge';
 import MultiTrophyMountsPage from '../pages/huntClub/MultiTrophyMounts';
+import CanadaGoosePage from '../pages/animals/class1/CanadaGoose';
+import GreylagGoosePage from '../pages/animals/class1/GreylagGoose';
+import MagpieGoosePage from '../pages/animals/class1/MagpieGoose';
+import TundraBeanGoosePage from '../pages/animals/class1/TundraBeanGoose';
+import SnowGoosePage from '../pages/animals/class1/SnowGoose';
+import EurasianWigeonPage from '../pages/animals/class1/EurasianWigeon';
+import GoldeneyePage from '../pages/animals/class1/Goldeneye';
+import GreenWingedTealPage from '../pages/animals/class1/GreenWingedTeal';
+import WoodDuckPage from '../pages/animals/class1/WoodDuck';
+import HarlequinDuckPage from '../pages/animals/class1/HarlequinDuck';
+import FerruginousDuckPage from '../pages/animals/class1/FerruginousDuck';
+import CinnamonTealPage from '../pages/animals/class1/CinnamonTeal';
+import TuftedDuckPage from '../pages/animals/class1/TuftedDuck';
+import MallardPage from '../pages/animals/class1/Mallard';
+import GadwallPage from '../pages/animals/class1/Gadwall';
+import EurasianTealPage from '../pages/animals/class1/EurasianTeal';
+import NorthernPintailPage from '../pages/animals/class1/NorthernPintail';
+import HazelGrousePage from '../pages/animals/class1/HazelGrouse';
+import DuskyGrousePage from '../pages/animals/class1/DuskyGrouse';
+import BlackGrousePage from '../pages/animals/class1/BlackGrouse';
+import BobwhiteQuailPage from '../pages/animals/class1/BobwhiteQuail';
+import StubbleQuailPage from '../pages/animals/class1/StubbleQuail';
+import RockPtarmiganPage from '../pages/animals/class1/RockPtarmigan';
+import WesternCapercailliePage from '../pages/animals/class1/WesternCapercaillie';
+import RedGrousePage from '../pages/animals/class1/RedGrouse';
+import WillowPtarmiganPage from '../pages/animals/class1/WillowPtarmigan';
+import EasternWildTurkeyPage from '../pages/animals/class1/EasternWildTurkey';
+import MerriamTurkeyPage from '../pages/animals/class1/MerriamTurkey';
+import EurasianWoodcockPage from '../pages/animals/class1/EurasianWoodcock';
+import RingNeckedPheasantPage from '../pages/animals/class1/RingNeckedPheasant';
+import RioGrandeTurkeyPage from '../pages/animals/class1/RioGrandeTurkey';
+import EasternCottontailRabbitPage from '../pages/animals/class1/EasternCottontailRabbit';
+import AntelopeJackrabbitPage from '../pages/animals/class1/AntelopeJackrabbit';
+import EuropeanHarePage from '../pages/animals/class1/EuropeanHare';
+import EuropeanRabbitPage from '../pages/animals/class1/EuropeanRabbit';
+import MountainHarePage from '../pages/animals/class1/MountainHare';
+import ScrubHarePage from '../pages/animals/class1/ScrubHare';
+import WhiteTailedJackrabbitPage from '../pages/animals/class1/WhiteTailedJackrabbit';
+import WoollyHarePage from '../pages/animals/class1/WoolyHare';
+import AmericanMinkPage from '../pages/animals/class1/AmericanMink';
+import EurasianPineMartenPage from '../pages/animals/class1/EurasianPineMarten';
 
 export default function AppRouter() {
   return (
@@ -229,6 +294,31 @@ export default function AppRouter() {
       <Route path="/weapons/rifles/quist-reaper-7-62x39" element={<QuistReaper762x39 />} />
       <Route path="/weapons/shotguns/cacciatore-12g" element={<Cacciatore12G />} />
       <Route path="/weapons/shotguns/caversham-steward-12g" element={<CavershamSteward12G />} />
+      <Route path="/weapons/shotguns/couso-model-1897" element={<CousoModel1897 />} />
+      <Route path="/weapons/shotguns/strecker-sxs-20g" element={<StreckerSxS20G />} />
+      <Route path="/weapons/shotguns/nordin-20sa" element={<Nordin20SA />} />
+      <Route path="/weapons/shotguns/grelck-drilling-rifle" element={<GrelckDrillingRifle />} />
+      <Route path="/weapons/shotguns/miller-model-1891" element={<MillerModel1891 />} />
+      <Route path="/weapons/shotguns/strandberg-10sa" element={<Strandberg10SA />} />
+      <Route path="/weapons/shotguns/gopi-10g-grand" element={<Gopi10GGrand />} />
+      <Route path="/weapons/bows/alexander-longbow" element={<AlexanderLongbow />} />
+      <Route path="/weapons/bows/bearclaw-lite-cb-60" element={<BearclawLiteCB60 />} />
+      <Route path="/weapons/bows/crosspoint-cb-165" element={<CrosspointCB165 />} />
+      <Route path="/weapons/bows/hawk-edge-cb-70" element={<HawkEdgeCB70 />} />
+      <Route path="/weapons/bows/houyi-recurve-bow" element={<HouyiRecurveBow />} />
+      <Route path="/weapons/bows/koter-cb-65" element={<KoterCB65 />} />
+      <Route path="/weapons/bows/razorback-lite-cb-60" element={<RazorbackLiteCB60 />} />
+      <Route path="/weapons/bows/stenberg-takedown-recurve-bow" element={<StandbergTakedownRecurveBow />} />
+      <Route path="/weapons/handguns/243-r-cuomo" element={<RCuomo243 />} />
+      <Route path="/weapons/handguns/44-panther-magnum" element={<PantherMagnum44 />} />
+      <Route path="/weapons/handguns/45-rolleston" element={<Rolleston45 />} />
+      <Route path="/weapons/handguns/10mm-davani" element={<Davani10mm />} />
+      <Route path="/weapons/handguns/andersson-22lr" element={<Andersson22LR />} />
+      <Route path="/weapons/handguns/focoso-357" element={<Focoso357 />} />
+      <Route path="/weapons/handguns/mangiafico-410-45-colt" element={<Mangiafico41045Colt />} />
+      <Route path="/weapons/handguns/rhino-454" element={<Rhino454 />} />
+      <Route path="/weapons/handguns/sundberg-454" element={<Sundberg454 />} />
+      <Route path="/weapons/handguns/45-70-jernberg-superior" element={<Jernberg4570Superior />} />
       <Route path="/weapons/rifles/:weaponId" element={<WeaponDetail />} />
       <Route path="/weapons/rifles/moradi-model-1894" element={<MoradiModel1894 />} />
       <Route path="/weapons/rifles/MoradiModel1894" element={<MoradiModel1894 />} />
@@ -274,7 +364,81 @@ export default function AppRouter() {
       <Route path="/animals/heart-rate" element={<HeartRatePage />} />
       <Route path="/animals/integrity" element={<IntegrityPage />} />
       <Route path="/animals/wind" element={<WindPage />} />
-      <Route path="/animals/:animalId" element={<AnimalDetailPage />} />
+      <Route path="/animals/Canada-Goose" element={<CanadaGoosePage />} />
+      <Route path="/animals/Greylag-Goose" element={<GreylagGoosePage />} />
+      <Route path="/animals/Magpie-Goose" element={<MagpieGoosePage />} />
+      <Route path="/animals/Tundra-Bean-Goose" element={<TundraBeanGoosePage />} />
+      <Route path="/animals/Snow-Goose" element={<SnowGoosePage />} />
+      <Route path="/animals/Eurasian-Wigeon" element={<EurasianWigeonPage />} />
+      <Route path="/animals/Goldeneye" element={<GoldeneyePage />} />
+      <Route path="/animals/GreenWingedTeal" element={<GreenWingedTealPage />} />
+      <Route path="/animals/Green-Winged-Teal" element={<GreenWingedTealPage />} />
+      <Route path="/animals/HarlequinDuck" element={<HarlequinDuckPage />} />
+      <Route path="/animals/Harlequin-Duck" element={<HarlequinDuckPage />} />
+      <Route path="/animals/FerruginousDuck" element={<FerruginousDuckPage />} />
+      <Route path="/animals/Ferruginous-Duck" element={<FerruginousDuckPage />} />
+      <Route path="/animals/TuftedDuck" element={<TuftedDuckPage />} />
+      <Route path="/animals/Tufted-Duck" element={<TuftedDuckPage />} />
+      <Route path="/animals/Mallard" element={<MallardPage />} />
+      <Route path="/animals/WoodDuck" element={<WoodDuckPage />} />
+      <Route path="/animals/Wood-Duck" element={<WoodDuckPage />} />
+      <Route path="/animals/CinnamonTeal" element={<CinnamonTealPage />} />
+      <Route path="/animals/Cinnamon-Teal" element={<CinnamonTealPage />} />
+      <Route path="/animals/EurasianTeal" element={<EurasianTealPage />} />
+      <Route path="/animals/Eurasian-Teal" element={<EurasianTealPage />} />
+      <Route path="/animals/NorthernPintail" element={<NorthernPintailPage />} />
+      <Route path="/animals/Northern-Pintail" element={<NorthernPintailPage />} />
+      <Route path="/animals/EurasianWoodcock" element={<EurasianWoodcockPage />} />
+      <Route path="/animals/Eurasian-Woodcock" element={<EurasianWoodcockPage />} />
+      <Route path="/animals/AntelopeJackrabbit" element={<AntelopeJackrabbitPage />} />
+      <Route path="/animals/EuropeanHare" element={<EuropeanHarePage />} />
+      <Route path="/animals/European-Hare" element={<EuropeanHarePage />} />
+      <Route path="/animals/EuropeanRabbit" element={<EuropeanRabbitPage />} />
+      <Route path="/animals/European-Rabbit" element={<EuropeanRabbitPage />} />
+      <Route path="/animals/MountainHare" element={<MountainHarePage />} />
+      <Route path="/animals/Mountain-Hare" element={<MountainHarePage />} />
+      <Route path="/animals/ScrubHare" element={<ScrubHarePage />} />
+      <Route path="/animals/Scrub-Hare" element={<ScrubHarePage />} />
+      <Route path="/animals/WhiteTailedJackrabbit" element={<WhiteTailedJackrabbitPage />} />
+      <Route path="/animals/White-tailed-Jackrabbit" element={<WhiteTailedJackrabbitPage />} />
+      <Route path="/animals/WoollyHare" element={<WoollyHarePage />} />
+      <Route path="/animals/Woolly-Hare" element={<WoollyHarePage />} />
+      <Route path="/animals/AmericanMink" element={<AmericanMinkPage />} />
+      <Route path="/animals/American-Mink" element={<AmericanMinkPage />} />
+      <Route path="/animals/EurasianPineMarten" element={<EurasianPineMartenPage />} />
+      <Route path="/animals/Eurasian-Pine-Marten" element={<EurasianPineMartenPage />} />
+      <Route path="/animals/EasternCottontailRabbit" element={<EasternCottontailRabbitPage />} />
+      <Route path="/animals/Eastern-Cottontail-Rabbit" element={<EasternCottontailRabbitPage />} />
+      <Route path="/animals/Antelope-Jackrabbit" element={<AntelopeJackrabbitPage />} />
+      <Route path="/animals/HazelGrouse" element={<HazelGrousePage />} />
+      <Route path="/animals/Hazel-Grouse" element={<HazelGrousePage />} />
+      <Route path="/animals/DuskyGrouse" element={<DuskyGrousePage />} />
+      <Route path="/animals/Dusky-Grouse" element={<DuskyGrousePage />} />
+      <Route path="/animals/RedGrouse" element={<RedGrousePage />} />
+      <Route path="/animals/WesternCapercaillie" element={<WesternCapercailliePage />} />
+      <Route path="/animals/Western-Capercaillie" element={<WesternCapercailliePage />} />
+      <Route path="/animals/StubbleQuail" element={<StubbleQuailPage />} />
+      <Route path="/animals/Stubble-Quail" element={<StubbleQuailPage />} />
+      <Route path="/animals/BobwhiteQuail" element={<BobwhiteQuailPage />} />
+      <Route path="/animals/Bobwhite-Quail" element={<BobwhiteQuailPage />} />
+      <Route path="/animals/RingNeckedPheasant" element={<RingNeckedPheasantPage />} />
+      <Route path="/animals/Ring-Necked-Pheasant" element={<RingNeckedPheasantPage />} />
+      <Route path="/animals/Red-Grouse" element={<RedGrousePage />} />
+        <Route path="/animals/RockPtarmigan" element={<RockPtarmiganPage />} />
+        <Route path="/animals/Rock-Ptarmigan" element={<RockPtarmiganPage />} />
+        <Route path="/animals/WillowPtarmigan" element={<WillowPtarmiganPage />} />
+        <Route path="/animals/Willow-Ptarmigan" element={<WillowPtarmiganPage />} />
+        <Route path="/animals/EasternWildTurkey" element={<EasternWildTurkeyPage />} />
+        <Route path="/animals/Eastern-Wild-Turkey" element={<EasternWildTurkeyPage />} />
+        <Route path="/animals/MerriamTurkey" element={<MerriamTurkeyPage />} />
+        <Route path="/animals/Merriam-Turkey" element={<MerriamTurkeyPage />} />
+        <Route path="/animals/RioGrandeTurkey" element={<RioGrandeTurkeyPage />} />
+        <Route path="/animals/Rio-Grande-Turkey" element={<RioGrandeTurkeyPage />} />
+      <Route path="/animals/Gadwall" element={<GadwallPage />} />
+      <Route path="/animals/Gadwall" element={<GadwallPage />} />
+      <Route path="/animals/BlackGrouse" element={<BlackGrousePage />} />
+      <Route path="/animals/Black-Grouse" element={<BlackGrousePage />} />
+      {/* Dynamic animal detail route removed — using explicit per-animal pages */}
       <Route path="/harvest" element={<HarvestScreen />} />
       <Route path="/animals/behaviour" element={<AnimalBehaviour />} />
       <Route path="/animals/hunting-pressure" element={<HuntingPressure />} />

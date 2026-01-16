@@ -128,7 +128,7 @@ export default function App() {
     { name: "Vasquez Cyclone .45", class: "2-4", accuracy: 60, recoil: 10, reload: 49, hipshot: 80, mag: 7 },
     { name: "Eckers .30-06", class: "4-8", accuracy: 35, recoil: 80, reload: 49, hipshot: 50, mag: 4 },
     { name: "Mårtensson 6.5mm", class: "4-8", accuracy: 70, recoil: 50, reload: 49, hipshot: 67, mag: 5 },
-    { name: "Hudzik .50 Caplock", class: "3-8", accuracy: 25, recoil: 70, reload: 5, hipshot: 15, mag: 1 },
+    { name: "Hudzik .50 Caplock", class: "3-7, 4-8", accuracy: 25, recoil: 70, reload: 5, hipshot: 15, mag: 1 },
     { name: "M1 Iwaniec", class: "4-8", accuracy: 35, recoil: 82, reload: 49, hipshot: 50, mag: 5, link: "/weapons/rifles/m1-iwaniec" },
     { name: "F.L. Sporter .303", class: "4-8", accuracy: 55, recoil: 64, reload: 49, hipshot: 67, mag: 5 },
     { name: "Kullman .22H", class: "1-2", accuracy: 100, recoil: 20, reload: 49, hipshot: 86, mag: 6 },
@@ -140,7 +140,7 @@ export default function App() {
     { name: "Malmer 7mm Magnum", class: "4-9", accuracy: 35, recoil: 85, reload: 40, hipshot: 25, mag: 3, link: "/weapons/rifles/malmer-7mm-magnum" },
     { name: "Olsson Model 23 .308", class: "4-8", accuracy: 40, recoil: 79, reload: 40, hipshot: 27, mag: 4 },
     { name: "Zagan Varminter .22-250", class: "2-4", accuracy: 100, recoil: 30, reload: 49, hipshot: 80, mag: 5 },
-    { name: "Moradi Model 1894", class: "3-8", accuracy: 80, recoil: 43, reload: 57, hipshot: 76, mag: 6 },
+    { name: "Moradi Model 1894", class: "3-8**", accuracy: 80, recoil: 43, reload: 57, hipshot: 76, mag: 6 },
     { name: "Arzyna .300 Mag Tactical", class: "7-9", accuracy: 90, recoil: 75, reload: 59, hipshot: 50, mag: 5 },
     { name: "Gandhare Rifle", class: "4-8", accuracy: 30, recoil: 70, reload: 70, hipshot: 15, mag: 1 },
     { name: "Vallgarda .375", class: "7-9", accuracy: 95, recoil: 100, reload: 45, hipshot: 50, mag: 4 },
@@ -156,67 +156,67 @@ export default function App() {
 
   /* ------------------- ADDED HANDGUN IMAGES ------------------- */
   const handgunImages = [
-    { name: ".243 R. Cuomo", img: cuomo243 },
-    { name: ".44 Panther Magnum", img: panther44 },
-    { name: ".45 Rolleston", img: rolleston45 },
-    { name: "10mm Davani", img: davani10mm },
-    { name: "Andersson .22LR", img: andersson22lr },
-    { name: "Focoso 357", img: focoso357 },
-    { name: "Mangiafico 410/45 Colt", img: mangiafico410 },
-    { name: "Rhino 454", img: rhino454 },
-    { name: "Sundberg 454", img: sundberg454 },
-    { name: ".45-70 Jernberg Superior", img: jernberg4570 },
+    { name: ".243 R. Cuomo", img: cuomo243, link: "/weapons/handguns/243-r-cuomo" },
+    { name: ".44 Panther Magnum", img: panther44, link: "/weapons/handguns/44-panther-magnum" },
+    { name: ".45 Rolleston", img: rolleston45, link: "/weapons/handguns/45-rolleston" },
+    { name: "10mm Davani", img: davani10mm, link: "/weapons/handguns/10mm-davani" },
+    { name: "Andersson .22LR", img: andersson22lr, link: "/weapons/handguns/andersson-22lr" },
+    { name: "Focoso 357", img: focoso357, link: "/weapons/handguns/focoso-357" },
+    { name: "Mangiafico 410/45 Colt", img: mangiafico410, link: "/weapons/handguns/mangiafico-410-45-colt" },
+    { name: "Rhino 454", img: rhino454, link: "/weapons/handguns/rhino-454" },
+    { name: "Sundberg 454", img: sundberg454, link: "/weapons/handguns/sundberg-454" },
+    { name: ".45-70 Jernberg Superior", img: jernberg4570, link: "/weapons/handguns/45-70-jernberg-superior" },
   ];
 
   /* ------------------- ADDED SHOTGUN IMAGES ------------------- */
   const shotgunImages = [
         { name: "Cacciatore 12G", img: cacciatore12g, link: "/weapons/shotguns/cacciatore-12g" },
     { name: "Caversham Steward 12G", img: caversham12g, link: "/weapons/shotguns/caversham-steward-12g" },
-    { name: "Couso Model 1897", img: couso1897 },
-    { name: "Strecker SxS 20G", img: strecker20g },
-    { name: "Nordin 20SA", img: nordin20sa },
-    { name: "Grelck Drilling Rifle", img: grelck },
-    { name: "Miller Model 1891", img: miller1891 },
-    { name: "Strandberg 10SA Executive", img: strandberg10sa },
-    { name: "Gopi 10G Grand", img: gopi10g },
+    { name: "Couso Model 1897", img: couso1897, link: "/weapons/shotguns/couso-model-1897" },
+    { name: "Strecker SxS 20G", img: strecker20g, link: "/weapons/shotguns/strecker-sxs-20g" },
+    { name: "Nordin 20SA", img: nordin20sa, link: "/weapons/shotguns/nordin-20sa" },
+    { name: "Grelck Drilling Rifle", img: grelck, link: "/weapons/shotguns/grelck-drilling-rifle" },
+    { name: "Miller Model 1891", img: miller1891, link: "/weapons/shotguns/miller-model-1891" },
+    { name: "Strandberg 10SA Executive", img: strandberg10sa, link: "/weapons/shotguns/strandberg-10sa" },
+    { name: "Gopi 10G Grand", img: gopi10g, link: "/weapons/shotguns/gopi-10g-grand" },
   ];
 
   /* ------------------- ADDED BOW IMAGES ------------------- */
   const bowImages = [
-    { name: "Alexander Longbow", img: alexander },
-    { name: "Bearclaw Lite CB-60", img: bearclaw },
-    { name: "Crosspoint CB-165", img: crosspoint },
-    { name: "Hawk Edge CB-70", img: hawkedge },
-    { name: "Houyi Recurve Bow", img: houyi },
-    { name: "Koter CB-65 Bow", img: koter },
-    { name: "Razorback Lite CB-60", img: razorback },
-    { name: "Stenberg Takedown Recurve Bow", img: stenberg },
+    { name: "Alexander Longbow", img: alexander, link: "/weapons/bows/alexander-longbow" },
+    { name: "Bearclaw Lite CB-60", img: bearclaw, link: "/weapons/bows/bearclaw-lite-cb-60" },
+    { name: "Crosspoint CB-165", img: crosspoint, link: "/weapons/bows/crosspoint-cb-165" },
+    { name: "Hawk Edge CB-70", img: hawkedge, link: "/weapons/bows/hawk-edge-cb-70" },
+    { name: "Houyi Recurve Bow", img: houyi, link: "/weapons/bows/houyi-recurve-bow" },
+    { name: "Koter CB-65 Bow", img: koter, link: "/weapons/bows/koter-cb-65" },
+    { name: "Razorback Lite CB-60", img: razorback, link: "/weapons/bows/razorback-lite-cb-60" },
+    { name: "Stenberg Takedown Recurve Bow", img: stenberg, link: "/weapons/bows/stenberg-takedown-recurve-bow" },
   ];
 
   /* ------------------- ADDED HANDGUN STATS ------------------- */
   const handgunStats = [
-    { name: ".243 R. Cuomo", class: "2-6", accuracy: 62, recoil: 48, reload: 50, hipshot: 17, mag: 1 },
-    { name: ".44 Panther Magnum", class: "3-8", accuracy: 33, recoil: 82, reload: 60, hipshot: 95, mag: 6 },
-    { name: ".45 Rolleston", class: "2-5", accuracy: 45, recoil: 75, reload: 18, hipshot: 72, mag: 5 },
-    { name: "10mm Davani", class: "2-6", accuracy: 85, recoil: 50, reload: 78, hipshot: 80, mag: 15 },
-    { name: "Andersson .22LR", class: "1", accuracy: 100, recoil: 10, reload: 49, hipshot: 86, mag: 10 },
+    { name: ".243 R. Cuomo", class: "2-6**", accuracy: 62, recoil: 48, reload: 50, hipshot: 17, mag: 1, link: "/weapons/handguns/243-r-cuomo" },
+    { name: ".44 Panther Magnum", class: "3-8", accuracy: 33, recoil: 82, reload: 60, hipshot: 95, mag: 6, link: "/weapons/handguns/44-panther-magnum" },
+    { name: ".45 Rolleston", class: "2-5", accuracy: 45, recoil: 75, reload: 18, hipshot: 72, mag: 5, link: "/weapons/handguns/45-rolleston" },
+    { name: "10mm Davani", class: "2-6", accuracy: 85, recoil: 50, reload: 78, hipshot: 80, mag: 15, link: "/weapons/handguns/10mm-davani" },
+    { name: "Andersson .22LR", class: "1**", accuracy: 100, recoil: 10, reload: 49, hipshot: 86, mag: 10, link: "/weapons/handguns/andersson-22lr" },
     { name: "Focoso 357", class: "2-6", accuracy: 55, recoil: 64, reload: 60, hipshot: 100, mag: 6 },
-    { name: "Mangiafico 410/45 Colt", class: "1-5", accuracy: 40, recoil: 70, reload: 60, hipshot: 95, mag: 6 },
+    { name: "Mangiafico 410/45 Colt", class: "(1**), 2-5", accuracy: 40, recoil: 70, reload: 60, hipshot: 95, mag: 6 },
     { name: "Rhino 454", class: "4-9", accuracy: 10, recoil: 100, reload: 60, hipshot: 86, mag: 5 },
-    { name: "Sundberg 454", class: "4-9", accuracy: 10, recoil: 100, reload: 60, hipshot: 86, mag: 5 },
-    { name: ".45-70 Jernberg Superior", class: "4-9", accuracy: 75, recoil: 62, reload: 58, hipshot: 25, mag: 1 },
+    { name: "Sundberg 454", class: "4-9", accuracy: 10, recoil: 100, reload: 60, hipshot: 86, mag: 5, link: "/weapons/handguns/sundberg-454" },
+    { name: ".45-70 Jernberg Superior", class: "4-9**", accuracy: 75, recoil: 62, reload: 58, hipshot: 25, mag: 1, link: "/weapons/handguns/45-70-jernberg-superior" },
   ];
 
   /* ------------------- ADDED SHOTGUN STATS ------------------- */
   const shotgunStats = [
-    { name: "Cacciatore 12G", class: "1-8", accuracy: 33, recoil: 82, reload: 29, hipshot: 88, mag: 6 },
-    { name: "Caversham Steward 12G", class: "1-8", accuracy: 33, recoil: 82, reload: 69, hipshot: 88, mag: 2 },
-    { name: "Couso Model 1897", class: "1-7", accuracy: 33, recoil: 82, reload: 29, hipshot: 88, mag: 5 },
-    { name: "Strecker SxS 20G", class: "1-7", accuracy: 33, recoil: 82, reload: 10, hipshot: 95, mag: 2 },
-    { name: "Nordin 20SA", class: "1-7", accuracy: 33, recoil: 82, reload: 29, hipshot: 88, mag: 3 },
-    { name: "Grelck Drilling Rifle", class: "1-9", accuracy: 33, recoil: 82, reload: 10, hipshot: 95, mag: 3 },
-    { name: "Miller Model 1891", class: "1-2, 4-9", accuracy: 33, recoil: 82, reload: 69, hipshot: 88, mag: 3 },
-    { name: "Strandberg 10SA Executive", class: "1-2, 4-9", accuracy: 30, recoil: 82, reload: 25, hipshot: 88, mag: 4 },
+    { name: "Cacciatore 12G", class: "1, 2-5, 4-8", accuracy: 33, recoil: 82, reload: 29, hipshot: 88, mag: 6 },
+    { name: "Caversham Steward 12G", class: "1, 2-5, 4-8", accuracy: 33, recoil: 82, reload: 69, hipshot: 88, mag: 2 },
+    { name: "Couso Model 1897", class: "1, 2-4, 4-7", accuracy: 33, recoil: 82, reload: 29, hipshot: 88, mag: 5 },
+    { name: "Strecker SxS 20G", class: "1, 2-4, 4-7", accuracy: 33, recoil: 82, reload: 10, hipshot: 95, mag: 2 },
+    { name: "Nordin 20SA", class: "1, 2-4, 4-7", accuracy: 33, recoil: 82, reload: 29, hipshot: 88, mag: 3 },
+    { name: "Grelck Drilling Rifle", class: "1, 2-4, 4-7, (5-9**)", accuracy: 33, recoil: 82, reload: 10, hipshot: 95, mag: 3 },
+    { name: "Miller Model 1891", class: "1-2, 4-7, 6-9", accuracy: 33, recoil: 82, reload: 69, hipshot: 88, mag: 3 },
+    { name: "Strandberg 10SA Executive", class: "1-2, 4-7, 6-9", accuracy: 30, recoil: 82, reload: 25, hipshot: 88, mag: 4 },
     { name: "Gopi 10G Grand", class: "1-2, 4-9", accuracy: 36, recoil: 82, reload: 50, hipshot: 92, mag: 2 },
     { name: "Giddings SSC .410 Coyote", class: "1, 2-3, 3-5", accuracy: 33, recoil: 78, reload: 60, hipshot: 88, mag: 1 },
   ];
@@ -380,6 +380,7 @@ export default function App() {
                         </tbody>
                     </table>
                     <p className="text-xs text-gray-500 mt-2">* Higher value is better.</p>
+                    <p className="text-xs text-gray-500 mt-1">** Ammunition from another weapon class</p>
                 </div>
 
             </div>
@@ -461,6 +462,7 @@ export default function App() {
                         </tbody>
                     </table>
                     <p className="text-xs text-gray-500 mt-2">* Higher value is better.</p>
+                    <p className="text-xs text-gray-500 mt-1">** Ammunition from another weapon class</p>
                 </div>
             </div>
 
@@ -493,9 +495,13 @@ export default function App() {
                                     </svg>
                                 </div>
                             </div>
-                            <p className="mt-2 text-sm text-green-800 font-bold hover:underline">
-                                {bow.name}
-                            </p>
+                            {bow.link ? (
+                                <Link to={bow.link} className="mt-2 text-sm text-green-800 font-bold hover:underline block">{bow.name}</Link>
+                            ) : (
+                                <p className="mt-2 text-sm text-green-800 font-bold hover:underline">
+                                    {bow.name}
+                                </p>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -516,9 +522,18 @@ export default function App() {
                             </tr>
                         </thead>
                         <tbody className="text-gray-700 divide-y divide-gray-200">
-                            {bowStats.map((bow, idx) => (
+                            {bowStats.map((bow, idx) => {
+                                const imageObj = bowImages.find(img => img.name === bow.name);
+                                const link = imageObj ? imageObj.link : null;
+                                return (
                                 <tr key={idx} className="hover:bg-gray-50">
-                                    <td className="p-3 text-green-800 hover:underline cursor-pointer">{bow.name}</td>
+                                    <td className="p-3 text-green-800 hover:underline cursor-pointer">
+                                        {link ? (
+                                            <Link to={link}>{bow.name}</Link>
+                                        ) : (
+                                            bow.name
+                                        )}
+                                    </td>
                                     <td className="p-3">{bow.class}</td>
                                     <td className="p-3 text-center">{bow.accuracy}</td>
                                     <td className="p-3 text-center">{bow.recoil}</td>
@@ -527,7 +542,8 @@ export default function App() {
                                     <td className="p-3 text-center">{bow.draw}</td>
                                     <td className="p-3 text-center">{bow.mag}</td>
                                 </tr>
-                            ))}
+                                );
+                            })}
                         </tbody>
                     </table>
                     <p className="text-xs text-gray-500 mt-2">* Higher value is better.</p>
@@ -563,9 +579,15 @@ export default function App() {
                                     </svg>
                                 </div>
                             </div>
-                            <p className="mt-2 text-sm text-green-800 font-bold hover:underline">
-                                {gun.name}
-                            </p>
+                            {gun.link ? (
+                                <Link to={gun.link} className="mt-2 text-sm text-green-800 font-bold hover:underline block">
+                                    {gun.name}
+                                </Link>
+                            ) : (
+                                <p className="mt-2 text-sm text-green-800 font-bold hover:underline">
+                                    {gun.name}
+                                </p>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -587,7 +609,13 @@ export default function App() {
                         <tbody className="text-gray-700 divide-y divide-gray-200">
                             {handgunStats.map((gun, idx) => (
                                 <tr key={idx} className="hover:bg-gray-50">
-                                    <td className="p-3 text-green-800 hover:underline cursor-pointer">{gun.name}</td>
+                                    <td className="p-3 text-green-800 hover:underline cursor-pointer">
+                                        {gun.link ? (
+                                            <Link to={gun.link}>{gun.name}</Link>
+                                        ) : (
+                                            gun.name
+                                        )}
+                                    </td>
                                     <td className="p-3">{gun.class}</td>
                                     <td className="p-3 text-center">{gun.accuracy}</td>
                                     <td className="p-3 text-center">{gun.recoil}</td>
@@ -599,6 +627,7 @@ export default function App() {
                         </tbody>
                     </table>
                     <p className="text-xs text-gray-500 mt-2">* Higher value is better.</p>
+                    <p className="text-xs text-gray-500 mt-1">** Ammunition from another weapon class</p>
                 </div>
             </div>
 

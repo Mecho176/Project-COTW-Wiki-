@@ -72,11 +72,11 @@ export default function App() {
                 <div className="text-sm bg-white">
                     <div className="grid grid-cols-2 border-b border-gray-100 p-2">
                         <div className="font-bold text-gray-700">Value</div>
-                        <div className="text-gray-600">25000</div>
+                        <div className="text-gray-600">0</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-100 p-2 bg-gray-50">
                         <div className="font-bold text-gray-700">Weight</div>
-                        <div className="text-gray-600">3.0</div>
+                        <div className="text-gray-600">4</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-100 p-2">
                         <div className="font-bold text-gray-700">Score</div>
@@ -93,23 +93,23 @@ export default function App() {
                 <div className="text-sm bg-white">
                     <div className="grid grid-cols-2 border-b border-gray-100 p-2">
                         <div className="font-bold text-gray-700">Accuracy</div>
-                        <div className="text-gray-600">60</div>
+                        <div className="text-gray-600">40</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-100 p-2 bg-gray-50">
                         <div className="font-bold text-gray-700">Recoil</div>
-                        <div className="text-gray-600">70</div>
+                        <div className="text-gray-600">75</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-100 p-2">
                         <div className="font-bold text-gray-700">Reload</div>
-                        <div className="text-gray-600">80</div>
+                        <div className="text-gray-600">59</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-100 p-2 bg-gray-50">
                         <div className="font-bold text-gray-700">Hipshot</div>
-                        <div className="text-gray-600">40</div>
+                        <div className="text-gray-600">65</div>
                     </div>
                     <div className="grid grid-cols-2 border-b border-gray-100 p-2">
                         <div className="font-bold text-gray-700">Magazine</div>
-                        <div className="text-gray-600">1</div>
+                        <div className="text-gray-600">5</div>
                     </div>
                 </div>
             </div>

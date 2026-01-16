@@ -133,7 +133,7 @@ export default function AnimalsTable() {
   return (
       <section className="mt-8 w-full">
         <div className="max-w-3xl mx-auto px-4">
-          <h3 className="text-xl font-semibold mb-2">Animals</h3>
+          <h3 className="text-xl font-semibold mb-2">All Animals by class</h3>
           <table className="home-blank-table" aria-label="Blank two-column table">
             <colgroup>
               <col className="col-10" />

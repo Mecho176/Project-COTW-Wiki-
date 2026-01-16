@@ -22,9 +22,9 @@ export default function App() {
 
   // Data for Ammo Table
   const ammoData = [
-    { name: "12 Gauge Birdshot", pen: "Low", exp: "High", class: "1", range: "25-50m", price: 200 },
-    { name: "12 Gauge Buckshot", pen: "Medium", exp: "Medium", class: "2-5", range: "25-50m", price: 260 },
-    { name: "12 Gauge Slug", pen: "High", exp: "Low", class: "4-8", range: "50-100m", price: 400 },
+    { name: "12 Gauge Birdshot", pen: 0, exp: 0, class: "1", range: "25m", price: 180 },
+    { name: "12 Gauge Buckshot", pen: 5, exp: 0, class: "2-5", range: "25m", price: 530 },
+    { name: "12 Gauge Slug", pen: 40, exp: 19, class: "4-8", range: "50m", price: 880 },
   ];
 
   // Data for Sights List
