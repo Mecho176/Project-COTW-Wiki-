@@ -1,125 +1,98 @@
-import React from 'react'; 
+import React from 'react';
+
+// --- IMPORTS ---
+// Standard Icons
+import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp';
+import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp';
+import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp';
+import class3Icon from '../../../assets/Class3Icon.webp'; // Class 3 for Pronghorn
+import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
+
+// Main Image
+import PronghornMain from '../../../assets/Pronghorn.webp';
+import ShotSchemeImage from '../../../assets/Pronghorn_shot_scheme.webp';
+
+// Fur Variant Images (Placeholders)
+import Pronghorn_AlbinoMaleRightSide from '../../../assets/Pronghorn_AlbinoMaleRightSide.webp';
+import Pronghorn_BrownMaleRightSide from '../../../assets/Pronghorn_BrownMaleRightSide.webp';
+import Pronghorn_DarkMaleRightSide from '../../../assets/Pronghorn_DarkMaleRightSide.webp';
+import Pronghorn_LeucisticMaleRightSide from '../../../assets/Pronghorn_LeucisticMaleRightSide.webp';
+import Pronghorn_MelanisticMaleRightSide from '../../../assets/Pronghorn_MelanisticMaleRightSide.webp';
+import Pronghorn_PiebaldVariation1MaleRightSide from '../../../assets/Pronghorn_PiebaldVariation1MaleRightSide.webp';
+import Pronghorn_PiebaldVariation2MaleRightSide from '../../../assets/Pronghorn_PiebaldVariation2MaleRightSide.webp';
+import Pronghorn_PiebaldVariation2MaleLeftSide from '../../../assets/Pronghorn_PiebaldVariation2MaleLeftSide.webp';
+import Pronghorn_TanMaleRightSide from '../../../assets/Pronghorn_TanMaleRightSide.webp';
+
+import Pronghorn_AlbinoFemaleRightSide from '../../../assets/Pronghorn_AlbinoFemaleRightSide.webp';
+import Pronghorn_BrownFemaleRightSide from '../../../assets/Pronghorn_BrownFemaleRightSide.webp';
+import Pronghorn_DarkFemaleRightSide from '../../../assets/Pronghorn_DarkFemaleRightSide.webp';
+import Pronghorn_LeucisticFemaleRightSide from '../../../assets/Pronghorn_LeucisticFemaleRightSide.webp';
+import Pronghorn_MelanisticFemaleRightSide from '../../../assets/Pronghorn_MelanisticFemaleRightSide.webp';
+import Pronghorn_PiebaldVariation1FemaleRightSide from '../../../assets/Pronghorn_PiebaldVariation1FemaleRightSide.webp';
+import Pronghorn_PiebaldVariation1FemaleLeftSide from '../../../assets/Pronghorn_PiebaldVariation1FemaleLeftSide.webp';
+import Pronghorn_TanFemaleRightSide from '../../../assets/Pronghorn_TanFemaleRightSide.webp';
 
 
-// --- IMPORTS --- // 
-// Standard Icons //
-import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp'; 
-import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp'; 
-import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp'; 
-// Added Drinking Icon //
-
-import class2Icon from '../../../assets/Class2Icon.webp';
- // Updated to Class 2 
- 
- import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
-
-  // Main Image 
-  import NorthernRedMuntjacMain from '../../../assets/Northern_Red_Muntjac.webp'; 
-  import ShotSchemeImage from '../../../assets/Northern_Red_Muntjac_shot_scheme.webp'; 
-
-  // Fur Variant Images (Placeholders)
-
-    // Male 
-    import Muntjac_Male_Albino from '../../../assets/NorthernRedMuntjac_AlbinoMale.webp'; 
-    import Muntjac_Male_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Male.webp'; 
-    import Muntjac_Male_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Male.webp'; 
-    import Muntjac_Male_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticMale.webp'; 
-    import Muntjac_Male_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Male.webp'; 
-    import Muntjac_Male_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Male.webp'; 
-
-    // Female 
-    import Muntjac_Female_Albino from '../../../assets/NorthernRedMuntjac_AlbinoFemale.webp'; 
-    import Muntjac_Female_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Female.webp'; 
-    import Muntjac_Female_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Female.webp'; 
-    import Muntjac_Female_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticFemale.webp'; 
-    import Muntjac_Female_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Female.webp'; 
-    import Muntjac_Female_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Female.webp';
-
-
-const NorthernRedMuntjac = () => {
+const Pronghorn = () => {
 
   // --- DATA SOURCES ---
 
   // Need Zone Times
   const needZonesData = [
     {
-      name: "Sundarpatan",
+      name: "Askiy Ridge",
       schedule: [
         { time: "00:00 - 03:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "03:00 - 06:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "03:00 - 06:00", type: "Resting", icon: RestingZoneIcon },
         { time: "06:00 - 09:00", type: "Feeding", icon: FeedingZoneIcon },
         { time: "09:00 - 12:00", type: "Feeding", icon: FeedingZoneIcon },
         { time: "12:00 - 15:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "15:00 - 18:00", type: "Drinking", icon: DrinkingZoneIcon },
-        { time: "18:00 - 21:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "21:00 - 00:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "15:00 - 18:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "18:00 - 21:00", type: "Drinking", icon: DrinkingZoneIcon },
+        { time: "21:00 - 00:00", type: "Feeding", icon: FeedingZoneIcon },
       ]
     }
   ];
 
   // Features Table
   const features = [
-    { label: "Behavior", value: "Elusive and robust" },
-    { label: "Habitat", value: "Dense forests" },
-    { label: "Senses", value: "Excellent eyesight and sense of hearing" },
-    { label: "Social", value: "Primarily solitary, can be found in family groups" },
-    { label: "Active", value: "Dawn and dusk" },
-    { label: "Recommended Equipment", value: "Class 2 Ammo, Roe Deer Caller" },
-    { label: "Species", value: "Muntiacus vaginalis", italic: true, isLink: true },
-    { label: "Difficulty", value: "Easy" },
+    { label: "Behavior", value: "Curious, alert and agile" },
+    { label: "Habitat", value: "Dry plains" },
+    { label: "Senses", value: "Good vision and average smell and hearing" },
+    { label: "Social", value: "Mixed herds in winter, same-sex groups during mating season" },
+    { label: "Active", value: "Sporadic activity throughout day and night" },
+    { label: "Recommended Equipment", value: "Class 3 Ammo" },
+    { label: "Species", value: "Antilocapra americana", italic: true, isLink: true },
+    { label: "Difficulty", value: "Average" },
   ];
 
-  // Fur Gallery Data
-  const furGallery = [
-    { name: "Albino - Male", src: Muntjac_Male_Albino },
-    { name: "Leucistic Variation 1 - Male", src: Muntjac_Male_Leucistic1 },
-    { name: "Leucistic Variation 2 - Male", src: Muntjac_Male_Leucistic2 },
-    { name: "Melanistic - Male", src: Muntjac_Male_Melanistic },
-    { name: "Red Variation 1 - Male", src: Muntjac_Male_Red1 },
-    { name: "Red Variation 2 - Male", src: Muntjac_Male_Red2 },
-    { name: "Albino - Female", src: Muntjac_Female_Albino },
-    { name: "Leucistic Variation 1 - Female", src: Muntjac_Female_Leucistic1 },
-    { name: "Leucistic Variation 2 - Female", src: Muntjac_Female_Leucistic2 },
-    { name: "Melanistic - Female", src: Muntjac_Female_Melanistic },
-    { name: "Red Variation 1 - Female", src: Muntjac_Female_Red1 },
-    { name: "Red Variation 2 - Female", src: Muntjac_Female_Red2 },
+  // Fur Gallery Data - split male / female
+  const maleGallery = [
+    { name: "Albino", src: Pronghorn_AlbinoMaleRightSide },
+    { name: "Brown", src: Pronghorn_BrownMaleRightSide },
+    { name: "Dark", src: Pronghorn_DarkMaleRightSide },
+    { name: "Leucistic", src: Pronghorn_LeucisticMaleRightSide },
+    { name: "Melanistic", src: Pronghorn_MelanisticMaleRightSide },
+    { name: "Piebald Variation 1 (Right)", src: Pronghorn_PiebaldVariation1MaleRightSide },
+    { name: "Piebald Variation 2 (Right)", src: Pronghorn_PiebaldVariation2MaleRightSide },
+    { name: "Piebald Variation 2 (Left)", src: Pronghorn_PiebaldVariation2MaleLeftSide },
+    { name: "Tan", src: Pronghorn_TanMaleRightSide },
   ];
 
-  // Split galleries by sex for sub-topics
-  const maleGallery = furGallery.filter(item => /Male/i.test(item.name));
-  const femaleGallery = furGallery.filter(item => /Female/i.test(item.name));
-
-  // Smooth scroll helper for in-page TOC links
-  const scrollToId = (id) => (e) => {
-    if (e && e.preventDefault) e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (typeof window !== 'undefined' && window.history && window.history.replaceState) {
-      window.history.replaceState(null, '', `#${id}`);
-    }
-  };
+  const femaleGallery = [
+    { name: "Albino", src: Pronghorn_AlbinoFemaleRightSide },
+    { name: "Brown", src: Pronghorn_BrownFemaleRightSide },
+    { name: "Dark", src: Pronghorn_DarkFemaleRightSide },
+    { name: "Leucistic", src: Pronghorn_LeucisticFemaleRightSide },
+    { name: "Melanistic", src: Pronghorn_MelanisticFemaleRightSide },
+    { name: "Piebald Variation 1 (Right)", src: Pronghorn_PiebaldVariation1FemaleRightSide },
+    { name: "Piebald Variation 1 (Left)", src: Pronghorn_PiebaldVariation1FemaleLeftSide },
+    { name: "Tan", src: Pronghorn_TanFemaleRightSide },
+  ];
 
   // Trivia Data
   const triviaData = [
-    `The Muntjac Deer gets it's name 'MUNTJAC' from the Dutch, which borrowed the word from the Sundanese word for a "small deer"; specifically the "Chevrotain" or "Mouse Deer". The reason for why the Muntjac got associated with this animal is uncertain. Maybe traders, of the Dutch East India company, just thought it was a generic term for ALL small deer. Ironically, the Mouse Deer isn't even a real deer.[2]`,
-    `There are currently 12 known species of Muntjac Deer alive today. One of these species include the smallest Deer species in the world, the "Chinese Muntjac"; a deer species so small, it's standing height would be dwarfed by Shaquille O'Neal's shoe size, and it's average weight wouldn't be any heavier than a 2 year old Toddler.[3][4][5][6][7]`,
-    `The Muntjac Deer has many distinct physical traits; one of these being its "fangs". It uses these as display structures, as weapons for intraspecific combat, and their fangs also have the convenient ability to HINGE AT THE JAW LIKE A SNAKE! THAT'S RIGHT! THEY CAN FOLD AWAY THEIR FANGS LIKE SOME KIND OF SWISS ARMY KNIF!!!... Anyway they also have extremely pronounced scent glands on their foreheads and at the corners of their eyes. In fact, their top scent glands can inflate, making them the only deer species with inflatable structures on their body. Despite them being called "Barking Deer" these deer are relatively quiet, and overly rely on scent as their primary form of communication. [8][9][10]`,
-    `Yet another bizarre fact about this animal is the fact that it does not have a defined rutting season. They mate year round unlike most other deer. The females are also extremely fertile, being able to conceive again just days after giving birth.[11]`
-  ];
-
-  // References List
-  const references = [
-    "Northern Red Muntjac Need Zones, Sundarpatan",
-    "https://www.dictionary.com/browse/muntjac",
-    "https://news.mongabay.com/2020/08/the-large-antlered-muntjac-southeast-asias-mystery-deer-commentary/",
-    "https://www.rosamondgiffordzoo.org/experience/animals/mammals/chinese-muntjac/",
-    "https://seaworld.org/animals/facts/mammals/reeves-muntjac/",
-    "https://footwearnews.com/shoes/outdoor-footwear/shaq-shoe-size-1202540386/",
-    "https://www.whattoexpect.com/toddler/24-month-old.aspx",
-    "https://www.discoverwildlife.com/animal-facts/mammals/muntjac-deer",
-    "https://www.iflscience.com/muntjac-deer-have-bizarre-flaring-scent-glands-on-their-face-67030",
-    "https://www.sciencefocus.com/nature/muntjac-deer",
-    "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/animals/mammals/muntjac-deer/"
+    "The Pronghorn's blazing speed is an example of an evolutionary anachronism; a phenomenon where animals keep useful traits despite not needing them anymore. It is believed that Pronghorns developed this trait to run away from now extinct predators such as the American Cheetah (Miracinonyx)."
   ];
 
   // --- STYLES OBJECT ---
@@ -259,13 +232,12 @@ const NorthernRedMuntjac = () => {
       color: '#dbe4eb',
       verticalAlign: 'top',
     },
-    // Updated Shot Scheme Layout Styles
     shotContainer: {
       display: 'flex',
       backgroundColor: '#112233',
       marginTop: '10px',
       border: '1px solid #1f405a',
-      flexDirection: 'row', // Horizontal layout
+      flexDirection: 'row',
       alignItems: 'stretch',
     },
     shotImageWrapper: {
@@ -326,29 +298,36 @@ const NorthernRedMuntjac = () => {
     rarityVeryRare: { color: '#e74c3c', fontWeight: 'bold' },
   };
 
+  // Smooth scroll helper for TOC links
+  const scrollToId = (id) => (e) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    window.history.replaceState(null, '', `#${id}`);
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.innerWrapper}>
         
         {/* PAGE HEADER */}
         <div style={styles.mainHeader}>
-          <span>Northern Red Muntjac</span>
+          <span>Pronghorn</span>
         </div>
 
         <div style={styles.layout}>
           
           {/* --- RIGHT SIDEBAR (General Information) --- */}
           <aside style={styles.sidebarColumn}>
-            <div style={styles.sidebarHeader}>Northern Red Muntjac</div>
+            <div style={styles.sidebarHeader}>Pronghorn</div>
             <div style={styles.sidebarImage}>
-              <img src={NorthernRedMuntjacMain} alt="Northern Red Muntjac" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
+              <img src={PronghornMain} alt="Pronghorn" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
             </div>
             
             <div style={styles.sidebarHeader}>General Information</div>
             
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Class</span>
-              <span><img src={class2Icon} alt="Class 2" style={{width:'24px', height:'24px', verticalAlign: 'middle', marginRight: '6px'}}/>2</span>
+              <span><img src={class3Icon} alt="Class 3" style={{width:'24px', height:'24px', verticalAlign: 'middle', marginRight: '6px'}}/>3</span>
             </div>
 
             <div style={styles.sidebarSection}>
@@ -358,39 +337,41 @@ const NorthernRedMuntjac = () => {
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Trophy Type</span>
-              <span>Antlers</span>
+              <span>Horns</span>
               <div style={styles.trophyGrid}>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.silver}}>◆ Silver</span>
-                  <span>25.25</span>
+                  <span>36.65</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.gold}}>☗ Gold</span>
-                  <span>30.96</span>
+                  <span>77.42</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.diamond}}>☗ Diamond</span>
-                  <span>35.24</span>
+                  <span>108</span>
                 </div>
               </div>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Weight</span>
-              12kg — 28kg<br/>
-              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>26lbs — 62lbs</span>
+              35kg — 65kg<br/>
+              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>77lbs — 143lbs</span>
             </div>
 
             <div style={styles.sidebarSection}>
                <span style={styles.sidebarLabel}>Fur</span>
                <span style={{fontSize:'0.85rem'}}>
-                  Albino, Leucistic, Melanistic, Red
+                 Albino, Brown, Dark, Leucistic, Melanistic, Piebald, Tan
                </span>
             </div>
 
             <div style={styles.sidebarHeader}>Locations</div>
             <div style={styles.sidebarSection}>
-               <div style={{marginBottom:'4px'}}><span style={styles.link}>Sundarpatan</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Silver Ridge Peaks</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Rancho del Arroyo</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Askiy Ridge Hunting Preserve</span></div>
             </div>
           </aside>
 
@@ -399,21 +380,17 @@ const NorthernRedMuntjac = () => {
 
             {/* Quote Block */}
             <div style={styles.quoteBox}>
-              "The Northern Red Muntjac is a distinct and stealthy deer species primarily found in the dense forests of Southern Asia. Despite its small size, this elusive creature is sturdy, measuring approcimately 50-65 cm at the shoulder and weighing between 12-28kg. Its reddish-brown fur and cream-colored underparts provide natural camouflage in the undergrowth.
-
+              "The pronghorn is a species endemic to the Western plains of North America. Often colloquially referred to as "American antelope, they are not closely related to the true antelopes inhabiting Africa. Pronghorns are well-adapted to the open plains, they inhabit. They rely on their strong senses and great speed to spot and escape threats. Adult pronghorns can sprint as fast as 90 km/h (55 mph), making it the second fastest land animal after the African cheetah. Another particularity of the pronghorn is that they are the only animal to shed the keratin sheath of their horns and regrow it every year. Adults can measure up to 1.00 m tall at the shoulder. Males weigh up to 65.00 kg, while females reach 50.00 kg."
               <br/><br/>
-
-              The male is easily recognizable by its elongated upper canines and short antlers. They are solitary or pair-oriented and are most active during dusk and dawn. Their unique bark-like call is a clear sign of their presence. Renowned for their agility and quickness, they require patience to outsmart. The true value of hunting them lies in the pursuit itself."
-              <br/><br/>
-              ― In-Game Description
+              — In-Game Description
             </div>
 
             {/* Intro Text */}
             <p style={{marginBottom:'20px'}}>
-              The <strong>Northern Red Muntjac</strong> is a (<span style={styles.link}>class 2</span>) deer species that can be hunted on <span style={styles.link}>Sundarpatan</span>.
+              The <strong>Pronghorn</strong> is a <span style={styles.link}>class 3</span> animal that can be found on <span style={styles.link}>Silver Ridge Peaks</span>. It was retroactively added to <span style={styles.link}>Rancho del Arroyo</span> with the release of the Granite Update in December 2022. It is currently the fastest land animal in game.
             </p>
 
-            {/* Table of Contents (smooth-scroll links) */}
+            {/* Table of Contents */}
             <div style={{
                 border: '1px solid #3a5a75',
                 backgroundColor: '#0f2e48',
@@ -428,18 +405,18 @@ const NorthernRedMuntjac = () => {
               </div>
               <ol style={{margin:'0', paddingLeft: '20px', color: '#6fb2e6'}}>
                 <li><a href="#features" style={styles.link} onClick={scrollToId('features')}>Features</a></li>
-                <li><a href="#need-zones" style={styles.link} onClick={scrollToId('need-zones')}>Need Zone Times</a></li>
+                <li><a href="#need-zone-times" style={styles.link} onClick={scrollToId('need-zone-times')}>Need Zone Times</a></li>
                 <li><a href="#shot-scheme" style={styles.link} onClick={scrollToId('shot-scheme')}>Shot scheme</a></li>
+                <li><a href="#tips" style={styles.link} onClick={scrollToId('tips')}>Tips</a></li>
                 <li>
-                  <a href="#fur-variants" style={styles.link} onClick={scrollToId('fur-variants')}>Fur variants</a>
-                  <ol style={{margin:'6px 0 0 14px', paddingLeft: '0', color: '#6fb2e6', listStyleType: 'none'}}>
-                    <li><a href="#fur-male" style={styles.link} onClick={scrollToId('fur-male')}>4.1 Male</a></li>
-                    <li><a href="#fur-female" style={styles.link} onClick={scrollToId('fur-female')}>4.2 Female</a></li>
+                  <a href="#fur-variants" style={styles.link} onClick={scrollToId('fur-variants')}>Fur Variants</a>
+                  <ol style={{marginTop:'6px', marginLeft: '14px', paddingLeft: '6px', listStyle: 'none'}}>
+                    <li><a href="#male-variants" style={styles.link} onClick={scrollToId('male-variants')}>5.1 Male</a></li>
+                    <li><a href="#female-variants" style={styles.link} onClick={scrollToId('female-variants')}>5.2 Female</a></li>
                   </ol>
                 </li>
-                <li><a href="#variant-rarity" style={styles.link} onClick={scrollToId('variant-rarity')}>Fur Variant Rarity</a></li>
+                <li><a href="#fur-variant-rarity" style={styles.link} onClick={scrollToId('fur-variant-rarity')}>Fur Variant Rarity</a></li>
                 <li><a href="#trivia" style={styles.link} onClick={scrollToId('trivia')}>Trivia</a></li>
-                <li><a href="#references" style={styles.link} onClick={scrollToId('references')}>References</a></li>
               </ol>
             </div>
 
@@ -465,11 +442,11 @@ const NorthernRedMuntjac = () => {
             </table>
             
             {/* NEED ZONE TIMES */}
-            <h2 id="need-zones" style={styles.h2}>Need Zone Times</h2>
+            <h2 id="need-zone-times" style={styles.h2}>Need Zone Times</h2>
             <div style={{display:'inline-block'}}>
                 <table style={{...styles.table, width: '300px'}}>
                     <thead>
-                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Sundarpatan</th></tr>
+                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Askiy Ridge</th></tr>
                         <tr>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Times</th>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Activity</th>
@@ -491,7 +468,7 @@ const NorthernRedMuntjac = () => {
                 </table>
             </div>
 
-             {/* SHOT SCHEME - Updated Layout with Legend */}
+             {/* SHOT SCHEME */}
              <h2 id="shot-scheme" style={styles.h2}>Shot scheme</h2>
             <div style={styles.shotContainer}>
                 <div style={styles.shotImageWrapper}>
@@ -506,10 +483,15 @@ const NorthernRedMuntjac = () => {
                 </div>
             </div>
 
-            {/* FUR VARIANTS (Gallery) */}
-            <h2 id="fur-variants" style={styles.h2}>Fur variants</h2>
+            {/* TIPS */}
+            <h2 id="tips" style={styles.h2}>Tips</h2>
+            <p style={{marginBottom: '20px'}}>
+                Found in the lower areas of the reserve, these stunning animals are sure to provide some great hunting opportunities!
+            </p>
 
-            <h3 id="fur-male" style={{...styles.h2, fontSize: '1.15rem', marginTop: '10px'}}>Male</h3>
+            {/* FUR VARIANTS (Gallery) */}
+            <h2 id="fur-variants" style={styles.h2}>Fur Variants</h2>
+            <h3 id="male-variants" style={{color: '#9fd3ff', marginTop: '10px'}}>Male</h3>
             <div style={styles.galleryGrid}>
               {maleGallery.map((item, i) => (
                 <div key={i} style={styles.galleryItem}>
@@ -521,7 +503,7 @@ const NorthernRedMuntjac = () => {
               ))}
             </div>
 
-            <h3 id="fur-female" style={{...styles.h2, fontSize: '1.15rem', marginTop: '18px'}}>Female</h3>
+            <h3 id="female-variants" style={{color: '#9fd3ff', marginTop: '14px'}}>Female</h3>
             <div style={styles.galleryGrid}>
               {femaleGallery.map((item, i) => (
                 <div key={i} style={styles.galleryItem}>
@@ -534,7 +516,7 @@ const NorthernRedMuntjac = () => {
             </div>
 
             {/* FUR VARIANT RARITY TABLE */}
-            <h2 id="variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
+            <h2 id="fur-variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
             <div style={{overflowX: 'auto'}}>
                 <table style={styles.table}>
                     <thead>
@@ -549,19 +531,41 @@ const NorthernRedMuntjac = () => {
                     <tbody>
                         <tr>
                             <td style={{...styles.td, color: '#3498db', fontStyle: 'italic', fontWeight: 'bold'}}>
-                                Male/<span style={{color: '#d63384'}}>Female</span>
+                                Male
                             </td>
                             <td style={styles.td}>
-                                Red Variation 1 (49.87%)<br/>
-                                Red Variation 2 (49.87%)
+                                Tan (37.30%)<br/>
+                                Brown (37.30%)<br/>
+                                Dark (25.00%)
                             </td>
                             <td style={styles.td}>X</td>
+                            <td style={styles.td}>
+                                Piebald Variation 1 (0.20%)<br/>
+                                Piebald Variation 2 (0.10%)
+                            </td>
+                            <td style={styles.td}>
+                                Albino (0.03%)<br/>
+                                Leucistic (0.03%)<br/>
+                                Melanistic (0.03%)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style={{...styles.td, color: '#d63384', fontStyle: 'italic', fontWeight: 'bold'}}>
+                                Female
+                            </td>
+                            <td style={styles.td}>
+                                Tan (37.34%)<br/>
+                                Brown (37.34%)<br/>
+                                Dark (25.03%)
+                            </td>
                             <td style={styles.td}>X</td>
                             <td style={styles.td}>
-                                Leucistic Variation 1 (0.07%)<br/>
-                                Leucistic Variation 2 (0.07%)<br/>
-                                Melanistic (0.07%)<br/>
-                                Albino (0.05%)
+                                Piebald (0.10%)
+                            </td>
+                            <td style={styles.td}>
+                                Albino (0.03%)<br/>
+                                Leucistic (0.03%)<br/>
+                                Melanistic (0.03%)
                             </td>
                         </tr>
                     </tbody>
@@ -576,16 +580,6 @@ const NorthernRedMuntjac = () => {
                 ))}
             </ul>
 
-            {/* REFERENCES */}
-            <h2 id="references" style={styles.h2}>References</h2>
-            <ol style={{fontSize: '0.9rem', paddingLeft: '20px'}}>
-               {references.map((ref, idx) => (
-                  <li key={idx} style={{marginBottom: '4px'}}>
-                     <span style={styles.link}>↑ {ref}</span>
-                  </li>
-               ))}
-            </ol>
-
             <div style={{marginTop: '40px'}}>
                 <AnimalsTableMini />
             </div>
@@ -597,4 +591,4 @@ const NorthernRedMuntjac = () => {
   );
 };
 
-export default NorthernRedMuntjac;
+export default Pronghorn;

@@ -236,6 +236,29 @@ import WhiteTailedJackrabbitPage from '../pages/animals/class1/WhiteTailedJackra
 import WoollyHarePage from '../pages/animals/class1/WoolyHare';
 import AmericanMinkPage from '../pages/animals/class1/AmericanMink';
 import EurasianPineMartenPage from '../pages/animals/class1/EurasianPineMarten';
+import NorthernRedMuntjacPage from '../pages/animals/class2/NorthernRedMuntjac';
+import RaccoonDogPage from '../pages/animals/class2/RaccoonDog';
+import SibereanMuskDeerPage from '../pages/animals/class2/SibereanMuskDeer';
+import CoyotePage from '../pages/animals/class2/Coyote';
+import SideStripedJackalPage from '../pages/animals/class2/SideStripedJackal';
+import GrayFoxPage from '../pages/animals/class2/GrayFox';
+import RedFoxPage from '../pages/animals/class2/RedFox';
+import TibetanFoxPage from '../pages/animals/class2/TibetanFox';
+import CommonRaccoonPage from '../pages/animals/class2/CommonRaccoon';
+import EuropeanBadgerPage from '../pages/animals/class2/EuropeanBadger';
+import BobcatPage from '../pages/animals/class2/Bobcat';
+import MexicanBobcatPage from '../pages/animals/class2/MexicanBobcat';
+import NorthAmericanBeaverPage from '../pages/animals/class2/NorthAmericanBeaver';
+import AxisDeerPage from '../pages/animals/class3/AxisDeer';
+import HogDeerPage from '../pages/animals/class3/HogDeer';
+import RoeDeerPage from '../pages/animals/class3/RoeDeer';
+import BlackbuckPage from '../pages/animals/class3/Blackbuck';
+import SpringbokPage from '../pages/animals/class3/Springbok';
+import PronghornPage from '../pages/animals/class3/Pronghorn';
+import FeralGoatPage from '../pages/animals/class3/FeralGoat';
+import ChamoisPage from '../pages/animals/class3/Chamois';
+import EurasianLynxPage from '../pages/animals/class3/EurasianLynx';
+import CollaredPeccaryPage from '../pages/animals/class3/CollaredPeccary';
 
 export default function AppRouter() {
   return (
@@ -410,6 +433,50 @@ export default function AppRouter() {
       <Route path="/animals/EasternCottontailRabbit" element={<EasternCottontailRabbitPage />} />
       <Route path="/animals/Eastern-Cottontail-Rabbit" element={<EasternCottontailRabbitPage />} />
       <Route path="/animals/Antelope-Jackrabbit" element={<AntelopeJackrabbitPage />} />
+      <Route path="/animals/NorthernRedMuntjac" element={<NorthernRedMuntjacPage />} />
+      <Route path="/animals/Northern-Red-Muntjac" element={<NorthernRedMuntjacPage />} />
+      <Route path="/animals/RaccoonDog" element={<RaccoonDogPage />} />
+      <Route path="/animals/Raccoon-Dog" element={<RaccoonDogPage />} />
+      <Route path="/animals/SibereanMuskDeer" element={<SibereanMuskDeerPage />} />
+      <Route path="/animals/Siberian-Musk-Deer" element={<SibereanMuskDeerPage />} />
+      <Route path="/animals/SideStripedJackal" element={<SideStripedJackalPage />} />
+      <Route path="/animals/Side-striped-Jackal" element={<SideStripedJackalPage />} />
+      <Route path="/animals/Coyote" element={<CoyotePage />} />
+      <Route path="/animals/GrayFox" element={<GrayFoxPage />} />
+      <Route path="/animals/Gray-Fox" element={<GrayFoxPage />} />
+      <Route path="/animals/EuropeanBadger" element={<EuropeanBadgerPage />} />
+      <Route path="/animals/European-Badger" element={<EuropeanBadgerPage />} />
+      <Route path="/animals/NorthAmericanBeaver" element={<NorthAmericanBeaverPage />} />
+      <Route path="/animals/North-American-Beaver" element={<NorthAmericanBeaverPage />} />
+      <Route path="/animals/AxisDeer" element={<AxisDeerPage />} />
+      <Route path="/animals/Axis-Deer" element={<AxisDeerPage />} />
+      <Route path="/animals/HogDeer" element={<HogDeerPage />} />
+      <Route path="/animals/Hog-Deer" element={<HogDeerPage />} />
+      <Route path="/animals/RoeDeer" element={<RoeDeerPage />} />
+      <Route path="/animals/Roe-Deer" element={<RoeDeerPage />} />
+      <Route path="/animals/Blackbuck" element={<BlackbuckPage />} />
+      <Route path="/animals/Black-Buck" element={<BlackbuckPage />} />
+      <Route path="/animals/Springbok" element={<SpringbokPage />} />
+      <Route path="/animals/Spring-Bok" element={<SpringbokPage />} />
+      <Route path="/animals/Pronghorn" element={<PronghornPage />} />
+      <Route path="/animals/Prong-Horn" element={<PronghornPage />} />
+      <Route path="/animals/FeralGoat" element={<FeralGoatPage />} />
+      <Route path="/animals/Feral-Goat" element={<FeralGoatPage />} />
+      <Route path="/animals/Chamois" element={<ChamoisPage />} />
+      <Route path="/animals/CollaredPeccary" element={<CollaredPeccaryPage />} />
+      <Route path="/animals/Collared-Peccary" element={<CollaredPeccaryPage />} />
+      <Route path="/animals/EurasianLynx" element={<EurasianLynxPage />} />
+      <Route path="/animals/Eurasian-Lynx" element={<EurasianLynxPage />} />
+      <Route path="/animals/RedFox" element={<RedFoxPage />} />
+      <Route path="/animals/Red-Fox" element={<RedFoxPage />} />
+      <Route path="/animals/TibetanFox" element={<TibetanFoxPage />} />
+      <Route path="/animals/Tibetan-Fox" element={<TibetanFoxPage />} />
+      <Route path="/animals/CommonRaccoon" element={<CommonRaccoonPage />} />
+      <Route path="/animals/Common-Raccoon" element={<CommonRaccoonPage />} />
+      <Route path="/animals/MexicanBobcat" element={<MexicanBobcatPage />} />
+      <Route path="/animals/Mexican-Bobcat" element={<MexicanBobcatPage />} />
+      <Route path="/animals/Bobcat" element={<BobcatPage />} />
+      <Route path="/animals/Bob-cat" element={<BobcatPage />} />
       <Route path="/animals/HazelGrouse" element={<HazelGrousePage />} />
       <Route path="/animals/Hazel-Grouse" element={<HazelGrousePage />} />
       <Route path="/animals/DuskyGrouse" element={<DuskyGrousePage />} />

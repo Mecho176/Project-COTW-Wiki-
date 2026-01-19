@@ -1,125 +1,87 @@
-import React from 'react'; 
+import React from 'react';
+
+// --- IMPORTS ---
+// Standard Icons
+import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp';
+import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp';
+import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp';
+import class2Icon from '../../../assets/Class2Icon.webp'; // Class 2 for Common Raccoon
+import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
+
+// Main Image
+import CommonRaccoonMain from '../../../assets/CommonRaccoon.webp';
+import ShotSchemeImage from '../../../assets/Common_Raccoon_shot_scheme.webp';
+
+// Fur Variant Images (Placeholders)
+import CommonRaccoon_Albino from '../../../assets/CommonRaccoon_Albino.webp';
+import CommonRaccoon_Blonde from '../../../assets/CommonRaccoon_Blonde.webp';
+import CommonRaccoon_BlondePiebald from '../../../assets/CommonRaccoon_BlondePiebald.webp';
+import CommonRaccoon_Brown from '../../../assets/CommonRaccoon_Brown.webp';
+import CommonRaccoon_Grey from '../../../assets/CommonRaccoon_Grey.webp';
+import CommonRaccoon_GreyPiebald from '../../../assets/CommonRaccoon_GreyPiebald.webp';
+import CommonRaccoon_Melanistic from '../../../assets/CommonRaccoon_Melanistic.webp';
 
 
-// --- IMPORTS --- // 
-// Standard Icons //
-import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp'; 
-import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp'; 
-import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp'; 
-// Added Drinking Icon //
-
-import class2Icon from '../../../assets/Class2Icon.webp';
- // Updated to Class 2 
- 
- import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
-
-  // Main Image 
-  import NorthernRedMuntjacMain from '../../../assets/Northern_Red_Muntjac.webp'; 
-  import ShotSchemeImage from '../../../assets/Northern_Red_Muntjac_shot_scheme.webp'; 
-
-  // Fur Variant Images (Placeholders)
-
-    // Male 
-    import Muntjac_Male_Albino from '../../../assets/NorthernRedMuntjac_AlbinoMale.webp'; 
-    import Muntjac_Male_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Male.webp'; 
-    import Muntjac_Male_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Male.webp'; 
-    import Muntjac_Male_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticMale.webp'; 
-    import Muntjac_Male_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Male.webp'; 
-    import Muntjac_Male_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Male.webp'; 
-
-    // Female 
-    import Muntjac_Female_Albino from '../../../assets/NorthernRedMuntjac_AlbinoFemale.webp'; 
-    import Muntjac_Female_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Female.webp'; 
-    import Muntjac_Female_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Female.webp'; 
-    import Muntjac_Female_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticFemale.webp'; 
-    import Muntjac_Female_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Female.webp'; 
-    import Muntjac_Female_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Female.webp';
-
-
-const NorthernRedMuntjac = () => {
+const CommonRaccoon = () => {
 
   // --- DATA SOURCES ---
 
   // Need Zone Times
   const needZonesData = [
     {
-      name: "Sundarpatan",
+      name: "Mississippi Acres / New England Mountains / Salzwiesen Park", // Maps inferred from intro text
       schedule: [
-        { time: "00:00 - 03:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "03:00 - 06:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "06:00 - 09:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "09:00 - 12:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "12:00 - 15:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "15:00 - 18:00", type: "Drinking", icon: DrinkingZoneIcon },
-        { time: "18:00 - 21:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "21:00 - 00:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "00:00 - 03:30", type: "Drinking", icon: DrinkingZoneIcon },
+        { time: "03:00 - 06:30", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "06:00 - 10:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "10:00 - 13:30", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "13:00 - 16:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "16:00 - 20:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "20:00 - 00:30", type: "Feeding", icon: FeedingZoneIcon },
       ]
     }
   ];
 
   // Features Table
   const features = [
-    { label: "Behavior", value: "Elusive and robust" },
-    { label: "Habitat", value: "Dense forests" },
-    { label: "Senses", value: "Excellent eyesight and sense of hearing" },
-    { label: "Social", value: "Primarily solitary, can be found in family groups" },
-    { label: "Active", value: "Dawn and dusk" },
-    { label: "Recommended Equipment", value: "Class 2 Ammo, Roe Deer Caller" },
-    { label: "Species", value: "Muntiacus vaginalis", italic: true, isLink: true },
-    { label: "Difficulty", value: "Easy" },
+    { label: "Behavior", value: "Intelligent and adaptable" },
+    { label: "Habitat", value: "Prefers wooded habitats near water" },
+    { label: "Senses", value: "Excellent smell and hearing, average vision" },
+    { label: "Social", value: "Forms small, loose, same sex social groups" },
+    { label: "Active", value: "Mostly at night, from dusk to dawn" },
+    { label: "Recommended Equipment", value: "Class 2 Ammo, Raccoon \"Squall\" Caller" },
+    { label: "Species", value: "Procyon lotor", italic: true, isLink: true },
+    { label: "Difficulty", value: "Average" },
   ];
 
   // Fur Gallery Data
   const furGallery = [
-    { name: "Albino - Male", src: Muntjac_Male_Albino },
-    { name: "Leucistic Variation 1 - Male", src: Muntjac_Male_Leucistic1 },
-    { name: "Leucistic Variation 2 - Male", src: Muntjac_Male_Leucistic2 },
-    { name: "Melanistic - Male", src: Muntjac_Male_Melanistic },
-    { name: "Red Variation 1 - Male", src: Muntjac_Male_Red1 },
-    { name: "Red Variation 2 - Male", src: Muntjac_Male_Red2 },
-    { name: "Albino - Female", src: Muntjac_Female_Albino },
-    { name: "Leucistic Variation 1 - Female", src: Muntjac_Female_Leucistic1 },
-    { name: "Leucistic Variation 2 - Female", src: Muntjac_Female_Leucistic2 },
-    { name: "Melanistic - Female", src: Muntjac_Female_Melanistic },
-    { name: "Red Variation 1 - Female", src: Muntjac_Female_Red1 },
-    { name: "Red Variation 2 - Female", src: Muntjac_Female_Red2 },
+    { name: "Albino", src: CommonRaccoon_Albino },
+    { name: "Blonde", src: CommonRaccoon_Blonde },
+    { name: "Blonde Piebald", src: CommonRaccoon_BlondePiebald },
+    { name: "Brown", src: CommonRaccoon_Brown },
+    { name: "Grey", src: CommonRaccoon_Grey },
+    { name: "Grey Piebald", src: CommonRaccoon_GreyPiebald },
+    { name: "Melanistic", src: CommonRaccoon_Melanistic },
   ];
-
-  // Split galleries by sex for sub-topics
-  const maleGallery = furGallery.filter(item => /Male/i.test(item.name));
-  const femaleGallery = furGallery.filter(item => /Female/i.test(item.name));
-
-  // Smooth scroll helper for in-page TOC links
-  const scrollToId = (id) => (e) => {
-    if (e && e.preventDefault) e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (typeof window !== 'undefined' && window.history && window.history.replaceState) {
-      window.history.replaceState(null, '', `#${id}`);
-    }
-  };
 
   // Trivia Data
   const triviaData = [
-    `The Muntjac Deer gets it's name 'MUNTJAC' from the Dutch, which borrowed the word from the Sundanese word for a "small deer"; specifically the "Chevrotain" or "Mouse Deer". The reason for why the Muntjac got associated with this animal is uncertain. Maybe traders, of the Dutch East India company, just thought it was a generic term for ALL small deer. Ironically, the Mouse Deer isn't even a real deer.[2]`,
-    `There are currently 12 known species of Muntjac Deer alive today. One of these species include the smallest Deer species in the world, the "Chinese Muntjac"; a deer species so small, it's standing height would be dwarfed by Shaquille O'Neal's shoe size, and it's average weight wouldn't be any heavier than a 2 year old Toddler.[3][4][5][6][7]`,
-    `The Muntjac Deer has many distinct physical traits; one of these being its "fangs". It uses these as display structures, as weapons for intraspecific combat, and their fangs also have the convenient ability to HINGE AT THE JAW LIKE A SNAKE! THAT'S RIGHT! THEY CAN FOLD AWAY THEIR FANGS LIKE SOME KIND OF SWISS ARMY KNIF!!!... Anyway they also have extremely pronounced scent glands on their foreheads and at the corners of their eyes. In fact, their top scent glands can inflate, making them the only deer species with inflatable structures on their body. Despite them being called "Barking Deer" these deer are relatively quiet, and overly rely on scent as their primary form of communication. [8][9][10]`,
-    `Yet another bizarre fact about this animal is the fact that it does not have a defined rutting season. They mate year round unlike most other deer. The females are also extremely fertile, being able to conceive again just days after giving birth.[11]`
+    "The Common Raccoon's scientific name Procyon lotor means Pre-Dog Washer in Neo-Latin, on account of their doglike appearance and their propensity to \"wash\" their food.",
+    "The word Raccoon comes from a local Native American word meaning, animal that scratches with its hands.",
+    "Raccoons are very nimble with their hands. So much so, that early biologists once thought the Raccoon could have been a distant Primate relative. Modern phylogenetic analysis has since clarified that this is not true; but even among its own taxon it's abnormally dexterous. So much so that it's touch is considered an essential sense for the animal, using its hands to \"see\" in the dark.",
+    "They are the sole representative of the genus Procyon in game, and is also the largest member of the family Procyonidae in the world.",
+    "A common name for the Raccoon is the Trash Panda. As the name suggests, they are known for getting into trash. And this behavior is represented in game, as their is a small chance for a Raccoon to climb into a trashcan if it is nearby."
   ];
 
   // References List
   const references = [
-    "Northern Red Muntjac Need Zones, Sundarpatan",
-    "https://www.dictionary.com/browse/muntjac",
-    "https://news.mongabay.com/2020/08/the-large-antlered-muntjac-southeast-asias-mystery-deer-commentary/",
-    "https://www.rosamondgiffordzoo.org/experience/animals/mammals/chinese-muntjac/",
-    "https://seaworld.org/animals/facts/mammals/reeves-muntjac/",
-    "https://footwearnews.com/shoes/outdoor-footwear/shaq-shoe-size-1202540386/",
-    "https://www.whattoexpect.com/toddler/24-month-old.aspx",
-    "https://www.discoverwildlife.com/animal-facts/mammals/muntjac-deer",
-    "https://www.iflscience.com/muntjac-deer-have-bizarre-flaring-scent-glands-on-their-face-67030",
-    "https://www.sciencefocus.com/nature/muntjac-deer",
-    "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/animals/mammals/muntjac-deer/"
+    "https://www.pbs.org/wnet/nature/raccoon-nation-raccoon-fact-sheet/7553/",
+    "https://northernwoodlands.org/outside_story/article/raccoons-hands",
+    "https://pubmed.ncbi.nlm.nih.gov/10512570/",
+    "https://www.vancouverwildlife.com/blogs/the-sensitive-side-of-raccoons-a-closer-look-at-their-feet-and-sense-of-touch/",
+    "https://www.sciencedirect.com/topics/immunology-and-microbiology/procyonidae",
+    "https://www.youtube.com/shorts/MTZmfsyl20w"
   ];
 
   // --- STYLES OBJECT ---
@@ -259,13 +221,12 @@ const NorthernRedMuntjac = () => {
       color: '#dbe4eb',
       verticalAlign: 'top',
     },
-    // Updated Shot Scheme Layout Styles
     shotContainer: {
       display: 'flex',
       backgroundColor: '#112233',
       marginTop: '10px',
       border: '1px solid #1f405a',
-      flexDirection: 'row', // Horizontal layout
+      flexDirection: 'row',
       alignItems: 'stretch',
     },
     shotImageWrapper: {
@@ -326,22 +287,32 @@ const NorthernRedMuntjac = () => {
     rarityVeryRare: { color: '#e74c3c', fontWeight: 'bold' },
   };
 
+  // Smooth-scroll helper for TOC links
+  const scrollToId = (id) => (e) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.replaceState(null, '', `#${id}`);
+    }
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.innerWrapper}>
         
         {/* PAGE HEADER */}
         <div style={styles.mainHeader}>
-          <span>Northern Red Muntjac</span>
+          <span>Common Raccoon</span>
         </div>
 
         <div style={styles.layout}>
           
           {/* --- RIGHT SIDEBAR (General Information) --- */}
           <aside style={styles.sidebarColumn}>
-            <div style={styles.sidebarHeader}>Northern Red Muntjac</div>
+            <div style={styles.sidebarHeader}>Common Raccoon</div>
             <div style={styles.sidebarImage}>
-              <img src={NorthernRedMuntjacMain} alt="Northern Red Muntjac" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
+              <img src={CommonRaccoonMain} alt="Common Raccoon" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
             </div>
             
             <div style={styles.sidebarHeader}>General Information</div>
@@ -358,39 +329,41 @@ const NorthernRedMuntjac = () => {
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Trophy Type</span>
-              <span>Antlers</span>
+              <span>Weight</span>
               <div style={styles.trophyGrid}>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.silver}}>◆ Silver</span>
-                  <span>25.25</span>
+                  <span>5</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.gold}}>☗ Gold</span>
-                  <span>30.96</span>
+                  <span>9</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.diamond}}>☗ Diamond</span>
-                  <span>35.24</span>
+                  <span>12</span>
                 </div>
               </div>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Weight</span>
-              12kg — 28kg<br/>
-              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>26lbs — 62lbs</span>
+              3kg — 13kg<br/>
+              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>7lbs — 29lbs</span>
             </div>
 
             <div style={styles.sidebarSection}>
                <span style={styles.sidebarLabel}>Fur</span>
                <span style={{fontSize:'0.85rem'}}>
-                  Albino, Leucistic, Melanistic, Red
+                  Albino, Blonde, Blonde Piebald, Brown, Grey, Grey Piebald, Melanistic
                </span>
             </div>
 
             <div style={styles.sidebarHeader}>Locations</div>
             <div style={styles.sidebarSection}>
-               <div style={{marginBottom:'4px'}}><span style={styles.link}>Sundarpatan</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Mississippi Acres Preserve</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>New England Mountains</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Salzwiesen Park</span></div>
             </div>
           </aside>
 
@@ -399,21 +372,17 @@ const NorthernRedMuntjac = () => {
 
             {/* Quote Block */}
             <div style={styles.quoteBox}>
-              "The Northern Red Muntjac is a distinct and stealthy deer species primarily found in the dense forests of Southern Asia. Despite its small size, this elusive creature is sturdy, measuring approcimately 50-65 cm at the shoulder and weighing between 12-28kg. Its reddish-brown fur and cream-colored underparts provide natural camouflage in the undergrowth.
-
+              "The common raccoon is an adaptable omnivorous land mammal native to North and Central America. They typically prefer woodlands and wetlands, due to their high adaptability they can be found in a wide variety of habitats across the continent - including urban areas where they are considered pests. Raccoons have also been introduced in Western Europe, the Caucasus and Japan by humans. Raccoons are mostly nocturnal animals that spend the day hidden in tree cavities, hollow logs or dens dug in the ground. Due to this, hunter often use callers to lure them out of their nests."
               <br/><br/>
-
-              The male is easily recognizable by its elongated upper canines and short antlers. They are solitary or pair-oriented and are most active during dusk and dawn. Their unique bark-like call is a clear sign of their presence. Renowned for their agility and quickness, they require patience to outsmart. The true value of hunting them lies in the pursuit itself."
-              <br/><br/>
-              ― In-Game Description
+              — In-Game Description
             </div>
 
             {/* Intro Text */}
             <p style={{marginBottom:'20px'}}>
-              The <strong>Northern Red Muntjac</strong> is a (<span style={styles.link}>class 2</span>) deer species that can be hunted on <span style={styles.link}>Sundarpatan</span>.
+              The <strong>Common Raccoon</strong> is a <span style={styles.link}>class 2</span> animal that can be hunted on <span style={styles.link}>Mississippi Acres Preserve</span>, <span style={styles.link}>New England Mountains</span>, and <span style={styles.link}>Salzwiesen Park</span>. It was originally a class 1 animal before being changed to class 2 in a later patch.
             </p>
 
-            {/* Table of Contents (smooth-scroll links) */}
+            {/* Table of Contents */}
             <div style={{
                 border: '1px solid #3a5a75',
                 backgroundColor: '#0f2e48',
@@ -430,14 +399,8 @@ const NorthernRedMuntjac = () => {
                 <li><a href="#features" style={styles.link} onClick={scrollToId('features')}>Features</a></li>
                 <li><a href="#need-zones" style={styles.link} onClick={scrollToId('need-zones')}>Need Zone Times</a></li>
                 <li><a href="#shot-scheme" style={styles.link} onClick={scrollToId('shot-scheme')}>Shot scheme</a></li>
-                <li>
-                  <a href="#fur-variants" style={styles.link} onClick={scrollToId('fur-variants')}>Fur variants</a>
-                  <ol style={{margin:'6px 0 0 14px', paddingLeft: '0', color: '#6fb2e6', listStyleType: 'none'}}>
-                    <li><a href="#fur-male" style={styles.link} onClick={scrollToId('fur-male')}>4.1 Male</a></li>
-                    <li><a href="#fur-female" style={styles.link} onClick={scrollToId('fur-female')}>4.2 Female</a></li>
-                  </ol>
-                </li>
-                <li><a href="#variant-rarity" style={styles.link} onClick={scrollToId('variant-rarity')}>Fur Variant Rarity</a></li>
+                <li><a href="#fur-variants" style={styles.link} onClick={scrollToId('fur-variants')}>Fur variants</a></li>
+                <li><a href="#fur-variant-rarity" style={styles.link} onClick={scrollToId('fur-variant-rarity')}>Fur Variant Rarity</a></li>
                 <li><a href="#trivia" style={styles.link} onClick={scrollToId('trivia')}>Trivia</a></li>
                 <li><a href="#references" style={styles.link} onClick={scrollToId('references')}>References</a></li>
               </ol>
@@ -469,9 +432,9 @@ const NorthernRedMuntjac = () => {
             <div style={{display:'inline-block'}}>
                 <table style={{...styles.table, width: '300px'}}>
                     <thead>
-                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Sundarpatan</th></tr>
+                        {/* Note: Map name implied from general context, table header matches screenshot columns */}
                         <tr>
-                            <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Times</th>
+                            <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Time</th>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Activity</th>
                         </tr>
                     </thead>
@@ -491,7 +454,7 @@ const NorthernRedMuntjac = () => {
                 </table>
             </div>
 
-             {/* SHOT SCHEME - Updated Layout with Legend */}
+             {/* SHOT SCHEME */}
              <h2 id="shot-scheme" style={styles.h2}>Shot scheme</h2>
             <div style={styles.shotContainer}>
                 <div style={styles.shotImageWrapper}>
@@ -508,22 +471,8 @@ const NorthernRedMuntjac = () => {
 
             {/* FUR VARIANTS (Gallery) */}
             <h2 id="fur-variants" style={styles.h2}>Fur variants</h2>
-
-            <h3 id="fur-male" style={{...styles.h2, fontSize: '1.15rem', marginTop: '10px'}}>Male</h3>
             <div style={styles.galleryGrid}>
-              {maleGallery.map((item, i) => (
-                <div key={i} style={styles.galleryItem}>
-                  <div style={styles.galleryImgPlaceholder}>
-                    <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
-                  </div>
-                  <span style={styles.galleryLabel}>{item.name}</span>
-                </div>
-              ))}
-            </div>
-
-            <h3 id="fur-female" style={{...styles.h2, fontSize: '1.15rem', marginTop: '18px'}}>Female</h3>
-            <div style={styles.galleryGrid}>
-              {femaleGallery.map((item, i) => (
+              {furGallery.map((item, i) => (
                 <div key={i} style={styles.galleryItem}>
                   <div style={styles.galleryImgPlaceholder}>
                     <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
@@ -534,7 +483,7 @@ const NorthernRedMuntjac = () => {
             </div>
 
             {/* FUR VARIANT RARITY TABLE */}
-            <h2 id="variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
+            <h2 id="fur-variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
             <div style={{overflowX: 'auto'}}>
                 <table style={styles.table}>
                     <thead>
@@ -549,19 +498,39 @@ const NorthernRedMuntjac = () => {
                     <tbody>
                         <tr>
                             <td style={{...styles.td, color: '#3498db', fontStyle: 'italic', fontWeight: 'bold'}}>
-                                Male/<span style={{color: '#d63384'}}>Female</span>
+                                Male
                             </td>
                             <td style={styles.td}>
-                                Red Variation 1 (49.87%)<br/>
-                                Red Variation 2 (49.87%)
+                                Grey (37.35%)<br/>
+                                Brown (37.35%)<br/>
+                                Blonde (25.00%)
                             </td>
                             <td style={styles.td}>X</td>
+                            <td style={styles.td}>
+                                Piebald Grey (0.10%)<br/>
+                                Piebald Blonde (0.10%)
+                            </td>
+                            <td style={styles.td}>
+                                Albino (0.05%)<br/>
+                                Melanistic (0.05%)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style={{...styles.td, color: '#d63384', fontStyle: 'italic', fontWeight: 'bold'}}>
+                                Female
+                            </td>
+                            <td style={styles.td}>
+                                Brown (59.62%)<br/>
+                                Blonde (39.90%)
+                            </td>
                             <td style={styles.td}>X</td>
                             <td style={styles.td}>
-                                Leucistic Variation 1 (0.07%)<br/>
-                                Leucistic Variation 2 (0.07%)<br/>
-                                Melanistic (0.07%)<br/>
-                                Albino (0.05%)
+                                Piebald Grey (0.16%)<br/>
+                                Piebald Blonde (0.16%)
+                            </td>
+                            <td style={styles.td}>
+                                Albino (0.08%)<br/>
+                                Melanistic (0.08%)
                             </td>
                         </tr>
                     </tbody>
@@ -597,4 +566,4 @@ const NorthernRedMuntjac = () => {
   );
 };
 
-export default NorthernRedMuntjac;
+export default CommonRaccoon;

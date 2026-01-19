@@ -1,88 +1,76 @@
-import React from 'react'; 
+import React from 'react';
 
-
-// --- IMPORTS --- // 
-// Standard Icons //
-import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp'; 
-import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp'; 
-import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp'; 
-// Added Drinking Icon //
-
+// --- IMPORTS ---
+// Standard Icons
+import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp';
+import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp';
+import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp';
 import class2Icon from '../../../assets/Class2Icon.webp';
- // Updated to Class 2 
- 
- import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
+import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
 
-  // Main Image 
-  import NorthernRedMuntjacMain from '../../../assets/Northern_Red_Muntjac.webp'; 
-  import ShotSchemeImage from '../../../assets/Northern_Red_Muntjac_shot_scheme.webp'; 
+// Main Image
+import SiberianMuskDeerMain from '../../../assets/Muskder.webp';
+import ShotSchemeImage from '../../../assets/Musk_deer_shot_scheme.webp';
 
-  // Fur Variant Images (Placeholders)
+// Fur Variant Images (Placeholders)
+// Male
+import MuskDeer_Male_Albino from '../../../assets/SiberianMuskDeer_AlbinoMale.webp';
+import MuskDeer_Male_DarkBrown from '../../../assets/SiberianMuskDeer_DarkBrownMale.webp';
+import MuskDeer_Male_GreyBrown from '../../../assets/SiberianMuskDeer_GreyBrownMale.webp';
+import MuskDeer_Male_Melanistic from '../../../assets/SiberianMuskDeer_MelanisticMale.webp';
+import MuskDeer_Male_Piebald from '../../../assets/SiberianMuskDeer_PiebaldMale.webp';
 
-    // Male 
-    import Muntjac_Male_Albino from '../../../assets/NorthernRedMuntjac_AlbinoMale.webp'; 
-    import Muntjac_Male_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Male.webp'; 
-    import Muntjac_Male_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Male.webp'; 
-    import Muntjac_Male_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticMale.webp'; 
-    import Muntjac_Male_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Male.webp'; 
-    import Muntjac_Male_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Male.webp'; 
-
-    // Female 
-    import Muntjac_Female_Albino from '../../../assets/NorthernRedMuntjac_AlbinoFemale.webp'; 
-    import Muntjac_Female_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Female.webp'; 
-    import Muntjac_Female_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Female.webp'; 
-    import Muntjac_Female_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticFemale.webp'; 
-    import Muntjac_Female_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Female.webp'; 
-    import Muntjac_Female_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Female.webp';
+// Female
+import MuskDeer_Female_Albino from '../../../assets/SiberianMuskDeer_AlbinoFemale.webp';
+import MuskDeer_Female_GreyBrown from '../../../assets/SiberianMuskDeer_GreyBrownFemale.webp';
+import MuskDeer_Female_Melanistic from '../../../assets/SiberianMuskDeer_MelanisticFemale.webp';
+import MuskDeer_Female_Orange from '../../../assets/SiberianMuskDeer_OrangeFemale.webp';
+import MuskDeer_Female_Piebald from '../../../assets/SiberianMuskDeer_PiebaldFemale.webp';
 
 
-const NorthernRedMuntjac = () => {
+const SiberianMuskDeer = () => {
 
   // --- DATA SOURCES ---
 
   // Need Zone Times
   const needZonesData = [
     {
-      name: "Sundarpatan",
+      name: "Medved-Taiga National Park", // Inferred from Locations screenshot
       schedule: [
-        { time: "00:00 - 03:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "03:00 - 06:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "06:00 - 09:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "09:00 - 12:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "12:00 - 15:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "15:00 - 18:00", type: "Drinking", icon: DrinkingZoneIcon },
-        { time: "18:00 - 21:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "21:00 - 00:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "00:00 - 04:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "04:00 - 08:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "08:00 - 12:30", type: "Drinking", icon: DrinkingZoneIcon },
+        { time: "12:00 - 16:30", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "16:00 - 20:30", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "20:00 - 00:30", type: "Resting", icon: RestingZoneIcon },
       ]
     }
   ];
 
   // Features Table
   const features = [
-    { label: "Behavior", value: "Elusive and robust" },
-    { label: "Habitat", value: "Dense forests" },
-    { label: "Senses", value: "Excellent eyesight and sense of hearing" },
-    { label: "Social", value: "Primarily solitary, can be found in family groups" },
-    { label: "Active", value: "Dawn and dusk" },
-    { label: "Recommended Equipment", value: "Class 2 Ammo, Roe Deer Caller" },
-    { label: "Species", value: "Muntiacus vaginalis", italic: true, isLink: true },
+    { label: "Behavior", value: "Docile and somewhat skittish" },
+    { label: "Habitat", value: "Prefer forests and mountainous terrain" },
+    { label: "Senses", value: "Excellent hearing and good sense of smell" },
+    { label: "Social", value: "Mostly Solitary" },
+    { label: "Active", value: "During dusk and dawn" },
+    { label: "Recommended Equipment", value: "Class 2 Ammo, Musk Deer Scent" },
+    { label: "Species", value: "Moschus moschiferus", italic: true, isLink: true },
     { label: "Difficulty", value: "Easy" },
   ];
 
   // Fur Gallery Data
   const furGallery = [
-    { name: "Albino - Male", src: Muntjac_Male_Albino },
-    { name: "Leucistic Variation 1 - Male", src: Muntjac_Male_Leucistic1 },
-    { name: "Leucistic Variation 2 - Male", src: Muntjac_Male_Leucistic2 },
-    { name: "Melanistic - Male", src: Muntjac_Male_Melanistic },
-    { name: "Red Variation 1 - Male", src: Muntjac_Male_Red1 },
-    { name: "Red Variation 2 - Male", src: Muntjac_Male_Red2 },
-    { name: "Albino - Female", src: Muntjac_Female_Albino },
-    { name: "Leucistic Variation 1 - Female", src: Muntjac_Female_Leucistic1 },
-    { name: "Leucistic Variation 2 - Female", src: Muntjac_Female_Leucistic2 },
-    { name: "Melanistic - Female", src: Muntjac_Female_Melanistic },
-    { name: "Red Variation 1 - Female", src: Muntjac_Female_Red1 },
-    { name: "Red Variation 2 - Female", src: Muntjac_Female_Red2 },
+    { name: "Albino - Male", src: MuskDeer_Male_Albino },
+    { name: "Dark Brown - Male", src: MuskDeer_Male_DarkBrown },
+    { name: "Grey Brown - Male", src: MuskDeer_Male_GreyBrown },
+    { name: "Melanistic - Male", src: MuskDeer_Male_Melanistic },
+    { name: "Piebald - Male", src: MuskDeer_Male_Piebald },
+    { name: "Albino - Female", src: MuskDeer_Female_Albino },
+    { name: "Grey Brown - Female", src: MuskDeer_Female_GreyBrown },
+    { name: "Melanistic - Female", src: MuskDeer_Female_Melanistic },
+    { name: "Orange - Female", src: MuskDeer_Female_Orange },
+    { name: "Piebald - Female", src: MuskDeer_Female_Piebald },
   ];
 
   // Split galleries by sex for sub-topics
@@ -101,26 +89,12 @@ const NorthernRedMuntjac = () => {
 
   // Trivia Data
   const triviaData = [
-    `The Muntjac Deer gets it's name 'MUNTJAC' from the Dutch, which borrowed the word from the Sundanese word for a "small deer"; specifically the "Chevrotain" or "Mouse Deer". The reason for why the Muntjac got associated with this animal is uncertain. Maybe traders, of the Dutch East India company, just thought it was a generic term for ALL small deer. Ironically, the Mouse Deer isn't even a real deer.[2]`,
-    `There are currently 12 known species of Muntjac Deer alive today. One of these species include the smallest Deer species in the world, the "Chinese Muntjac"; a deer species so small, it's standing height would be dwarfed by Shaquille O'Neal's shoe size, and it's average weight wouldn't be any heavier than a 2 year old Toddler.[3][4][5][6][7]`,
-    `The Muntjac Deer has many distinct physical traits; one of these being its "fangs". It uses these as display structures, as weapons for intraspecific combat, and their fangs also have the convenient ability to HINGE AT THE JAW LIKE A SNAKE! THAT'S RIGHT! THEY CAN FOLD AWAY THEIR FANGS LIKE SOME KIND OF SWISS ARMY KNIF!!!... Anyway they also have extremely pronounced scent glands on their foreheads and at the corners of their eyes. In fact, their top scent glands can inflate, making them the only deer species with inflatable structures on their body. Despite them being called "Barking Deer" these deer are relatively quiet, and overly rely on scent as their primary form of communication. [8][9][10]`,
-    `Yet another bizarre fact about this animal is the fact that it does not have a defined rutting season. They mate year round unlike most other deer. The females are also extremely fertile, being able to conceive again just days after giving birth.[11]`
+    "The Siberian Musk Deer is named for its distinctive 'musk', which is highly sought after for use in perfumes, and other things.",
+    "It's called кабарга (kabarga) in Russian.",
+    "Despite its name, the Siberian Musk Deer is not a part of the deer family (Cervidae). In fact, it is the only surviving member of the Moschidae family.",
+    "It is currently the only animal in game that requires scent to attract."
   ];
 
-  // References List
-  const references = [
-    "Northern Red Muntjac Need Zones, Sundarpatan",
-    "https://www.dictionary.com/browse/muntjac",
-    "https://news.mongabay.com/2020/08/the-large-antlered-muntjac-southeast-asias-mystery-deer-commentary/",
-    "https://www.rosamondgiffordzoo.org/experience/animals/mammals/chinese-muntjac/",
-    "https://seaworld.org/animals/facts/mammals/reeves-muntjac/",
-    "https://footwearnews.com/shoes/outdoor-footwear/shaq-shoe-size-1202540386/",
-    "https://www.whattoexpect.com/toddler/24-month-old.aspx",
-    "https://www.discoverwildlife.com/animal-facts/mammals/muntjac-deer",
-    "https://www.iflscience.com/muntjac-deer-have-bizarre-flaring-scent-glands-on-their-face-67030",
-    "https://www.sciencefocus.com/nature/muntjac-deer",
-    "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/animals/mammals/muntjac-deer/"
-  ];
 
   // --- STYLES OBJECT ---
   const styles = {
@@ -259,13 +233,12 @@ const NorthernRedMuntjac = () => {
       color: '#dbe4eb',
       verticalAlign: 'top',
     },
-    // Updated Shot Scheme Layout Styles
     shotContainer: {
       display: 'flex',
       backgroundColor: '#112233',
       marginTop: '10px',
       border: '1px solid #1f405a',
-      flexDirection: 'row', // Horizontal layout
+      flexDirection: 'row',
       alignItems: 'stretch',
     },
     shotImageWrapper: {
@@ -274,7 +247,7 @@ const NorthernRedMuntjac = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#000',
+      backgroundColor: '#2e2e2e', // Adjusted background to match dark scan look
     },
     shotLegend: {
       width: '240px',
@@ -332,16 +305,16 @@ const NorthernRedMuntjac = () => {
         
         {/* PAGE HEADER */}
         <div style={styles.mainHeader}>
-          <span>Northern Red Muntjac</span>
+          <span>Siberian Musk Deer</span>
         </div>
 
         <div style={styles.layout}>
           
           {/* --- RIGHT SIDEBAR (General Information) --- */}
           <aside style={styles.sidebarColumn}>
-            <div style={styles.sidebarHeader}>Northern Red Muntjac</div>
+            <div style={styles.sidebarHeader}>Siberian Musk Deer</div>
             <div style={styles.sidebarImage}>
-              <img src={NorthernRedMuntjacMain} alt="Northern Red Muntjac" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
+              <img src={SiberianMuskDeerMain} alt="Siberian Musk Deer" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
             </div>
             
             <div style={styles.sidebarHeader}>General Information</div>
@@ -353,44 +326,44 @@ const NorthernRedMuntjac = () => {
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Difficulty</span>
-              <span>1: Trivial — 5: Medium</span>
+              <span>1: Trivial — 3: Very Easy</span>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Trophy Type</span>
-              <span>Antlers</span>
+              <span>Tusks</span>
               <div style={styles.trophyGrid}>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.silver}}>◆ Silver</span>
-                  <span>25.25</span>
+                  <span>60</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.gold}}>☗ Gold</span>
-                  <span>30.96</span>
+                  <span>168</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.diamond}}>☗ Diamond</span>
-                  <span>35.24</span>
+                  <span>249</span>
                 </div>
               </div>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Weight</span>
-              12kg — 28kg<br/>
-              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>26lbs — 62lbs</span>
+              9 kg — 17 kg<br/>
+              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>20lbs — 37lbs</span>
             </div>
 
             <div style={styles.sidebarSection}>
                <span style={styles.sidebarLabel}>Fur</span>
                <span style={{fontSize:'0.85rem'}}>
-                  Albino, Leucistic, Melanistic, Red
+                  Albino, Dark Brown, Grey Brown, Melanistic, Orange, Piebald
                </span>
             </div>
 
             <div style={styles.sidebarHeader}>Locations</div>
             <div style={styles.sidebarSection}>
-               <div style={{marginBottom:'4px'}}><span style={styles.link}>Sundarpatan</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Medved-Taiga National Park</span></div>
             </div>
           </aside>
 
@@ -399,21 +372,17 @@ const NorthernRedMuntjac = () => {
 
             {/* Quote Block */}
             <div style={styles.quoteBox}>
-              "The Northern Red Muntjac is a distinct and stealthy deer species primarily found in the dense forests of Southern Asia. Despite its small size, this elusive creature is sturdy, measuring approcimately 50-65 cm at the shoulder and weighing between 12-28kg. Its reddish-brown fur and cream-colored underparts provide natural camouflage in the undergrowth.
-
+              "As the name implies, Siberian Musk Deer can be found in Siberia, but populations also exist in other parts of northeast Asia. It's a very small species with both genders weighing between 7.00 - 17.00 kg (15 - 37 lb). Although bearing fangs, Siberian Musk Deer are actually herbivores with their main source of nutrients, lichens. The fangs are essentially the musk deer answer to antlers as males grow these for display. These peculiar creatures rely primarily on their acute sense of hearing to detect threats and then use their small shape as an advantage to hide from predators. The Siberian Musk Deer is a solitary creature and is primarily active during the night."
               <br/><br/>
-
-              The male is easily recognizable by its elongated upper canines and short antlers. They are solitary or pair-oriented and are most active during dusk and dawn. Their unique bark-like call is a clear sign of their presence. Renowned for their agility and quickness, they require patience to outsmart. The true value of hunting them lies in the pursuit itself."
-              <br/><br/>
-              ― In-Game Description
+              — In-Game Description
             </div>
 
             {/* Intro Text */}
             <p style={{marginBottom:'20px'}}>
-              The <strong>Northern Red Muntjac</strong> is a (<span style={styles.link}>class 2</span>) deer species that can be hunted on <span style={styles.link}>Sundarpatan</span>.
+              The <strong>Musk Deer</strong> is a small kind of "deer" (<span style={styles.link}>class 2</span>). It can be hunted in the <span style={styles.link}>Medved-Taiga National Park</span>.
             </p>
 
-            {/* Table of Contents (smooth-scroll links) */}
+            {/* Table of Contents */}
             <div style={{
                 border: '1px solid #3a5a75',
                 backgroundColor: '#0f2e48',
@@ -439,12 +408,11 @@ const NorthernRedMuntjac = () => {
                 </li>
                 <li><a href="#variant-rarity" style={styles.link} onClick={scrollToId('variant-rarity')}>Fur Variant Rarity</a></li>
                 <li><a href="#trivia" style={styles.link} onClick={scrollToId('trivia')}>Trivia</a></li>
-                <li><a href="#references" style={styles.link} onClick={scrollToId('references')}>References</a></li>
               </ol>
             </div>
 
             {/* FEATURES */}
-            <h2 id="features" style={styles.h2}>Features</h2>
+            <h2 style={styles.h2}>Features</h2>
             <table style={styles.table}>
               <thead>
                 <tr>
@@ -465,11 +433,11 @@ const NorthernRedMuntjac = () => {
             </table>
             
             {/* NEED ZONE TIMES */}
-            <h2 id="need-zones" style={styles.h2}>Need Zone Times</h2>
+            <h2 style={styles.h2}>Need Zone Times</h2>
             <div style={{display:'inline-block'}}>
                 <table style={{...styles.table, width: '300px'}}>
                     <thead>
-                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Sundarpatan</th></tr>
+                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Medved-Taiga National Park</th></tr>
                         <tr>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Times</th>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Activity</th>
@@ -491,8 +459,8 @@ const NorthernRedMuntjac = () => {
                 </table>
             </div>
 
-             {/* SHOT SCHEME - Updated Layout with Legend */}
-             <h2 id="shot-scheme" style={styles.h2}>Shot scheme</h2>
+             {/* SHOT SCHEME */}
+             <h2 style={styles.h2}>Shot scheme</h2>
             <div style={styles.shotContainer}>
                 <div style={styles.shotImageWrapper}>
                    <img src={ShotSchemeImage} alt="Shot Scheme" style={{width: '100%', height: 'auto', maxHeight:'350px', objectFit: 'contain'}} />
@@ -534,7 +502,7 @@ const NorthernRedMuntjac = () => {
             </div>
 
             {/* FUR VARIANT RARITY TABLE */}
-            <h2 id="variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
+            <h2 style={styles.h2}>Fur Variant Rarity</h2>
             <div style={{overflowX: 'auto'}}>
                 <table style={styles.table}>
                     <thead>
@@ -547,21 +515,40 @@ const NorthernRedMuntjac = () => {
                         </tr>
                     </thead>
                     <tbody>
+                        {/* Male Row */}
                         <tr>
                             <td style={{...styles.td, color: '#3498db', fontStyle: 'italic', fontWeight: 'bold'}}>
-                                Male/<span style={{color: '#d63384'}}>Female</span>
+                                Male
                             </td>
                             <td style={styles.td}>
-                                Red Variation 1 (49.87%)<br/>
-                                Red Variation 2 (49.87%)
+                                Dark Brown (49.85%)<br/>
+                                Gray Brown (49.85%)
                             </td>
                             <td style={styles.td}>X</td>
+                            <td style={styles.td}>
+                                Piebald (0.20%)
+                            </td>
+                            <td style={styles.td}>
+                                Albino (0.05%)<br/>
+                                Melanistic (0.05%)
+                            </td>
+                        </tr>
+                         {/* Female Row */}
+                         <tr>
+                            <td style={{...styles.td, color: '#d63384', fontStyle: 'italic', fontWeight: 'bold'}}>
+                                Female
+                            </td>
+                            <td style={styles.td}>
+                                Gray Brown (49.85%)<br/>
+                                Orange (49.85%)
+                            </td>
                             <td style={styles.td}>X</td>
                             <td style={styles.td}>
-                                Leucistic Variation 1 (0.07%)<br/>
-                                Leucistic Variation 2 (0.07%)<br/>
-                                Melanistic (0.07%)<br/>
-                                Albino (0.05%)
+                                Piebald (0.20%)
+                            </td>
+                            <td style={styles.td}>
+                                Albino (0.05%)<br/>
+                                Melanistic (0.05%)
                             </td>
                         </tr>
                     </tbody>
@@ -569,22 +556,14 @@ const NorthernRedMuntjac = () => {
             </div>
 
             {/* TRIVIA */}
-            <h2 id="trivia" style={styles.h2}>Trivia</h2>
+            <h2 style={styles.h2}>Trivia</h2>
             <ul style={{fontSize: '0.95rem', paddingLeft: '20px', listStyleType: 'disc', color: '#dbe4eb'}}>
                 {triviaData.map((point, idx) => (
                     <li key={idx} style={{marginBottom: '10px'}}>{point}</li>
                 ))}
             </ul>
 
-            {/* REFERENCES */}
-            <h2 id="references" style={styles.h2}>References</h2>
-            <ol style={{fontSize: '0.9rem', paddingLeft: '20px'}}>
-               {references.map((ref, idx) => (
-                  <li key={idx} style={{marginBottom: '4px'}}>
-                     <span style={styles.link}>↑ {ref}</span>
-                  </li>
-               ))}
-            </ol>
+            {/* References removed per request */}
 
             <div style={{marginTop: '40px'}}>
                 <AnimalsTableMini />
@@ -597,4 +576,4 @@ const NorthernRedMuntjac = () => {
   );
 };
 
-export default NorthernRedMuntjac;
+export default SiberianMuskDeer;

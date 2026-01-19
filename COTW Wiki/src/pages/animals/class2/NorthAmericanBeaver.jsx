@@ -1,125 +1,77 @@
-import React from 'react'; 
+import React from 'react';
+
+// --- IMPORTS ---
+// Standard Icons
+import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp';
+import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp';
+import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp';
+import GatheringZoneIcon from '../../../assets/GatheringZoneIcon.webp';
+import class2Icon from '../../../assets/Class2Icon.webp'; // Class 2 for Beaver
+import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
+
+// Main Image
+import BeaverMain from '../../../assets/North_American_Beaver.webp';
+import ShotSchemeImage from '../../../assets/North_American_Beaver_shot_scheme.webp';
+
+// Fur Variant Images (Placeholders)
+import Beaver_Albino from '../../../assets/NorthAmericanBeaver_Albino.webp';
+import Beaver_DarkBrown from '../../../assets/NorthAmericanBeaver_DarkBrown.webp';
+import Beaver_Leucistic from '../../../assets/NorthAmericanBeaver_Leucistic.webp';
+import Beaver_LightBrown from '../../../assets/NorthAmericanBeaver_LightBrown.webp';
+import Beaver_Melanistic from '../../../assets/NorthAmericanBeaver_Melanistic.webp';
+import Beaver_Piebald from '../../../assets/NorthAmericanBeaver_Piebald.webp';
+import Beaver_ReddishBrown from '../../../assets/NorthAmericanBeaver_ReddishBrown.webp';
 
 
-// --- IMPORTS --- // 
-// Standard Icons //
-import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp'; 
-import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp'; 
-import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp'; 
-// Added Drinking Icon //
-
-import class2Icon from '../../../assets/Class2Icon.webp';
- // Updated to Class 2 
- 
- import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
-
-  // Main Image 
-  import NorthernRedMuntjacMain from '../../../assets/Northern_Red_Muntjac.webp'; 
-  import ShotSchemeImage from '../../../assets/Northern_Red_Muntjac_shot_scheme.webp'; 
-
-  // Fur Variant Images (Placeholders)
-
-    // Male 
-    import Muntjac_Male_Albino from '../../../assets/NorthernRedMuntjac_AlbinoMale.webp'; 
-    import Muntjac_Male_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Male.webp'; 
-    import Muntjac_Male_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Male.webp'; 
-    import Muntjac_Male_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticMale.webp'; 
-    import Muntjac_Male_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Male.webp'; 
-    import Muntjac_Male_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Male.webp'; 
-
-    // Female 
-    import Muntjac_Female_Albino from '../../../assets/NorthernRedMuntjac_AlbinoFemale.webp'; 
-    import Muntjac_Female_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Female.webp'; 
-    import Muntjac_Female_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Female.webp'; 
-    import Muntjac_Female_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticFemale.webp'; 
-    import Muntjac_Female_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Female.webp'; 
-    import Muntjac_Female_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Female.webp';
-
-
-const NorthernRedMuntjac = () => {
+const NorthAmericanBeaver = () => {
 
   // --- DATA SOURCES ---
 
   // Need Zone Times
   const needZonesData = [
     {
-      name: "Sundarpatan",
+      name: "Askiy Ridge",
       schedule: [
-        { time: "00:00 - 03:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "03:00 - 06:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "06:00 - 09:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "09:00 - 12:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "12:00 - 15:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "15:00 - 18:00", type: "Drinking", icon: DrinkingZoneIcon },
-        { time: "18:00 - 21:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "21:00 - 00:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "00:00 - 04:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "04:00 - 08:00", type: "Gathering", icon: GatheringZoneIcon }, // Using Feeding icon as placeholder for Gathering
+        { time: "08:00 - 12:00", type: "Gathering", icon: GatheringZoneIcon },
+        { time: "12:00 - 16:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "16:00 - 20:00", type: "Gathering", icon: GatheringZoneIcon },
+        { time: "20:00 - 00:00", type: "Resting", icon: RestingZoneIcon },
       ]
     }
   ];
 
+  // Need Zone Intro Text
+  const needZoneIntro = "When resting, the beavers are under water near their lodge and nearly invisible. Resting and feeding zones leave no traces in the environment and can only be registered by spotting the beavers with binoculars. At the moment, the traces for gathering and droppings look identical so it can take some time to find a gathering zone. It is easiest to hunt beavers in their feeding zones as they are slightly in the water or on land during their gathering times.";
+
   // Features Table
   const features = [
-    { label: "Behavior", value: "Elusive and robust" },
-    { label: "Habitat", value: "Dense forests" },
-    { label: "Senses", value: "Excellent eyesight and sense of hearing" },
-    { label: "Social", value: "Primarily solitary, can be found in family groups" },
-    { label: "Active", value: "Dawn and dusk" },
-    { label: "Recommended Equipment", value: "Class 2 Ammo, Roe Deer Caller" },
-    { label: "Species", value: "Muntiacus vaginalis", italic: true, isLink: true },
-    { label: "Difficulty", value: "Easy" },
+    { label: "Behavior", value: "Cooperative, renowned for their dam-building skills" },
+    { label: "Habitat", value: "Freshwater environments, such as rivers, streams, ponds, and lakes" },
+    { label: "Senses", value: "Good vision, acute hearing and strong sense of smell" },
+    { label: "Social", value: "Lives in family groups called colonies" },
+    { label: "Active", value: "Mostly crepuscular, can be active during the day and night" },
+    { label: "Recommended Equipment", value: "Class 2 Ammo" },
+    { label: "Species", value: "Castor canadensis", italic: true, isLink: true },
+    { label: "Difficulty", value: "Average" },
   ];
 
   // Fur Gallery Data
   const furGallery = [
-    { name: "Albino - Male", src: Muntjac_Male_Albino },
-    { name: "Leucistic Variation 1 - Male", src: Muntjac_Male_Leucistic1 },
-    { name: "Leucistic Variation 2 - Male", src: Muntjac_Male_Leucistic2 },
-    { name: "Melanistic - Male", src: Muntjac_Male_Melanistic },
-    { name: "Red Variation 1 - Male", src: Muntjac_Male_Red1 },
-    { name: "Red Variation 2 - Male", src: Muntjac_Male_Red2 },
-    { name: "Albino - Female", src: Muntjac_Female_Albino },
-    { name: "Leucistic Variation 1 - Female", src: Muntjac_Female_Leucistic1 },
-    { name: "Leucistic Variation 2 - Female", src: Muntjac_Female_Leucistic2 },
-    { name: "Melanistic - Female", src: Muntjac_Female_Melanistic },
-    { name: "Red Variation 1 - Female", src: Muntjac_Female_Red1 },
-    { name: "Red Variation 2 - Female", src: Muntjac_Female_Red2 },
+    { name: "Albino", src: Beaver_Albino },
+    { name: "Dark Brown", src: Beaver_DarkBrown },
+    { name: "Leucistic", src: Beaver_Leucistic },
+    { name: "Light Brown", src: Beaver_LightBrown },
+    { name: "Melanistic", src: Beaver_Melanistic },
+    { name: "Piebald", src: Beaver_Piebald },
+    { name: "Reddish Brown", src: Beaver_ReddishBrown },
   ];
 
-  // Split galleries by sex for sub-topics
-  const maleGallery = furGallery.filter(item => /Male/i.test(item.name));
-  const femaleGallery = furGallery.filter(item => /Female/i.test(item.name));
-
-  // Smooth scroll helper for in-page TOC links
-  const scrollToId = (id) => (e) => {
-    if (e && e.preventDefault) e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (typeof window !== 'undefined' && window.history && window.history.replaceState) {
-      window.history.replaceState(null, '', `#${id}`);
-    }
-  };
-
-  // Trivia Data
-  const triviaData = [
-    `The Muntjac Deer gets it's name 'MUNTJAC' from the Dutch, which borrowed the word from the Sundanese word for a "small deer"; specifically the "Chevrotain" or "Mouse Deer". The reason for why the Muntjac got associated with this animal is uncertain. Maybe traders, of the Dutch East India company, just thought it was a generic term for ALL small deer. Ironically, the Mouse Deer isn't even a real deer.[2]`,
-    `There are currently 12 known species of Muntjac Deer alive today. One of these species include the smallest Deer species in the world, the "Chinese Muntjac"; a deer species so small, it's standing height would be dwarfed by Shaquille O'Neal's shoe size, and it's average weight wouldn't be any heavier than a 2 year old Toddler.[3][4][5][6][7]`,
-    `The Muntjac Deer has many distinct physical traits; one of these being its "fangs". It uses these as display structures, as weapons for intraspecific combat, and their fangs also have the convenient ability to HINGE AT THE JAW LIKE A SNAKE! THAT'S RIGHT! THEY CAN FOLD AWAY THEIR FANGS LIKE SOME KIND OF SWISS ARMY KNIF!!!... Anyway they also have extremely pronounced scent glands on their foreheads and at the corners of their eyes. In fact, their top scent glands can inflate, making them the only deer species with inflatable structures on their body. Despite them being called "Barking Deer" these deer are relatively quiet, and overly rely on scent as their primary form of communication. [8][9][10]`,
-    `Yet another bizarre fact about this animal is the fact that it does not have a defined rutting season. They mate year round unlike most other deer. The females are also extremely fertile, being able to conceive again just days after giving birth.[11]`
-  ];
-
-  // References List
-  const references = [
-    "Northern Red Muntjac Need Zones, Sundarpatan",
-    "https://www.dictionary.com/browse/muntjac",
-    "https://news.mongabay.com/2020/08/the-large-antlered-muntjac-southeast-asias-mystery-deer-commentary/",
-    "https://www.rosamondgiffordzoo.org/experience/animals/mammals/chinese-muntjac/",
-    "https://seaworld.org/animals/facts/mammals/reeves-muntjac/",
-    "https://footwearnews.com/shoes/outdoor-footwear/shaq-shoe-size-1202540386/",
-    "https://www.whattoexpect.com/toddler/24-month-old.aspx",
-    "https://www.discoverwildlife.com/animal-facts/mammals/muntjac-deer",
-    "https://www.iflscience.com/muntjac-deer-have-bizarre-flaring-scent-glands-on-their-face-67030",
-    "https://www.sciencefocus.com/nature/muntjac-deer",
-    "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/animals/mammals/muntjac-deer/"
+  // Weapons to use
+  const weaponsToUseText = [
+    "Any weapon with class two ammunition will give integrity for the north american beavers however the Vasquez Cyclone .45 is efficient for taking out multiple beavers within a need zone due to the quiet qualities of the gun.",
+    "Other good weapons of choice include the Quist Reaper 7.62x39, the Laperriere Outrider .30-30 and the Ranger .243. (The use of hunting blinds is also highly recommended)."
   ];
 
   // --- STYLES OBJECT ---
@@ -259,13 +211,12 @@ const NorthernRedMuntjac = () => {
       color: '#dbe4eb',
       verticalAlign: 'top',
     },
-    // Updated Shot Scheme Layout Styles
     shotContainer: {
       display: 'flex',
       backgroundColor: '#112233',
       marginTop: '10px',
       border: '1px solid #1f405a',
-      flexDirection: 'row', // Horizontal layout
+      flexDirection: 'row',
       alignItems: 'stretch',
     },
     shotImageWrapper: {
@@ -326,22 +277,32 @@ const NorthernRedMuntjac = () => {
     rarityVeryRare: { color: '#e74c3c', fontWeight: 'bold' },
   };
 
+  // Smooth-scroll helper for TOC links
+  const scrollToId = (id) => (e) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.replaceState(null, '', `#${id}`);
+    }
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.innerWrapper}>
         
         {/* PAGE HEADER */}
         <div style={styles.mainHeader}>
-          <span>Northern Red Muntjac</span>
+          <span>North American Beaver</span>
         </div>
 
         <div style={styles.layout}>
           
           {/* --- RIGHT SIDEBAR (General Information) --- */}
           <aside style={styles.sidebarColumn}>
-            <div style={styles.sidebarHeader}>Northern Red Muntjac</div>
+            <div style={styles.sidebarHeader}>North American Beaver</div>
             <div style={styles.sidebarImage}>
-              <img src={NorthernRedMuntjacMain} alt="Northern Red Muntjac" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
+              <img src={BeaverMain} alt="North American Beaver" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
             </div>
             
             <div style={styles.sidebarHeader}>General Information</div>
@@ -358,39 +319,39 @@ const NorthernRedMuntjac = () => {
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Trophy Type</span>
-              <span>Antlers</span>
+              <span>Weight</span>
               <div style={styles.trophyGrid}>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.silver}}>◆ Silver</span>
-                  <span>25.25</span>
+                  <span>19.20</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.gold}}>☗ Gold</span>
-                  <span>30.96</span>
+                  <span>25.60</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.diamond}}>☗ Diamond</span>
-                  <span>35.24</span>
+                  <span>30.40</span>
                 </div>
               </div>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Weight</span>
-              12kg — 28kg<br/>
-              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>26lbs — 62lbs</span>
+              16kg — 32kg<br/>
+              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>35lbs — 71lbs</span>
             </div>
 
             <div style={styles.sidebarSection}>
                <span style={styles.sidebarLabel}>Fur</span>
                <span style={{fontSize:'0.85rem'}}>
-                  Albino, Leucistic, Melanistic, Red
+                  Albino, Dark Brown, Leucistic, Light Brown, Melanistic, Piebald, Reddish Brown
                </span>
             </div>
 
             <div style={styles.sidebarHeader}>Locations</div>
             <div style={styles.sidebarSection}>
-               <div style={{marginBottom:'4px'}}><span style={styles.link}>Sundarpatan</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Askiy Ridge Hunting Preserve</span></div>
             </div>
           </aside>
 
@@ -399,21 +360,19 @@ const NorthernRedMuntjac = () => {
 
             {/* Quote Block */}
             <div style={styles.quoteBox}>
-              "The Northern Red Muntjac is a distinct and stealthy deer species primarily found in the dense forests of Southern Asia. Despite its small size, this elusive creature is sturdy, measuring approcimately 50-65 cm at the shoulder and weighing between 12-28kg. Its reddish-brown fur and cream-colored underparts provide natural camouflage in the undergrowth.
-
+              "North American beavers have stocky bodies with a yellow-brown to almost black coat and a broad, flat, scaly tail. They have webbed rear feet and digitated front paws. Beavers regularly move between aquatic and terrestrial environments. Their small, dexterous front feet are well adapted to working on land. They walk on five digits, grasp sticks with their front paws and have well-developed digging claws.
               <br/><br/>
-
-              The male is easily recognizable by its elongated upper canines and short antlers. They are solitary or pair-oriented and are most active during dusk and dawn. Their unique bark-like call is a clear sign of their presence. Renowned for their agility and quickness, they require patience to outsmart. The true value of hunting them lies in the pursuit itself."
+              A beaver's long, dark-orange, visible incisors grow continuously throughout its life and are worn down through daily use. These teeth are self-sharpening and can cleave a willow the size of a person's finger in a single bite."
               <br/><br/>
-              ― In-Game Description
+              — In-Game Description
             </div>
 
             {/* Intro Text */}
             <p style={{marginBottom:'20px'}}>
-              The <strong>Northern Red Muntjac</strong> is a (<span style={styles.link}>class 2</span>) deer species that can be hunted on <span style={styles.link}>Sundarpatan</span>.
+              The <strong>North American Beaver</strong> is a small <span style={styles.link}>class 2</span> rodent that can be hunted on <span style={styles.link}>Askiy Ridge Hunting Preserve</span>.
             </p>
 
-            {/* Table of Contents (smooth-scroll links) */}
+            {/* Table of Contents */}
             <div style={{
                 border: '1px solid #3a5a75',
                 backgroundColor: '#0f2e48',
@@ -430,16 +389,9 @@ const NorthernRedMuntjac = () => {
                 <li><a href="#features" style={styles.link} onClick={scrollToId('features')}>Features</a></li>
                 <li><a href="#need-zones" style={styles.link} onClick={scrollToId('need-zones')}>Need Zone Times</a></li>
                 <li><a href="#shot-scheme" style={styles.link} onClick={scrollToId('shot-scheme')}>Shot scheme</a></li>
-                <li>
-                  <a href="#fur-variants" style={styles.link} onClick={scrollToId('fur-variants')}>Fur variants</a>
-                  <ol style={{margin:'6px 0 0 14px', paddingLeft: '0', color: '#6fb2e6', listStyleType: 'none'}}>
-                    <li><a href="#fur-male" style={styles.link} onClick={scrollToId('fur-male')}>4.1 Male</a></li>
-                    <li><a href="#fur-female" style={styles.link} onClick={scrollToId('fur-female')}>4.2 Female</a></li>
-                  </ol>
-                </li>
-                <li><a href="#variant-rarity" style={styles.link} onClick={scrollToId('variant-rarity')}>Fur Variant Rarity</a></li>
-                <li><a href="#trivia" style={styles.link} onClick={scrollToId('trivia')}>Trivia</a></li>
-                <li><a href="#references" style={styles.link} onClick={scrollToId('references')}>References</a></li>
+                <li><a href="#fur-variants" style={styles.link} onClick={scrollToId('fur-variants')}>Fur variants</a></li>
+                <li><a href="#fur-variant-rarity" style={styles.link} onClick={scrollToId('fur-variant-rarity')}>Fur Variant Rarity</a></li>
+                <li><a href="#weapons-to-use" style={styles.link} onClick={scrollToId('weapons-to-use')}>Weapons to use</a></li>
               </ol>
             </div>
 
@@ -466,10 +418,11 @@ const NorthernRedMuntjac = () => {
             
             {/* NEED ZONE TIMES */}
             <h2 id="need-zones" style={styles.h2}>Need Zone Times</h2>
+            <p style={{marginBottom: '15px', fontSize: '0.9rem'}}>{needZoneIntro}</p>
             <div style={{display:'inline-block'}}>
                 <table style={{...styles.table, width: '300px'}}>
                     <thead>
-                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Sundarpatan</th></tr>
+                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Askiy Ridge</th></tr>
                         <tr>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Times</th>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Activity</th>
@@ -491,8 +444,8 @@ const NorthernRedMuntjac = () => {
                 </table>
             </div>
 
-             {/* SHOT SCHEME - Updated Layout with Legend */}
-             <h2 id="shot-scheme" style={styles.h2}>Shot scheme</h2>
+             {/* SHOT SCHEME */}
+             <h2 id="shot-scheme" style={styles.h2}>Shot Scheme</h2>
             <div style={styles.shotContainer}>
                 <div style={styles.shotImageWrapper}>
                    <img src={ShotSchemeImage} alt="Shot Scheme" style={{width: '100%', height: 'auto', maxHeight:'350px', objectFit: 'contain'}} />
@@ -508,22 +461,8 @@ const NorthernRedMuntjac = () => {
 
             {/* FUR VARIANTS (Gallery) */}
             <h2 id="fur-variants" style={styles.h2}>Fur variants</h2>
-
-            <h3 id="fur-male" style={{...styles.h2, fontSize: '1.15rem', marginTop: '10px'}}>Male</h3>
             <div style={styles.galleryGrid}>
-              {maleGallery.map((item, i) => (
-                <div key={i} style={styles.galleryItem}>
-                  <div style={styles.galleryImgPlaceholder}>
-                    <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
-                  </div>
-                  <span style={styles.galleryLabel}>{item.name}</span>
-                </div>
-              ))}
-            </div>
-
-            <h3 id="fur-female" style={{...styles.h2, fontSize: '1.15rem', marginTop: '18px'}}>Female</h3>
-            <div style={styles.galleryGrid}>
-              {femaleGallery.map((item, i) => (
+              {furGallery.map((item, i) => (
                 <div key={i} style={styles.galleryItem}>
                   <div style={styles.galleryImgPlaceholder}>
                     <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
@@ -534,7 +473,7 @@ const NorthernRedMuntjac = () => {
             </div>
 
             {/* FUR VARIANT RARITY TABLE */}
-            <h2 id="variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
+            <h2 id="fur-variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
             <div style={{overflowX: 'auto'}}>
                 <table style={styles.table}>
                     <thead>
@@ -552,39 +491,31 @@ const NorthernRedMuntjac = () => {
                                 Male/<span style={{color: '#d63384'}}>Female</span>
                             </td>
                             <td style={styles.td}>
-                                Red Variation 1 (49.87%)<br/>
-                                Red Variation 2 (49.87%)
+                                Light Brown (74.70%)<br/>
+                                Dark Brown (12.50%)<br/>
+                                Reddish Brown (12.50%)
                             </td>
                             <td style={styles.td}>X</td>
-                            <td style={styles.td}>X</td>
                             <td style={styles.td}>
-                                Leucistic Variation 1 (0.07%)<br/>
-                                Leucistic Variation 2 (0.07%)<br/>
-                                Melanistic (0.07%)<br/>
-                                Albino (0.05%)
+                                Piebald (0.20%)
+                            </td>
+                            <td style={styles.td}>
+                                Albino (0.03%)<br/>
+                                Leucistic (0.03%)<br/>
+                                Melanistic (0.03%)
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            {/* TRIVIA */}
-            <h2 id="trivia" style={styles.h2}>Trivia</h2>
-            <ul style={{fontSize: '0.95rem', paddingLeft: '20px', listStyleType: 'disc', color: '#dbe4eb'}}>
-                {triviaData.map((point, idx) => (
-                    <li key={idx} style={{marginBottom: '10px'}}>{point}</li>
-                ))}
-            </ul>
+            {/* WEAPONS TO USE */}
+            <h2 id="weapons-to-use" style={styles.h2}>Weapons to use</h2>
+            {weaponsToUseText.map((paragraph, idx) => (
+                <p key={idx} style={{marginBottom: '15px'}} dangerouslySetInnerHTML={{__html: paragraph.replace(/Vasquez Cyclone .45|Quist Reaper 7.62x39|Laperriere Outrider .30-30|Ranger .243/g, (match) => `<span style="color: #6fb2e6; cursor: pointer;">${match}</span>`)}} />
+            ))}
 
-            {/* REFERENCES */}
-            <h2 id="references" style={styles.h2}>References</h2>
-            <ol style={{fontSize: '0.9rem', paddingLeft: '20px'}}>
-               {references.map((ref, idx) => (
-                  <li key={idx} style={{marginBottom: '4px'}}>
-                     <span style={styles.link}>↑ {ref}</span>
-                  </li>
-               ))}
-            </ol>
+            {/* TRIVIA (Placeholder as no content provided in screenshot) */}
 
             <div style={{marginTop: '40px'}}>
                 <AnimalsTableMini />
@@ -597,4 +528,4 @@ const NorthernRedMuntjac = () => {
   );
 };
 
-export default NorthernRedMuntjac;
+export default NorthAmericanBeaver;

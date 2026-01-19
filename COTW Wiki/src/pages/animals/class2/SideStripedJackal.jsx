@@ -1,125 +1,90 @@
-import React from 'react'; 
+import React from 'react';
+
+// --- IMPORTS ---
+// Standard Icons
+import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp';
+import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp';
+import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp';
+import class2Icon from '../../../assets/Class2Icon.webp'; // Class 2 for Side-Striped Jackal
+import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
+
+// Main Image
+import SideStripedJackalMain from '../../../assets/SideStripedJackal.webp';
+import ShotSchemeImage from '../../../assets/Side_striped_jackal_shot_scheme.webp';
+
+// Fur Variant Images (Placeholders)
+import Jackal_Albino from '../../../assets/SideStripedJackal_Albino.webp';
+import Jackal_Grey from '../../../assets/SideStripedJackal_Grey.webp';
+import Jackal_GreyBrown from '../../../assets/SideStripedJackal_GreyBrown.webp';
+import Jackal_LightBrown from '../../../assets/SideStripedJackal_LightBrown.webp';
+import Jackal_Melanistic from '../../../assets/SideStripedJackal_Melanistic.webp';
+import Jackal_Unnamed from '../../../assets/SideStripedJackal_Unnamed.webp';
 
 
-// --- IMPORTS --- // 
-// Standard Icons //
-import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp'; 
-import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp'; 
-import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp'; 
-// Added Drinking Icon //
+const SideStripedJackal = () => {
 
-import class2Icon from '../../../assets/Class2Icon.webp';
- // Updated to Class 2 
- 
- import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
-
-  // Main Image 
-  import NorthernRedMuntjacMain from '../../../assets/Northern_Red_Muntjac.webp'; 
-  import ShotSchemeImage from '../../../assets/Northern_Red_Muntjac_shot_scheme.webp'; 
-
-  // Fur Variant Images (Placeholders)
-
-    // Male 
-    import Muntjac_Male_Albino from '../../../assets/NorthernRedMuntjac_AlbinoMale.webp'; 
-    import Muntjac_Male_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Male.webp'; 
-    import Muntjac_Male_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Male.webp'; 
-    import Muntjac_Male_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticMale.webp'; 
-    import Muntjac_Male_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Male.webp'; 
-    import Muntjac_Male_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Male.webp'; 
-
-    // Female 
-    import Muntjac_Female_Albino from '../../../assets/NorthernRedMuntjac_AlbinoFemale.webp'; 
-    import Muntjac_Female_Leucistic1 from '../../../assets/NorthernRedMuntjac_LeucisticVariation1Female.webp'; 
-    import Muntjac_Female_Leucistic2 from '../../../assets/NorthernRedMuntjac_LeucisticVariation2Female.webp'; 
-    import Muntjac_Female_Melanistic from '../../../assets/NorthernRedMuntjac_MelanisticFemale.webp'; 
-    import Muntjac_Female_Red1 from '../../../assets/NorthernRedMuntjac_RedVariation1Female.webp'; 
-    import Muntjac_Female_Red2 from '../../../assets/NorthernRedMuntjac_RedVariation2Female.webp';
-
-
-const NorthernRedMuntjac = () => {
+  // Smooth-scroll helper for the Table of Contents
+  const scrollToId = (id) => {
+    try {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', `#${id}`);
+    } catch (e) {
+      // ignore in non-DOM environments
+    }
+  };
 
   // --- DATA SOURCES ---
 
   // Need Zone Times
   const needZonesData = [
     {
-      name: "Sundarpatan",
+      name: "Vurhonga Savanna", // Inferred from locations
       schedule: [
-        { time: "00:00 - 03:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "03:00 - 06:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "06:00 - 09:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "09:00 - 12:00", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "12:00 - 15:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "15:00 - 18:00", type: "Drinking", icon: DrinkingZoneIcon },
-        { time: "18:00 - 21:00", type: "Resting", icon: RestingZoneIcon },
-        { time: "21:00 - 00:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "00:00 - 03:30", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "03:00 - 06:30", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "06:30 - 10:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "10:00 - 14:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "14:00 - 18:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "18:00 - 21:30", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "21:00 - 00:30", type: "Feeding", icon: FeedingZoneIcon },
       ]
     }
   ];
 
   // Features Table
   const features = [
-    { label: "Behavior", value: "Elusive and robust" },
-    { label: "Habitat", value: "Dense forests" },
-    { label: "Senses", value: "Excellent eyesight and sense of hearing" },
-    { label: "Social", value: "Primarily solitary, can be found in family groups" },
-    { label: "Active", value: "Dawn and dusk" },
-    { label: "Recommended Equipment", value: "Class 2 Ammo, Roe Deer Caller" },
-    { label: "Species", value: "Muntiacus vaginalis", italic: true, isLink: true },
+    { label: "Behavior", value: "Skittish and occasional defensive" },
+    { label: "Habitat", value: "Woodlands, Bush, Grassland, Marshes (Any area with good cover)" },
+    { label: "Senses", value: "Excellent smell, good hearing, excellent vision" },
+    { label: "Social", value: "Mixed familial groups up to 12, or solitary males and females" },
+    { label: "Active", value: "Mainly nocturnal, sometimes daytime-active (All times of day/night)" },
+    { label: "Recommended Equipment", value: "Class 2 Ammo, Predator \"Jackrabbit\" Caller" },
+    { label: "Species", value: "Canis adustus", italic: true, isLink: true },
     { label: "Difficulty", value: "Easy" },
   ];
 
   // Fur Gallery Data
   const furGallery = [
-    { name: "Albino - Male", src: Muntjac_Male_Albino },
-    { name: "Leucistic Variation 1 - Male", src: Muntjac_Male_Leucistic1 },
-    { name: "Leucistic Variation 2 - Male", src: Muntjac_Male_Leucistic2 },
-    { name: "Melanistic - Male", src: Muntjac_Male_Melanistic },
-    { name: "Red Variation 1 - Male", src: Muntjac_Male_Red1 },
-    { name: "Red Variation 2 - Male", src: Muntjac_Male_Red2 },
-    { name: "Albino - Female", src: Muntjac_Female_Albino },
-    { name: "Leucistic Variation 1 - Female", src: Muntjac_Female_Leucistic1 },
-    { name: "Leucistic Variation 2 - Female", src: Muntjac_Female_Leucistic2 },
-    { name: "Melanistic - Female", src: Muntjac_Female_Melanistic },
-    { name: "Red Variation 1 - Female", src: Muntjac_Female_Red1 },
-    { name: "Red Variation 2 - Female", src: Muntjac_Female_Red2 },
+    { name: "Albino", src: Jackal_Albino },
+    { name: "Grey", src: Jackal_Grey },
+    { name: "Grey Brown", src: Jackal_GreyBrown },
+    { name: "Light Brown", src: Jackal_LightBrown },
+    { name: "Melanistic", src: Jackal_Melanistic },
+    { name: "Unnamed", src: Jackal_Unnamed },
   ];
-
-  // Split galleries by sex for sub-topics
-  const maleGallery = furGallery.filter(item => /Male/i.test(item.name));
-  const femaleGallery = furGallery.filter(item => /Female/i.test(item.name));
-
-  // Smooth scroll helper for in-page TOC links
-  const scrollToId = (id) => (e) => {
-    if (e && e.preventDefault) e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (typeof window !== 'undefined' && window.history && window.history.replaceState) {
-      window.history.replaceState(null, '', `#${id}`);
-    }
-  };
 
   // Trivia Data
   const triviaData = [
-    `The Muntjac Deer gets it's name 'MUNTJAC' from the Dutch, which borrowed the word from the Sundanese word for a "small deer"; specifically the "Chevrotain" or "Mouse Deer". The reason for why the Muntjac got associated with this animal is uncertain. Maybe traders, of the Dutch East India company, just thought it was a generic term for ALL small deer. Ironically, the Mouse Deer isn't even a real deer.[2]`,
-    `There are currently 12 known species of Muntjac Deer alive today. One of these species include the smallest Deer species in the world, the "Chinese Muntjac"; a deer species so small, it's standing height would be dwarfed by Shaquille O'Neal's shoe size, and it's average weight wouldn't be any heavier than a 2 year old Toddler.[3][4][5][6][7]`,
-    `The Muntjac Deer has many distinct physical traits; one of these being its "fangs". It uses these as display structures, as weapons for intraspecific combat, and their fangs also have the convenient ability to HINGE AT THE JAW LIKE A SNAKE! THAT'S RIGHT! THEY CAN FOLD AWAY THEIR FANGS LIKE SOME KIND OF SWISS ARMY KNIF!!!... Anyway they also have extremely pronounced scent glands on their foreheads and at the corners of their eyes. In fact, their top scent glands can inflate, making them the only deer species with inflatable structures on their body. Despite them being called "Barking Deer" these deer are relatively quiet, and overly rely on scent as their primary form of communication. [8][9][10]`,
-    `Yet another bizarre fact about this animal is the fact that it does not have a defined rutting season. They mate year round unlike most other deer. The females are also extremely fertile, being able to conceive again just days after giving birth.[11]`
+    "The Side-striped Jackal was the third of seven canids to be featured in the game. The others include the Red Fox, the Coyote, the Gray Wolf, the Iberian Wolf, the Gray Fox, and the Raccoon Dog.",
+    "In French, it is called the \"chacal à flancs rayés.\"",
+    "The word \"jackal\" is derived from the French word \"chacal,\" which in turn is derived from the Sanskrit word \"शृगाल,\" meaning \"the howler.\""
   ];
 
   // References List
   const references = [
-    "Northern Red Muntjac Need Zones, Sundarpatan",
-    "https://www.dictionary.com/browse/muntjac",
-    "https://news.mongabay.com/2020/08/the-large-antlered-muntjac-southeast-asias-mystery-deer-commentary/",
-    "https://www.rosamondgiffordzoo.org/experience/animals/mammals/chinese-muntjac/",
-    "https://seaworld.org/animals/facts/mammals/reeves-muntjac/",
-    "https://footwearnews.com/shoes/outdoor-footwear/shaq-shoe-size-1202540386/",
-    "https://www.whattoexpect.com/toddler/24-month-old.aspx",
-    "https://www.discoverwildlife.com/animal-facts/mammals/muntjac-deer",
-    "https://www.iflscience.com/muntjac-deer-have-bizarre-flaring-scent-glands-on-their-face-67030",
-    "https://www.sciencefocus.com/nature/muntjac-deer",
-    "https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/animals/mammals/muntjac-deer/"
+    "https://www.etymonline.com/word/jackal"
   ];
 
   // --- STYLES OBJECT ---
@@ -259,13 +224,12 @@ const NorthernRedMuntjac = () => {
       color: '#dbe4eb',
       verticalAlign: 'top',
     },
-    // Updated Shot Scheme Layout Styles
     shotContainer: {
       display: 'flex',
       backgroundColor: '#112233',
       marginTop: '10px',
       border: '1px solid #1f405a',
-      flexDirection: 'row', // Horizontal layout
+      flexDirection: 'row',
       alignItems: 'stretch',
     },
     shotImageWrapper: {
@@ -332,16 +296,16 @@ const NorthernRedMuntjac = () => {
         
         {/* PAGE HEADER */}
         <div style={styles.mainHeader}>
-          <span>Northern Red Muntjac</span>
+          <span>Side-Striped Jackal</span>
         </div>
 
         <div style={styles.layout}>
           
           {/* --- RIGHT SIDEBAR (General Information) --- */}
           <aside style={styles.sidebarColumn}>
-            <div style={styles.sidebarHeader}>Northern Red Muntjac</div>
+            <div style={styles.sidebarHeader}>Side-Striped Jackal</div>
             <div style={styles.sidebarImage}>
-              <img src={NorthernRedMuntjacMain} alt="Northern Red Muntjac" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
+              <img src={SideStripedJackalMain} alt="Side-Striped Jackal" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
             </div>
             
             <div style={styles.sidebarHeader}>General Information</div>
@@ -353,44 +317,44 @@ const NorthernRedMuntjac = () => {
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Difficulty</span>
-              <span>1: Trivial — 5: Medium</span>
+              <span>1: Trivial — 9: Legendary</span>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Trophy Type</span>
-              <span>Antlers</span>
+              <span>Weight</span>
               <div style={styles.trophyGrid}>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.silver}}>◆ Silver</span>
-                  <span>25.25</span>
+                  <span>16.8</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.gold}}>☗ Gold</span>
-                  <span>30.96</span>
+                  <span>23.8</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.diamond}}>☗ Diamond</span>
-                  <span>35.24</span>
+                  <span>29.1</span>
                 </div>
               </div>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Weight</span>
-              12kg — 28kg<br/>
-              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>26lbs — 62lbs</span>
+              ? — 14kg<br/>
+              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>? — 31lbs</span>
             </div>
 
             <div style={styles.sidebarSection}>
                <span style={styles.sidebarLabel}>Fur</span>
                <span style={{fontSize:'0.85rem'}}>
-                  Albino, Leucistic, Melanistic, Red
+                  Albino, Light Brown, Grey, Grey Brown, Melanistic
                </span>
             </div>
 
             <div style={styles.sidebarHeader}>Locations</div>
             <div style={styles.sidebarSection}>
-               <div style={{marginBottom:'4px'}}><span style={styles.link}>Sundarpatan</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Vurhonga Savanna</span></div>
             </div>
           </aside>
 
@@ -399,21 +363,17 @@ const NorthernRedMuntjac = () => {
 
             {/* Quote Block */}
             <div style={styles.quoteBox}>
-              "The Northern Red Muntjac is a distinct and stealthy deer species primarily found in the dense forests of Southern Asia. Despite its small size, this elusive creature is sturdy, measuring approcimately 50-65 cm at the shoulder and weighing between 12-28kg. Its reddish-brown fur and cream-colored underparts provide natural camouflage in the undergrowth.
-
+              "The Side-Striped Jackal (Canis Adustus) is a mostly nocturnal, opportunistic omnivore found predominantly in Tropical Africa. It prefers the moist, wooded areas of east, west and central Africa and stays away from the rainforests of the same regions. Easily distinguishable from its other Jackal relatives, the Side-Striped Jackal wears its eponymous stripe from elbow to hip, has shorter legs and shorter ears. Males and females are indistinguishable from a distance, except the fact that males are generally larger. The Side-Striped Jackal mates for life and mated pairs are aggressively territorial. They rarely go over 12.00 kg in weight or 0.50 m in shoulder height."
               <br/><br/>
-
-              The male is easily recognizable by its elongated upper canines and short antlers. They are solitary or pair-oriented and are most active during dusk and dawn. Their unique bark-like call is a clear sign of their presence. Renowned for their agility and quickness, they require patience to outsmart. The true value of hunting them lies in the pursuit itself."
-              <br/><br/>
-              ― In-Game Description
+              — In-Game Description
             </div>
 
             {/* Intro Text */}
             <p style={{marginBottom:'20px'}}>
-              The <strong>Northern Red Muntjac</strong> is a (<span style={styles.link}>class 2</span>) deer species that can be hunted on <span style={styles.link}>Sundarpatan</span>.
+              The <strong>Side-Striped Jackal</strong> is a <span style={styles.link}>class 2</span> omnivore. It can be hunted in the <span style={styles.link}>Vurhonga Savanna Reserve</span>.
             </p>
 
-            {/* Table of Contents (smooth-scroll links) */}
+            {/* Table of Contents */}
             <div style={{
                 border: '1px solid #3a5a75',
                 backgroundColor: '#0f2e48',
@@ -427,24 +387,18 @@ const NorthernRedMuntjac = () => {
                 🔢 Contents <span style={{float:'right', color: '#6fb2e6', fontSize:'0.8rem', cursor: 'pointer'}}>[hide]</span>
               </div>
               <ol style={{margin:'0', paddingLeft: '20px', color: '#6fb2e6'}}>
-                <li><a href="#features" style={styles.link} onClick={scrollToId('features')}>Features</a></li>
-                <li><a href="#need-zones" style={styles.link} onClick={scrollToId('need-zones')}>Need Zone Times</a></li>
-                <li><a href="#shot-scheme" style={styles.link} onClick={scrollToId('shot-scheme')}>Shot scheme</a></li>
-                <li>
-                  <a href="#fur-variants" style={styles.link} onClick={scrollToId('fur-variants')}>Fur variants</a>
-                  <ol style={{margin:'6px 0 0 14px', paddingLeft: '0', color: '#6fb2e6', listStyleType: 'none'}}>
-                    <li><a href="#fur-male" style={styles.link} onClick={scrollToId('fur-male')}>4.1 Male</a></li>
-                    <li><a href="#fur-female" style={styles.link} onClick={scrollToId('fur-female')}>4.2 Female</a></li>
-                  </ol>
-                </li>
-                <li><a href="#variant-rarity" style={styles.link} onClick={scrollToId('variant-rarity')}>Fur Variant Rarity</a></li>
-                <li><a href="#trivia" style={styles.link} onClick={scrollToId('trivia')}>Trivia</a></li>
-                <li><a href="#references" style={styles.link} onClick={scrollToId('references')}>References</a></li>
+                <li><a style={styles.link} onClick={() => scrollToId('features')}>Features</a></li>
+                <li><a style={styles.link} onClick={() => scrollToId('need-zones')}>Need Zone Times</a></li>
+                <li><a style={styles.link} onClick={() => scrollToId('shot-scheme')}>Shot scheme</a></li>
+                <li><a style={styles.link} onClick={() => scrollToId('fur-variants')}>Fur variants</a></li>
+                <li><a style={styles.link} onClick={() => scrollToId('fur-rarity')}>Fur Variant Rarity</a></li>
+                <li><a style={styles.link} onClick={() => scrollToId('trivia')}>Trivia</a></li>
+                <li><a style={styles.link} onClick={() => scrollToId('references')}>References</a></li>
               </ol>
             </div>
 
             {/* FEATURES */}
-            <h2 id="features" style={styles.h2}>Features</h2>
+            <h2 style={styles.h2} id="features">Features</h2>
             <table style={styles.table}>
               <thead>
                 <tr>
@@ -465,11 +419,12 @@ const NorthernRedMuntjac = () => {
             </table>
             
             {/* NEED ZONE TIMES */}
-            <h2 id="need-zones" style={styles.h2}>Need Zone Times</h2>
+            <h2 style={styles.h2} id="need-zones">Need Zone Times</h2>
             <div style={{display:'inline-block'}}>
                 <table style={{...styles.table, width: '300px'}}>
                     <thead>
-                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Sundarpatan</th></tr>
+                        {/* Header with map name inferred from location context if specific header isn't in screenshot, but generally consistent with style */}
+                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Vurhonga Savanna</th></tr>
                         <tr>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Times</th>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Activity</th>
@@ -491,8 +446,8 @@ const NorthernRedMuntjac = () => {
                 </table>
             </div>
 
-             {/* SHOT SCHEME - Updated Layout with Legend */}
-             <h2 id="shot-scheme" style={styles.h2}>Shot scheme</h2>
+             {/* SHOT SCHEME */}
+             <h2 style={styles.h2} id="shot-scheme">Shot scheme</h2>
             <div style={styles.shotContainer}>
                 <div style={styles.shotImageWrapper}>
                    <img src={ShotSchemeImage} alt="Shot Scheme" style={{width: '100%', height: 'auto', maxHeight:'350px', objectFit: 'contain'}} />
@@ -507,23 +462,9 @@ const NorthernRedMuntjac = () => {
             </div>
 
             {/* FUR VARIANTS (Gallery) */}
-            <h2 id="fur-variants" style={styles.h2}>Fur variants</h2>
-
-            <h3 id="fur-male" style={{...styles.h2, fontSize: '1.15rem', marginTop: '10px'}}>Male</h3>
+            <h2 style={styles.h2} id="fur-variants">Fur variants</h2>
             <div style={styles.galleryGrid}>
-              {maleGallery.map((item, i) => (
-                <div key={i} style={styles.galleryItem}>
-                  <div style={styles.galleryImgPlaceholder}>
-                    <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
-                  </div>
-                  <span style={styles.galleryLabel}>{item.name}</span>
-                </div>
-              ))}
-            </div>
-
-            <h3 id="fur-female" style={{...styles.h2, fontSize: '1.15rem', marginTop: '18px'}}>Female</h3>
-            <div style={styles.galleryGrid}>
-              {femaleGallery.map((item, i) => (
+              {furGallery.map((item, i) => (
                 <div key={i} style={styles.galleryItem}>
                   <div style={styles.galleryImgPlaceholder}>
                     <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
@@ -534,7 +475,7 @@ const NorthernRedMuntjac = () => {
             </div>
 
             {/* FUR VARIANT RARITY TABLE */}
-            <h2 id="variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
+            <h2 style={styles.h2} id="fur-rarity">Fur Variant Rarity</h2>
             <div style={{overflowX: 'auto'}}>
                 <table style={styles.table}>
                     <thead>
@@ -552,16 +493,15 @@ const NorthernRedMuntjac = () => {
                                 Male/<span style={{color: '#d63384'}}>Female</span>
                             </td>
                             <td style={styles.td}>
-                                Red Variation 1 (49.87%)<br/>
-                                Red Variation 2 (49.87%)
+                                Grey Brown (37.46%)<br/>
+                                Light Brown (37.46%)<br/>
+                                Grey (25.01%)
                             </td>
                             <td style={styles.td}>X</td>
                             <td style={styles.td}>X</td>
                             <td style={styles.td}>
-                                Leucistic Variation 1 (0.07%)<br/>
-                                Leucistic Variation 2 (0.07%)<br/>
-                                Melanistic (0.07%)<br/>
-                                Albino (0.05%)
+                                Albino (0.03%)<br/>
+                                Melanistic (0.03%)
                             </td>
                         </tr>
                     </tbody>
@@ -569,7 +509,7 @@ const NorthernRedMuntjac = () => {
             </div>
 
             {/* TRIVIA */}
-            <h2 id="trivia" style={styles.h2}>Trivia</h2>
+            <h2 style={styles.h2} id="trivia">Trivia</h2>
             <ul style={{fontSize: '0.95rem', paddingLeft: '20px', listStyleType: 'disc', color: '#dbe4eb'}}>
                 {triviaData.map((point, idx) => (
                     <li key={idx} style={{marginBottom: '10px'}}>{point}</li>
@@ -577,7 +517,7 @@ const NorthernRedMuntjac = () => {
             </ul>
 
             {/* REFERENCES */}
-            <h2 id="references" style={styles.h2}>References</h2>
+            <h2 style={styles.h2} id="references">References</h2>
             <ol style={{fontSize: '0.9rem', paddingLeft: '20px'}}>
                {references.map((ref, idx) => (
                   <li key={idx} style={{marginBottom: '4px'}}>
@@ -597,4 +537,4 @@ const NorthernRedMuntjac = () => {
   );
 };
 
-export default NorthernRedMuntjac;
+export default SideStripedJackal;
