@@ -5,85 +5,93 @@ import React from 'react';
 import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp';
 import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp';
 import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp';
-import class4Icon from '../../../assets/Class4Icon.webp'; // Class 4 for Blacktail Deer
+import class4Icon from '../../../assets/Class4Icon.webp'; // Class 4 for Sika Deer
 import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
 
 // Main Image
-import BlacktailDeerMain from '../../../assets/BlacktailDeer.webp';
-import ShotSchemeImage from '../../../assets/Blacktail_deer_shot_scheme.webp';
+import SikaDeerMain from '../../../assets/SikaDeer.webp';
 
 // Fur Variant Images (Placeholders)
-import BlacktailDeer_AlbinoMale from '../../../assets/BlacktailDeer_AlbinoMale.webp';
-import BlacktailDeer_DarkGreyMale from '../../../assets/BlacktailDeer_DarkGreyMale.webp';
-import BlacktailDeer_GreyMale from '../../../assets/BlacktailDeer_GreyMale.webp';
-import BlacktailDeer_GreyBrownMale from '../../../assets/BlacktailDeer_GreyBrownMale.webp';
-import BlacktailDeer_MelanisticMale from '../../../assets/BlacktailDeer_MelanisticMale.webp';
-import BlacktailDeer_PiebaldMale from '../../../assets/BlacktailDeer_PiebaldMale.webp';
+import SikaDeer_AlbinoMale from '../../../assets/SikaDeer_AlbinoMale.webp';
+import SikaDeer_BlackMale from '../../../assets/SikaDeer_BlackMale.webp';
+import SikaDeer_BrownMale from '../../../assets/SikaDeer_BrownMale.webp';
+import SikaDeer_DarkSpottedMale from '../../../assets/SikaDeer_DarkSpottedMale.webp';
+import SikaDeer_RedSpottedMale from '../../../assets/SikaDeer_RedSpottedMale.webp';
+import SikaDeer_SpottedMale from '../../../assets/SikaDeer_SpottedMale.webp';
 
-import BlacktailDeer_TanFemale from '../../../assets/BlacktailDeer_TanFemale.webp';
-import BlacktailDeer_AlbinoFemale from '../../../assets/BlacktailDeer_AlbinoFemale.webp';
-import BlacktailDeer_GreyFemale from '../../../assets/BlacktailDeer_GreyFemale.webp';
-import BlacktailDeer_GreyBrownFemale from '../../../assets/BlacktailDeer_GreyBrownFemale.webp';
-import BlacktailDeer_MelanisticFemale from '../../../assets/BlacktailDeer_MelanisticFemale.webp';
-import BlacktailDeer_PiebaldFemale from '../../../assets/BlacktailDeer_PiebaldFemale.webp';
+import SikaDeer_AlbinoFemale from '../../../assets/SikaDeer_AlbinoFemale.webp';
+import SikaDeer_BlackFemale from '../../../assets/SikaDeer_BlackFemale.webp';
+import SikaDeer_BrownFemale from '../../../assets/SikaDeer_BrownFemale.webp';
+import SikaDeer_DarkSpottedFemale from '../../../assets/SikaDeer_DarkSpottedFemale.webp';
+import SikaDeer_RedSpottedFemale from '../../../assets/SikaDeer_RedSpottedFemale.webp';
+import SikaDeer_SpottedFemale from '../../../assets/SikaDeer_SpottedFemale.webp';
 
 
+// --- ASSET ALIASES ---
+// Map generic gallery identifiers to the actual imported male/female assets
+const SikaDeer_Albino = SikaDeer_AlbinoMale;
+const SikaDeer_Black = SikaDeer_BlackMale;
+const SikaDeer_Brown = SikaDeer_BrownMale;
+const SikaDeer_DarkSpotted = SikaDeer_DarkSpottedMale;
+const SikaDeer_RedSpotted = SikaDeer_RedSpottedMale;
+const SikaDeer_Spotted = SikaDeer_SpottedMale;
 
-const BlacktailDeer = () => {
+const SikaDeer = () => {
 
   // --- DATA SOURCES ---
 
   // Need Zone Times
   const needZonesData = [
     {
-      name: "Layton Lake District",
+      name: "Te Awaroa National Park",
       schedule: [
-        { time: "00:00 - 04:30", type: "Resting", icon: RestingZoneIcon },
-        { time: "04:00 - 08:30", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "08:00 - 12:30", type: "Resting", icon: RestingZoneIcon },
-        { time: "12:00 - 16:30", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "16:00 - 20:30", type: "Drinking", icon: DrinkingZoneIcon },
-        { time: "20:00 - 00:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "00:00 - 05:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "05:00 - 09:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "10:00 - 13:00", type: "Drinking", icon: DrinkingZoneIcon },
+        { time: "11:30 - 14:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "14:00 - 18:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "17:30 - 21:30", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "21:00 - 00:00", type: "Resting", icon: RestingZoneIcon },
       ]
     }
   ];
 
   // Features Table
   const features = [
-    { label: "Behavior", value: "Docile and somewhat skittish" },
-    { label: "Habitat", value: "Forests with a lot of underbrush" },
-    { label: "Senses", value: "Excellent sense of smell and hearing" },
-    { label: "Social", value: "Usually solitary, can also be found in small groups" },
-    { label: "Active", value: "During dawn, dusk and night" },
-    { label: "Recommended Equipment", value: "class 4 Ammo, Deer \"Bleat\" Caller, Deer \"Grunt\" Caller, Blacktail Deer Scent" },
-    { label: "Species", value: "Odocoileus hemionus", italic: true, isLink: true },
-    { label: "Difficulty", value: "Average" },
+    { label: "Behavior", value: "Elusive and cunning, highly vocal" },
+    { label: "Habitat", value: "Subtropical forests with dense understory" },
+    { label: "Senses", value: "Excellent hearing and smell, average vision" },
+    { label: "Social", value: "Single sex groups, small groups of Hinds with Yearling females and fawns" },
+    { label: "Active", value: "Dawn and Dusk" },
+    { label: "Recommended Equipment", value: "Class 4 Ammo, Deer \"Bleat\" Caller, Deer \"Grunt\" Caller, Buck \"Snort Wheeze\" Caller, Red Deer Caller, Red Deer Scent Lure" },
+    { label: "Species", value: "Cervus nippon", italic: true, isLink: true },
+    { label: "Difficulty", value: "Easy" },
   ];
 
-  // Fur Gallery Data (separated by sex)
+  // Fur Gallery Data (split by sex)
   const maleGallery = [
-    { name: "Albino", src: BlacktailDeer_AlbinoMale },
-    { name: "Dark Grey", src: BlacktailDeer_DarkGreyMale },
-    { name: "Grey", src: BlacktailDeer_GreyMale },
-    { name: "Grey Brown", src: BlacktailDeer_GreyBrownMale },
-    { name: "Melanistic", src: BlacktailDeer_MelanisticMale },
-    { name: "Piebald", src: BlacktailDeer_PiebaldMale },
+    { name: "Albino", src: SikaDeer_AlbinoMale },
+    { name: "Black", src: SikaDeer_BlackMale },
+    { name: "Brown", src: SikaDeer_BrownMale },
+    { name: "Dark Spotted", src: SikaDeer_DarkSpottedMale },
+    { name: "Red Spotted", src: SikaDeer_RedSpottedMale },
+    { name: "Spotted", src: SikaDeer_SpottedMale },
   ];
 
   const femaleGallery = [
-    { name: "Tan", src: BlacktailDeer_TanFemale },
-    { name: "Albino", src: BlacktailDeer_AlbinoFemale },
-    { name: "Grey", src: BlacktailDeer_GreyFemale },
-    { name: "Grey Brown", src: BlacktailDeer_GreyBrownFemale },
-    { name: "Melanistic", src: BlacktailDeer_MelanisticFemale },
-    { name: "Piebald", src: BlacktailDeer_PiebaldFemale },
+    { name: "Albino", src: SikaDeer_AlbinoFemale },
+    { name: "Black", src: SikaDeer_BlackFemale },
+    { name: "Brown", src: SikaDeer_BrownFemale },
+    { name: "Dark Spotted", src: SikaDeer_DarkSpottedFemale },
+    { name: "Red Spotted", src: SikaDeer_RedSpottedFemale },
+    { name: "Spotted", src: SikaDeer_SpottedFemale },
   ];
 
   // Trivia Data
   const triviaData = [
-    "It was part of the original cast of animals huntable at launch.",
-    "The Blacktail Deer was one of the first animals, along with the Whitetail Deer, to get TruRACS.",
-    "Because of their rarity, and overall elusiveness, the Blacktail Deer is known by many hunters as the Ghost of The Pacific."
+    "The Sika Deer gets its name from the Japanese word for deer/shika (鹿)",
+    "The scientific name for the Sika Deer (Cervus nippon) can literally be translated as \"Deer Japan\", or \"Japanese Deer\". Although it is believed that the original meaning of the word 'Cervus' was \"Horned\".",
+    "Famous samurai 'Honda Tadakatsu' wore a black helmet adorned with replica Sika Deer antlers."
   ];
 
   // --- STYLES OBJECT ---
@@ -289,22 +297,32 @@ const BlacktailDeer = () => {
     rarityVeryRare: { color: '#e74c3c', fontWeight: 'bold' },
   };
 
+  // Smooth scroll helper for TOC links
+  const scrollToId = (e, id) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try { window.history.replaceState(null, '', `#${id}`); } catch (err) { /* ignore */ }
+    }
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.innerWrapper}>
         
         {/* PAGE HEADER */}
         <div style={styles.mainHeader}>
-          <span>Blacktail Deer</span>
+          <span>Sika Deer</span>
         </div>
 
         <div style={styles.layout}>
           
           {/* --- RIGHT SIDEBAR (General Information) --- */}
           <aside style={styles.sidebarColumn}>
-            <div style={styles.sidebarHeader}>Blacktail Deer</div>
+            <div style={styles.sidebarHeader}>Sika Deer</div>
             <div style={styles.sidebarImage}>
-              <img src={BlacktailDeerMain} alt="Blacktail Deer" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
+              <img src={SikaDeerMain} alt="Sika Deer" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
             </div>
             
             <div style={styles.sidebarHeader}>General Information</div>
@@ -325,35 +343,36 @@ const BlacktailDeer = () => {
               <div style={styles.trophyGrid}>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.silver}}>◆ Silver</span>
-                  <span>76.90</span>
+                  <span>53.29</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.gold}}>☗ Gold</span>
-                  <span>134.40</span>
+                  <span>136.40</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.diamond}}>☗ Diamond</span>
-                  <span>177.50</span>
+                  <span>198.74</span>
                 </div>
               </div>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Weight</span>
-              40kg — 95kg<br/>
-              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>88lbs — 209lbs</span>
+              25kg — 75kg<br/>
+              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>55lbs — 165lbs</span>
             </div>
 
             <div style={styles.sidebarSection}>
                <span style={styles.sidebarLabel}>Fur</span>
                <span style={{fontSize:'0.85rem'}}>
-                 Albino, Dark Grey, Grey, Grey-Brown, Melanistic, Piebald, Tan
+                 Albino, Black, Brown, Dark Spotted, Red Spotted, Spotted
                </span>
             </div>
 
             <div style={styles.sidebarHeader}>Locations</div>
             <div style={styles.sidebarSection}>
-               <div style={{marginBottom:'4px'}}><span style={styles.link}>Layton Lake District</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Te Awaroa National Park</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Tòrr nan Sithean</span></div>
             </div>
           </aside>
 
@@ -362,42 +381,41 @@ const BlacktailDeer = () => {
 
             {/* Quote Block */}
             <div style={styles.quoteBox}>
-              "The blacktail deer is generally considered a subspecies of the mule deer and native to the western part of North American continent although new science suggests it could be its own species and not a subspecies. The blacktail thrives around the edges of forests that are typically rich with foliage and grass which they feed on. They tend to avoid open areas that lack hiding spots, especially during harsh weather. The blacktail is a medium-sized deer, comparable to the whitetail deer, but blacktail bucks' antlers take different patterns that are more similar to the mule deer's. The blacktail's antlers grow from a spike into a distinctive double-fork shape."
+              "The sika deer (Cervus nippon) also known as the spotted deer or the Japanese deer, is a species of deer native to much of East Asia, and introduced to various other parts of the world. Previously found from northern Vietnam in the south to the Russian Far East in the north, it is now uncommon in these areas, excluding Japan, where the species is overabundant. A cunning, deer similar to that of a whitetail they inhabit native manuka and timber for most of the day venturing out in the evenings to late morning."
               <br/><br/>
               — In-Game Description
             </div>
 
             {/* Intro Text */}
             <p style={{marginBottom:'20px'}}>
-              The <strong>Blacktail Deer</strong> is a medium-sized deer species. It can be hunted in the <span style={styles.link}>Layton Lake District</span>.
+              The <strong>Sika Deer</strong> is a class 4 deer. It can be hunted in <span style={styles.link}>Te Awaroa National Park</span> and <span style={styles.link}>Tòrr nan Sithean</span>.
             </p>
 
-            {/* Table of Contents (numbered; Fur Variants has sub-topics) */}
+            {/* Table of Contents */}
             <div style={{
                 border: '1px solid #3a5a75',
                 backgroundColor: '#0f2e48',
                 display: 'inline-block',
                 padding: '10px 20px',
                 borderRadius: '4px',
-                minWidth: '260px',
+                minWidth: '200px',
                 marginBottom: '30px'
             }}>
               <div style={{fontWeight:'bold', borderBottom: '1px solid #3a5a75', marginBottom: '5px'}}>
-                🔢 Contents <span style={{float:'right', color: '#6fb2e6', fontSize: '0.8rem', cursor: 'pointer'}}>[hide]</span>
+                🔢 Contents <span style={{float:'right', color: '#6fb2e6', fontSize:'0.8rem', cursor: 'pointer'}}>[hide]</span>
               </div>
               <ol style={{margin:'0', paddingLeft: '20px', color: '#6fb2e6'}}>
-                <li><a href="#features" style={styles.link}>Features</a></li>
-                <li><a href="#need-zones" style={styles.link}>Need Zone Times</a></li>
-                <li><a href="#shot-scheme" style={styles.link}>Shot scheme</a></li>
-                <li>
-                  <a href="#fur-variants" style={styles.link}>Fur Variants</a>
-                  <ol style={{margin:'6px 0 0 14px', padding:'0', color:'#9ed3f5', listStyle: 'none'}}>
-                    <li><a href="#fur-male" style={styles.link}>4.1 Male</a></li>
-                    <li><a href="#fur-female" style={styles.link}>4.2 Female</a></li>
+                <li><a href="#features" onClick={(e)=>scrollToId(e,'features')} style={styles.link}>Features</a></li>
+                <li><a href="#need-zones" onClick={(e)=>scrollToId(e,'need-zones')} style={styles.link}>Need Zone Times</a></li>
+                <li><a href="#tips" onClick={(e)=>scrollToId(e,'tips')} style={styles.link}>Tips</a></li>
+                <li><a href="#fur-variants" onClick={(e)=>scrollToId(e,'fur-variants')} style={styles.link}>Fur Variants</a>
+                  <ol style={{marginTop:'6px', marginLeft:'-28px', listStyleType: 'none', color: '#9fd3ff'}}>
+                    <li><a href="#fur-male" onClick={(e)=>scrollToId(e,'fur-male')} style={styles.link}>4.1 Male</a></li>
+                    <li><a href="#fur-female" onClick={(e)=>scrollToId(e,'fur-female')} style={styles.link}>4.2 Female</a></li>
                   </ol>
                 </li>
-                <li><a href="#variant-rarity" style={styles.link}>Fur Variant Rarity</a></li>
-                <li><a href="#trivia" style={styles.link}>Trivia</a></li>
+                <li><a href="#fur-rarity" onClick={(e)=>scrollToId(e,'fur-rarity')} style={styles.link}>Fur Variant Rarity</a></li>
+                <li><a href="#trivia" onClick={(e)=>scrollToId(e,'trivia')} style={styles.link}>Trivia</a></li>
               </ol>
             </div>
 
@@ -427,7 +445,7 @@ const BlacktailDeer = () => {
             <div style={{display:'inline-block'}}>
                 <table style={{...styles.table, width: '300px'}}>
                     <thead>
-                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Layton Lake District</th></tr>
+                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Te Awaroa National Park</th></tr>
                         <tr>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Times</th>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Activity</th>
@@ -449,42 +467,37 @@ const BlacktailDeer = () => {
                 </table>
             </div>
 
-             {/* SHOT SCHEME */}
-             <h2 id="shot-scheme" style={styles.h2}>Shot scheme</h2>
-            <div style={styles.shotContainer}>
-                <div style={styles.shotImageWrapper}>
-                   <img src={ShotSchemeImage} alt="Shot Scheme" style={{width: '100%', height: 'auto', maxHeight:'350px', objectFit: 'contain'}} />
-                </div>
-                <div style={styles.shotLegend}>
-                   <div style={styles.legendHeader}>Color code</div>
-                   <div style={styles.legendItem}>Red - Kills immediately</div>
-                   <div style={styles.legendItem}>Blue - Kills very quick</div>
-                   <div style={styles.legendItem}>Orange - Kills slowly</div>
-                   <div style={{...styles.legendItem, borderBottom: 'none'}}>No Color - Unlikely to kill</div>
-                </div>
+            {/* Shot scheme removed per request */}
+
+            {/* TIPS */}
+            <h2 id="tips" style={styles.h2}>Tips</h2>
+            <div style={{fontSize:'0.95rem', marginBottom:'18px', color: '#dbe4eb'}}>
+              <p>
+                Among many other locations, the Sika Deer can be found at the Te Tai Pounamu, in the Invercraig Regions, at The Bay Of Rest and in the Waikerera River Region.
+              </p>
             </div>
 
             {/* FUR VARIANTS (Gallery) */}
             <h2 id="fur-variants" style={styles.h2}>Fur Variants</h2>
 
-            <h3 id="fur-male" style={{color: '#6fb2e6', marginTop: '12px'}}>Male</h3>
+            <h3 id="fur-male" style={{marginTop:'10px', marginBottom:'8px', color: '#6fb2e6'}}>Male</h3>
             <div style={styles.galleryGrid}>
               {maleGallery.map((item, i) => (
-                <div key={`m-${i}`} style={styles.galleryItem}>
+                <div key={i} style={styles.galleryItem}>
                   <div style={styles.galleryImgPlaceholder}>
-                    <img src={item.src} alt={item.name} style={{maxWidth: '100%', maxHeight: '100%', objectFit: 'contain'}} />
+                    <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
                   </div>
                   <span style={styles.galleryLabel}>{item.name}</span>
                 </div>
               ))}
             </div>
 
-            <h3 id="fur-female" style={{color: '#6fb2e6', marginTop: '18px'}}>Female</h3>
+            <h3 id="fur-female" style={{marginTop:'20px', marginBottom:'8px', color: '#6fb2e6'}}>Female</h3>
             <div style={styles.galleryGrid}>
               {femaleGallery.map((item, i) => (
-                <div key={`f-${i}`} style={styles.galleryItem}>
+                <div key={i} style={styles.galleryItem}>
                   <div style={styles.galleryImgPlaceholder}>
-                    <img src={item.src} alt={item.name} style={{maxWidth: '100%', maxHeight: '100%', objectFit: 'contain'}} />
+                    <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
                   </div>
                   <span style={styles.galleryLabel}>{item.name}</span>
                 </div>
@@ -492,7 +505,7 @@ const BlacktailDeer = () => {
             </div>
 
             {/* FUR VARIANT RARITY TABLE */}
-            <h2 id="variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
+            <h2 id="fur-rarity" style={styles.h2}>Fur Variant Rarity</h2>
             <div style={{overflowX: 'auto'}}>
                 <table style={styles.table}>
                     <thead>
@@ -507,38 +520,23 @@ const BlacktailDeer = () => {
                     <tbody>
                         <tr>
                             <td style={{...styles.td, color: '#3498db', fontStyle: 'italic', fontWeight: 'bold'}}>
-                                Male
+                                Male<span style={{color: '#dbe4eb'}}>/</span><span style={{color: '#d63384'}}>Female</span>
                             </td>
                             <td style={styles.td}>
-                                Grey (33.23%)<br/>
-                                Grey Brown (33.23%)<br/>
-                                Dark Grey (33.23%)
-                            </td>
-                            <td style={styles.td}>X</td>
-                            <td style={styles.td}>
-                                Piebald (0.20%)
+                                Black (37.35%)<br/>
+                                Brown (37.35%)<br/>
+                                Dark Spotted (12.50%)<br/>
+                                Spotted (12.50%)
                             </td>
                             <td style={styles.td}>
-                                Albino (0.05%)<br/>
-                                Melanistic (0.05%)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{...styles.td, color: '#d63384', fontStyle: 'italic', fontWeight: 'bold'}}>
-                                Female
+                                X
                             </td>
                             <td style={styles.td}>
-                                Grey (33.23%)<br/>
-                                Grey Brown (33.23%)<br/>
-                                Tan (33.23%)
-                            </td>
-                            <td style={styles.td}>X</td>
-                            <td style={styles.td}>
-                                Piebald (0.20%)
+                                Red Spotted (0.20%)<br/>
+                                Albino (0.10%)
                             </td>
                             <td style={styles.td}>
-                                Albino (0.05%)<br/>
-                                Melanistic (0.05%)
+                                X
                             </td>
                         </tr>
                     </tbody>
@@ -564,4 +562,4 @@ const BlacktailDeer = () => {
   );
 };
 
-export default BlacktailDeer;
+export default SikaDeer;

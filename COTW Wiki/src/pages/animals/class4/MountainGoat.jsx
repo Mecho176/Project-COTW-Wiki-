@@ -5,85 +5,80 @@ import React from 'react';
 import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp';
 import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp';
 import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp';
-import class4Icon from '../../../assets/Class4Icon.webp'; // Class 4 for Blacktail Deer
+import class4Icon from '../../../assets/Class4Icon.webp'; // Class 4 for Mountain Goat
 import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
 
 // Main Image
-import BlacktailDeerMain from '../../../assets/BlacktailDeer.webp';
-import ShotSchemeImage from '../../../assets/Blacktail_deer_shot_scheme.webp';
+import MountainGoatMain from '../../../assets/MountainGoat.webp';
+import ShotSchemeImg from '../../../assets/Mountain_Goat_shot_scheme.webp';
 
 // Fur Variant Images (Placeholders)
-import BlacktailDeer_AlbinoMale from '../../../assets/BlacktailDeer_AlbinoMale.webp';
-import BlacktailDeer_DarkGreyMale from '../../../assets/BlacktailDeer_DarkGreyMale.webp';
-import BlacktailDeer_GreyMale from '../../../assets/BlacktailDeer_GreyMale.webp';
-import BlacktailDeer_GreyBrownMale from '../../../assets/BlacktailDeer_GreyBrownMale.webp';
-import BlacktailDeer_MelanisticMale from '../../../assets/BlacktailDeer_MelanisticMale.webp';
-import BlacktailDeer_PiebaldMale from '../../../assets/BlacktailDeer_PiebaldMale.webp';
-
-import BlacktailDeer_TanFemale from '../../../assets/BlacktailDeer_TanFemale.webp';
-import BlacktailDeer_AlbinoFemale from '../../../assets/BlacktailDeer_AlbinoFemale.webp';
-import BlacktailDeer_GreyFemale from '../../../assets/BlacktailDeer_GreyFemale.webp';
-import BlacktailDeer_GreyBrownFemale from '../../../assets/BlacktailDeer_GreyBrownFemale.webp';
-import BlacktailDeer_MelanisticFemale from '../../../assets/BlacktailDeer_MelanisticFemale.webp';
-import BlacktailDeer_PiebaldFemale from '../../../assets/BlacktailDeer_PiebaldFemale.webp';
+// Note: Since Mountain Goats are monomorphic (males and females look very similar), 
+// and the screenshot shows a single gallery, we will use these for the display.
+import MountainGoat_Albino from '../../../assets/MountainGoat_Albino.webp';
+import MountainGoat_Beige from '../../../assets/MountainGoat_Beige.webp';
+import MountainGoat_LightBrown from '../../../assets/MountainGoat_LightBrown.webp';
+import MountainGoat_LightGrey from '../../../assets/MountainGoat_LightGrey.webp';
+import MountainGoat_Melanistic from '../../../assets/MountainGoat_Melanistic.webp';
+import MountainGoat_White from '../../../assets/MountainGoat_White.webp';
 
 
-
-const BlacktailDeer = () => {
+const MountainGoat = () => {
 
   // --- DATA SOURCES ---
 
   // Need Zone Times
   const needZonesData = [
     {
-      name: "Layton Lake District",
+      name: "Askiy Ridge Hunting Preserve",
       schedule: [
-        { time: "00:00 - 04:30", type: "Resting", icon: RestingZoneIcon },
-        { time: "04:00 - 08:30", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "08:00 - 12:30", type: "Resting", icon: RestingZoneIcon },
-        { time: "12:00 - 16:30", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "16:00 - 20:30", type: "Drinking", icon: DrinkingZoneIcon },
-        { time: "20:00 - 00:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "00:00 - 04:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "04:00 - 07:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "07:00 - 10:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "10:00 - 13:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "13:00 - 17:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "17:00 - 20:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "20:00 - 00:00", type: "Resting", icon: RestingZoneIcon },
       ]
     }
   ];
 
   // Features Table
   const features = [
-    { label: "Behavior", value: "Docile and somewhat skittish" },
-    { label: "Habitat", value: "Forests with a lot of underbrush" },
-    { label: "Senses", value: "Excellent sense of smell and hearing" },
-    { label: "Social", value: "Usually solitary, can also be found in small groups" },
-    { label: "Active", value: "During dawn, dusk and night" },
-    { label: "Recommended Equipment", value: "class 4 Ammo, Deer \"Bleat\" Caller, Deer \"Grunt\" Caller, Blacktail Deer Scent" },
-    { label: "Species", value: "Odocoileus hemionus", italic: true, isLink: true },
+    { label: "Behavior", value: "Cautious and curious" },
+    { label: "Habitat", value: "Mountain faces, alpine forests and basins" },
+    { label: "Senses", value: "Excellent senses of vision and hearing, decent sense of smell" },
+    { label: "Social", value: "Males live solitary or in small groups, females live in medium to large-sized groups tending their young" },
+    { label: "Active", value: "Morning and evening" },
+    { label: "Recommended Equipment", value: "Class 4 Ammo" },
+    { label: "Species", value: "Oreamnos americanus", italic: true, isLink: true },
     { label: "Difficulty", value: "Average" },
   ];
 
-  // Fur Gallery Data (separated by sex)
-  const maleGallery = [
-    { name: "Albino", src: BlacktailDeer_AlbinoMale },
-    { name: "Dark Grey", src: BlacktailDeer_DarkGreyMale },
-    { name: "Grey", src: BlacktailDeer_GreyMale },
-    { name: "Grey Brown", src: BlacktailDeer_GreyBrownMale },
-    { name: "Melanistic", src: BlacktailDeer_MelanisticMale },
-    { name: "Piebald", src: BlacktailDeer_PiebaldMale },
-  ];
-
-  const femaleGallery = [
-    { name: "Tan", src: BlacktailDeer_TanFemale },
-    { name: "Albino", src: BlacktailDeer_AlbinoFemale },
-    { name: "Grey", src: BlacktailDeer_GreyFemale },
-    { name: "Grey Brown", src: BlacktailDeer_GreyBrownFemale },
-    { name: "Melanistic", src: BlacktailDeer_MelanisticFemale },
-    { name: "Piebald", src: BlacktailDeer_PiebaldFemale },
+  // Fur Gallery Data 
+  // The screenshot shows one unified list of variants.
+  const furGallery = [
+    { name: "Albino", src: MountainGoat_Albino },
+    { name: "Beige", src: MountainGoat_Beige },
+    { name: "Light Brown", src: MountainGoat_LightBrown },
+    { name: "Light Grey", src: MountainGoat_LightGrey },
+    { name: "Melanistic", src: MountainGoat_Melanistic },
+    { name: "White", src: MountainGoat_White },
   ];
 
   // Trivia Data
   const triviaData = [
-    "It was part of the original cast of animals huntable at launch.",
-    "The Blacktail Deer was one of the first animals, along with the Whitetail Deer, to get TruRACS.",
-    "Because of their rarity, and overall elusiveness, the Blacktail Deer is known by many hunters as the Ghost of The Pacific."
+    "The Mountain Goat was reintroduced to the Colorado Rockies in 1947, as previously it went extinct in the area.",
+    "You can tell a Mountain Goat's age by the rings on its horns, not unlike a tree.",
+    "There is an indie folk rock band called \"The Mountain Goats\".",
+    "Despite their name, Mountain Goats are not true goats. They belong to the antelope family.",
+    "Mountain goats are nimble and can jump nearly 12 feet in a single bound."
+  ];
+
+  // References Data
+  const referencesData = [
+    "Mountain Goat Need Zones, Askiy Ridge",
+    "https://www.youtube.com/watch?v=hdY7aDVYAJs"
   ];
 
   // --- STYLES OBJECT ---
@@ -289,71 +284,88 @@ const BlacktailDeer = () => {
     rarityVeryRare: { color: '#e74c3c', fontWeight: 'bold' },
   };
 
+  // Smooth scroll helper for TOC links
+  const scrollToId = (e, id) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try { window.history.replaceState(null, '', `#${id}`); } catch (err) { /* ignore */ }
+    }
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.innerWrapper}>
         
         {/* PAGE HEADER */}
         <div style={styles.mainHeader}>
-          <span>Blacktail Deer</span>
+          <span>Mountain Goat</span>
         </div>
 
         <div style={styles.layout}>
           
           {/* --- RIGHT SIDEBAR (General Information) --- */}
           <aside style={styles.sidebarColumn}>
-            <div style={styles.sidebarHeader}>Blacktail Deer</div>
+            <div style={styles.sidebarHeader}>Mountain Goat</div>
             <div style={styles.sidebarImage}>
-              <img src={BlacktailDeerMain} alt="Blacktail Deer" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
+              <img src={MountainGoatMain} alt="Mountain Goat" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
             </div>
             
             <div style={styles.sidebarHeader}>General Information</div>
             
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Class</span>
+              {/* Cited from screenshot 1 */}
               <span><img src={class4Icon} alt="Class 4" style={{width:'24px', height:'24px', verticalAlign: 'middle', marginRight: '6px'}}/>4</span>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Difficulty</span>
+              {/* Cited from screenshot 1 */}
               <span>1: Trivial — 5: Medium</span>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Trophy Type</span>
-              <span>Antlers</span>
+              <span>Horns</span>
               <div style={styles.trophyGrid}>
+                {/* Cited from screenshot 1 */}
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.silver}}>◆ Silver</span>
-                  <span>76.90</span>
+                  <span>52.72</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.gold}}>☗ Gold</span>
-                  <span>134.40</span>
+                  <span>84.12</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.diamond}}>☗ Diamond</span>
-                  <span>177.50</span>
+                  <span>107.67</span>
                 </div>
               </div>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Weight</span>
-              40kg — 95kg<br/>
-              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>88lbs — 209lbs</span>
+              {/* Cited from screenshot 1 */}
+              45kg — 145kg<br/>
+              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>99lbs — 320lbs</span>
             </div>
 
             <div style={styles.sidebarSection}>
                <span style={styles.sidebarLabel}>Fur</span>
+               {/* Cited from screenshot 1 */}
                <span style={{fontSize:'0.85rem'}}>
-                 Albino, Dark Grey, Grey, Grey-Brown, Melanistic, Piebald, Tan
+                 Albino, Beige, Light Brown, Light Grey, Melanistic, White
                </span>
             </div>
 
             <div style={styles.sidebarHeader}>Locations</div>
             <div style={styles.sidebarSection}>
-               <div style={{marginBottom:'4px'}}><span style={styles.link}>Layton Lake District</span></div>
+               {/* Cited from screenshot 1 */}
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Silver Ridge Peaks</span></div>
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Askiy Ridge Hunting Preserve</span></div>
             </div>
           </aside>
 
@@ -362,42 +374,37 @@ const BlacktailDeer = () => {
 
             {/* Quote Block */}
             <div style={styles.quoteBox}>
-              "The blacktail deer is generally considered a subspecies of the mule deer and native to the western part of North American continent although new science suggests it could be its own species and not a subspecies. The blacktail thrives around the edges of forests that are typically rich with foliage and grass which they feed on. They tend to avoid open areas that lack hiding spots, especially during harsh weather. The blacktail is a medium-sized deer, comparable to the whitetail deer, but blacktail bucks' antlers take different patterns that are more similar to the mule deer's. The blacktail's antlers grow from a spike into a distinctive double-fork shape."
+              "The mountain goat, also known as the Rocky Mountain goat, is the largest mammal found in sub-alpine to alpine altitudes of the Rocky Mountains. Despite its name, it does not belong to the Capra genus that includes all other goats, but is the only living species of the Oreamnos genus. They are informally referred to as goat-antelopes. Both males and female mountain goats have beards and long black horns that can grow up to 0.28 min length. Contrary to most other animals, the female mountain goat is very competitive and protective of their food source. It is not uncommon for conflicts to include all nannies of the herd. The male "billy" goat weighs around 125.00 kg, while the female "nanny" goat weighs 80.00 kg"
               <br/><br/>
               — In-Game Description
             </div>
 
             {/* Intro Text */}
             <p style={{marginBottom:'20px'}}>
-              The <strong>Blacktail Deer</strong> is a medium-sized deer species. It can be hunted in the <span style={styles.link}>Layton Lake District</span>.
+              The <strong>Mountain Goat</strong> is a species in the <span style={styles.link}>Silver Ridge Peaks reserve</span> located in the rocky mountains of Colorado. It is a <span style={styles.link}>class 4</span> animal. Both females and males have horns.
             </p>
 
-            {/* Table of Contents (numbered; Fur Variants has sub-topics) */}
+            {/* Table of Contents */}
             <div style={{
                 border: '1px solid #3a5a75',
                 backgroundColor: '#0f2e48',
                 display: 'inline-block',
                 padding: '10px 20px',
                 borderRadius: '4px',
-                minWidth: '260px',
+                minWidth: '200px',
                 marginBottom: '30px'
             }}>
               <div style={{fontWeight:'bold', borderBottom: '1px solid #3a5a75', marginBottom: '5px'}}>
-                🔢 Contents <span style={{float:'right', color: '#6fb2e6', fontSize: '0.8rem', cursor: 'pointer'}}>[hide]</span>
+                🔢 Contents <span style={{float:'right', color: '#6fb2e6', fontSize:'0.8rem', cursor: 'pointer'}}>[hide]</span>
               </div>
               <ol style={{margin:'0', paddingLeft: '20px', color: '#6fb2e6'}}>
-                <li><a href="#features" style={styles.link}>Features</a></li>
-                <li><a href="#need-zones" style={styles.link}>Need Zone Times</a></li>
-                <li><a href="#shot-scheme" style={styles.link}>Shot scheme</a></li>
-                <li>
-                  <a href="#fur-variants" style={styles.link}>Fur Variants</a>
-                  <ol style={{margin:'6px 0 0 14px', padding:'0', color:'#9ed3f5', listStyle: 'none'}}>
-                    <li><a href="#fur-male" style={styles.link}>4.1 Male</a></li>
-                    <li><a href="#fur-female" style={styles.link}>4.2 Female</a></li>
-                  </ol>
-                </li>
-                <li><a href="#variant-rarity" style={styles.link}>Fur Variant Rarity</a></li>
-                <li><a href="#trivia" style={styles.link}>Trivia</a></li>
+                <li><a href="#features" onClick={(e)=>scrollToId(e,'features')} style={styles.link}>Features</a></li>
+                <li><a href="#need-zones" onClick={(e)=>scrollToId(e,'need-zones')} style={styles.link}>Need Zone Times</a></li>
+                <li><a href="#shot-scheme" onClick={(e)=>scrollToId(e,'shot-scheme')} style={styles.link}>Shot scheme</a></li>
+                <li><a href="#fur-variants" onClick={(e)=>scrollToId(e,'fur-variants')} style={styles.link}>Fur Variants</a></li>
+                <li><a href="#fur-rarity" onClick={(e)=>scrollToId(e,'fur-rarity')} style={styles.link}>Fur Variant Rarity</a></li>
+                <li><a href="#trivia" onClick={(e)=>scrollToId(e,'trivia')} style={styles.link}>Trivia</a></li>
+                <li><a href="#references" onClick={(e)=>scrollToId(e,'references')} style={styles.link}>References</a></li>
               </ol>
             </div>
 
@@ -427,7 +434,7 @@ const BlacktailDeer = () => {
             <div style={{display:'inline-block'}}>
                 <table style={{...styles.table, width: '300px'}}>
                     <thead>
-                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Layton Lake District</th></tr>
+                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Askiy Ridge</th></tr>
                         <tr>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Times</th>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Activity</th>
@@ -449,42 +456,28 @@ const BlacktailDeer = () => {
                 </table>
             </div>
 
-             {/* SHOT SCHEME */}
-             <h2 id="shot-scheme" style={styles.h2}>Shot scheme</h2>
+            {/* SHOT SCHEME */}
+            <h2 id="shot-scheme" style={styles.h2}>Shot scheme</h2>
             <div style={styles.shotContainer}>
-                <div style={styles.shotImageWrapper}>
-                   <img src={ShotSchemeImage} alt="Shot Scheme" style={{width: '100%', height: 'auto', maxHeight:'350px', objectFit: 'contain'}} />
-                </div>
-                <div style={styles.shotLegend}>
-                   <div style={styles.legendHeader}>Color code</div>
-                   <div style={styles.legendItem}>Red - Kills immediately</div>
-                   <div style={styles.legendItem}>Blue - Kills very quick</div>
-                   <div style={styles.legendItem}>Orange - Kills slowly</div>
-                   <div style={{...styles.legendItem, borderBottom: 'none'}}>No Color - Unlikely to kill</div>
-                </div>
+               <div style={styles.shotImageWrapper}>
+                 <img src={ShotSchemeImg} alt="Shot Scheme" style={{width: '100%', height: 'auto', maxHeight:'350px', objectFit: 'contain'}} />
+               </div>
+               <div style={styles.shotLegend}>
+                 <div style={styles.legendHeader}>Color code</div>
+                 <div style={styles.legendItem}>Red - Kills immediately</div>
+                 <div style={styles.legendItem}>Blue - Kills very quick</div>
+                 <div style={styles.legendItem}>Orange - Kills slowly</div>
+                 <div style={{...styles.legendItem, borderBottom: 'none'}}>No Color - Unlikely to kill</div>
+               </div>
             </div>
 
             {/* FUR VARIANTS (Gallery) */}
             <h2 id="fur-variants" style={styles.h2}>Fur Variants</h2>
-
-            <h3 id="fur-male" style={{color: '#6fb2e6', marginTop: '12px'}}>Male</h3>
             <div style={styles.galleryGrid}>
-              {maleGallery.map((item, i) => (
-                <div key={`m-${i}`} style={styles.galleryItem}>
+              {furGallery.map((item, i) => (
+                <div key={i} style={styles.galleryItem}>
                   <div style={styles.galleryImgPlaceholder}>
-                    <img src={item.src} alt={item.name} style={{maxWidth: '100%', maxHeight: '100%', objectFit: 'contain'}} />
-                  </div>
-                  <span style={styles.galleryLabel}>{item.name}</span>
-                </div>
-              ))}
-            </div>
-
-            <h3 id="fur-female" style={{color: '#6fb2e6', marginTop: '18px'}}>Female</h3>
-            <div style={styles.galleryGrid}>
-              {femaleGallery.map((item, i) => (
-                <div key={`f-${i}`} style={styles.galleryItem}>
-                  <div style={styles.galleryImgPlaceholder}>
-                    <img src={item.src} alt={item.name} style={{maxWidth: '100%', maxHeight: '100%', objectFit: 'contain'}} />
+                    <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
                   </div>
                   <span style={styles.galleryLabel}>{item.name}</span>
                 </div>
@@ -492,7 +485,7 @@ const BlacktailDeer = () => {
             </div>
 
             {/* FUR VARIANT RARITY TABLE */}
-            <h2 id="variant-rarity" style={styles.h2}>Fur Variant Rarity</h2>
+            <h2 id="fur-rarity" style={styles.h2}>Fur Variant Rarity</h2>
             <div style={{overflowX: 'auto'}}>
                 <table style={styles.table}>
                     <thead>
@@ -505,36 +498,22 @@ const BlacktailDeer = () => {
                         </tr>
                     </thead>
                     <tbody>
+                        {/* Combined Male/Female Row as per screenshot */}
                         <tr>
                             <td style={{...styles.td, color: '#3498db', fontStyle: 'italic', fontWeight: 'bold'}}>
-                                Male
+                                Male<span style={{color: '#dbe4eb'}}>/</span><span style={{color: '#d63384'}}>Female</span>
                             </td>
                             <td style={styles.td}>
-                                Grey (33.23%)<br/>
-                                Grey Brown (33.23%)<br/>
-                                Dark Grey (33.23%)
-                            </td>
-                            <td style={styles.td}>X</td>
-                            <td style={styles.td}>
-                                Piebald (0.20%)
+                                Beige (24.97%)<br/>
+                                Light Brown (24.97%)<br/>
+                                Light Grey (24.97%)<br/>
+                                White (24.97%)
                             </td>
                             <td style={styles.td}>
-                                Albino (0.05%)<br/>
-                                Melanistic (0.05%)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{...styles.td, color: '#d63384', fontStyle: 'italic', fontWeight: 'bold'}}>
-                                Female
+                                X
                             </td>
                             <td style={styles.td}>
-                                Grey (33.23%)<br/>
-                                Grey Brown (33.23%)<br/>
-                                Tan (33.23%)
-                            </td>
-                            <td style={styles.td}>X</td>
-                            <td style={styles.td}>
-                                Piebald (0.20%)
+                                X
                             </td>
                             <td style={styles.td}>
                                 Albino (0.05%)<br/>
@@ -553,6 +532,16 @@ const BlacktailDeer = () => {
                 ))}
             </ul>
 
+            {/* REFERENCES */}
+            <h2 id="references" style={styles.h2}>References</h2>
+            <ol style={{fontSize: '0.95rem', paddingLeft: '20px', color: '#6fb2e6'}}>
+              {referencesData.map((ref, idx) => (
+                 <li key={idx} style={{marginBottom: '5px'}}>
+                  <span style={{color: '#dbe4eb'}}>↑</span> <span style={styles.link}>{ref}</span>
+                 </li>
+              ))}
+            </ol>
+
             <div style={{marginTop: '40px'}}>
                 <AnimalsTableMini />
             </div>
@@ -564,4 +553,4 @@ const BlacktailDeer = () => {
   );
 };
 
-export default BlacktailDeer;
+export default MountainGoat;

@@ -5,85 +5,98 @@ import React from 'react';
 import FeedingZoneIcon from '../../../assets/FeedingZoneIcon.webp';
 import RestingZoneIcon from '../../../assets/RestingZoneIcon.webp';
 import DrinkingZoneIcon from '../../../assets/DrinkingZoneIcon.webp';
-import class4Icon from '../../../assets/Class4Icon.webp'; // Class 4 for Blacktail Deer
+import class4Icon from '../../../assets/Class4Icon.webp'; // Class 4 for Blue Sheep
 import AnimalsTableMini from '../../../components/AnimalsTableMini.jsx';
 
 // Main Image
-import BlacktailDeerMain from '../../../assets/BlacktailDeer.webp';
-import ShotSchemeImage from '../../../assets/Blacktail_deer_shot_scheme.webp';
+import BlueSheepMain from '../../../assets/Blue_Sheep.webp';
+import ShotSchemeImg from '../../../assets/Blue_Sheep_shot_scheme.webp';
 
-// Fur Variant Images (Placeholders)
-import BlacktailDeer_AlbinoMale from '../../../assets/BlacktailDeer_AlbinoMale.webp';
-import BlacktailDeer_DarkGreyMale from '../../../assets/BlacktailDeer_DarkGreyMale.webp';
-import BlacktailDeer_GreyMale from '../../../assets/BlacktailDeer_GreyMale.webp';
-import BlacktailDeer_GreyBrownMale from '../../../assets/BlacktailDeer_GreyBrownMale.webp';
-import BlacktailDeer_MelanisticMale from '../../../assets/BlacktailDeer_MelanisticMale.webp';
-import BlacktailDeer_PiebaldMale from '../../../assets/BlacktailDeer_PiebaldMale.webp';
+// Fur Variant Images (Placeholders based on screenshots)
+// Male
+import BlueSheep_AlbinoMale from '../../../assets/BlueSheep_AlbinoMale.webp';
+import BlueSheep_BlueGrayMale from '../../../assets/BlueSheep_BlueGrayMale.webp';
+import BlueSheep_BrownMale from '../../../assets/BlueSheep_BrownMale.webp';
+import BlueSheep_LeucisticMale from '../../../assets/BlueSheep_LeucisticMale.webp';
+import BlueSheep_MelanisticMale from '../../../assets/BlueSheep_MelanisticMale.webp';
+import BlueSheep_SlateGrayMale from '../../../assets/BlueSheep_SlateGrayMale.webp';
+import BlueSheep_YellowMale from '../../../assets/BlueSheep_YellowMale.webp';
 
-import BlacktailDeer_TanFemale from '../../../assets/BlacktailDeer_TanFemale.webp';
-import BlacktailDeer_AlbinoFemale from '../../../assets/BlacktailDeer_AlbinoFemale.webp';
-import BlacktailDeer_GreyFemale from '../../../assets/BlacktailDeer_GreyFemale.webp';
-import BlacktailDeer_GreyBrownFemale from '../../../assets/BlacktailDeer_GreyBrownFemale.webp';
-import BlacktailDeer_MelanisticFemale from '../../../assets/BlacktailDeer_MelanisticFemale.webp';
-import BlacktailDeer_PiebaldFemale from '../../../assets/BlacktailDeer_PiebaldFemale.webp';
+// Female
+import BlueSheep_AlbinoFemale from '../../../assets/BlueSheep_AlbinoFemale.webp';
+import BlueSheep_BlueGrayFemale from '../../../assets/BlueSheep_BlueGrayFemale.webp';
+import BlueSheep_BrownFemale from '../../../assets/BlueSheep_BrownFemale.webp';
+import BlueSheep_LeucisticFemale from '../../../assets/BlueSheep_LeucisticFemale.webp';
+import BlueSheep_MelanisticFemale from '../../../assets/BlueSheep_MelanisticFemale.webp';
+import BlueSheep_SlateGrayFemale from '../../../assets/BlueSheep_SlateGrayFemale.webp';
+import BlueSheep_YellowFemale from '../../../assets/BlueSheep_YellowFemale.webp';
 
 
-
-const BlacktailDeer = () => {
+const BlueSheep = () => {
 
   // --- DATA SOURCES ---
 
   // Need Zone Times
   const needZonesData = [
     {
-      name: "Layton Lake District",
+      name: "Sundarpatan",
       schedule: [
-        { time: "00:00 - 04:30", type: "Resting", icon: RestingZoneIcon },
-        { time: "04:00 - 08:30", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "08:00 - 12:30", type: "Resting", icon: RestingZoneIcon },
-        { time: "12:00 - 16:30", type: "Feeding", icon: FeedingZoneIcon },
-        { time: "16:00 - 20:30", type: "Drinking", icon: DrinkingZoneIcon },
-        { time: "20:00 - 00:30", type: "Resting", icon: RestingZoneIcon },
+        { time: "00:00 - 04:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "04:00 - 07:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "07:00 - 11:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "11:00 - 14:00", type: "Resting", icon: RestingZoneIcon },
+        { time: "14:00 - 17:00", type: "Drinking", icon: DrinkingZoneIcon },
+        { time: "17:00 - 20:00", type: "Feeding", icon: FeedingZoneIcon },
+        { time: "20:00 - 00:00", type: "Resting", icon: RestingZoneIcon },
       ]
     }
   ];
 
   // Features Table
   const features = [
-    { label: "Behavior", value: "Docile and somewhat skittish" },
-    { label: "Habitat", value: "Forests with a lot of underbrush" },
-    { label: "Senses", value: "Excellent sense of smell and hearing" },
-    { label: "Social", value: "Usually solitary, can also be found in small groups" },
-    { label: "Active", value: "During dawn, dusk and night" },
-    { label: "Recommended Equipment", value: "class 4 Ammo, Deer \"Bleat\" Caller, Deer \"Grunt\" Caller, Blacktail Deer Scent" },
-    { label: "Species", value: "Odocoileus hemionus", italic: true, isLink: true },
+    { label: "Behavior", value: "Alert and wary" },
+    { label: "Habitat", value: "Mountain slopes and cliffs" },
+    { label: "Senses", value: "Good vision, hearing and smell" },
+    { label: "Social", value: "Mixed groups and solo animals of both sexes" },
+    { label: "Active", value: "Dawn to dusk" },
+    { label: "Recommended Equipment", value: "Class 4 Ammo" },
+    { label: "Species", value: "Pseudois nayaur", italic: true, isLink: true },
     { label: "Difficulty", value: "Average" },
   ];
 
-  // Fur Gallery Data (separated by sex)
+  // Fur Gallery Data (split by sex)
   const maleGallery = [
-    { name: "Albino", src: BlacktailDeer_AlbinoMale },
-    { name: "Dark Grey", src: BlacktailDeer_DarkGreyMale },
-    { name: "Grey", src: BlacktailDeer_GreyMale },
-    { name: "Grey Brown", src: BlacktailDeer_GreyBrownMale },
-    { name: "Melanistic", src: BlacktailDeer_MelanisticMale },
-    { name: "Piebald", src: BlacktailDeer_PiebaldMale },
+    { name: "Albino", src: BlueSheep_AlbinoMale },
+    { name: "Blue Gray", src: BlueSheep_BlueGrayMale },
+    { name: "Brown", src: BlueSheep_BrownMale },
+    { name: "Leucistic", src: BlueSheep_LeucisticMale },
+    { name: "Melanistic", src: BlueSheep_MelanisticMale },
+    { name: "Slate Gray", src: BlueSheep_SlateGrayMale },
+    { name: "Yellow", src: BlueSheep_YellowMale },
   ];
 
   const femaleGallery = [
-    { name: "Tan", src: BlacktailDeer_TanFemale },
-    { name: "Albino", src: BlacktailDeer_AlbinoFemale },
-    { name: "Grey", src: BlacktailDeer_GreyFemale },
-    { name: "Grey Brown", src: BlacktailDeer_GreyBrownFemale },
-    { name: "Melanistic", src: BlacktailDeer_MelanisticFemale },
-    { name: "Piebald", src: BlacktailDeer_PiebaldFemale },
+    { name: "Albino", src: BlueSheep_AlbinoFemale },
+    { name: "Blue Gray", src: BlueSheep_BlueGrayFemale },
+    { name: "Brown", src: BlueSheep_BrownFemale },
+    { name: "Leucistic", src: BlueSheep_LeucisticFemale },
+    { name: "Melanistic", src: BlueSheep_MelanisticFemale },
+    { name: "Slate Gray", src: BlueSheep_SlateGrayFemale },
+    { name: "Yellow", src: BlueSheep_YellowFemale },
   ];
 
   // Trivia Data
   const triviaData = [
-    "It was part of the original cast of animals huntable at launch.",
-    "The Blacktail Deer was one of the first animals, along with the Whitetail Deer, to get TruRACS.",
-    "Because of their rarity, and overall elusiveness, the Blacktail Deer is known by many hunters as the Ghost of The Pacific."
+    "The Blue Sheep is commonly called the Bharal, an Urdu word that means wild sheep",
+    "Despite its name, the Blue Sheep is actually more closely related to Goats than Sheep. In fact, it is believed that their genus Pseudois evolved before the split between the \"True Goats\" (Genus: Capra) and the \"True Sheep\" (Genus: Ovis). Because of this they share traits from both Sheep AND Goats. Naturalist George Schaller said it best, \"[Blue Sheep are] goats with sheeplike traits. They lack beards and calluses on the knees, they have no strong body odor and the females have small, almost nonfunctional horns, all characters typical of sheep. [However] they resemble goats in their flat broad tail with a bare ventral surface, the conspicuous markings on the forelegs, and the large dew claws,\""
+  ];
+
+  // References Data
+  const referencesData = [
+    "Blue Sheep Need Zones, Sundarpatan",
+    "factanimal.com",
+    "animaldiversity.org",
+    "britannica.com"
   ];
 
   // --- STYLES OBJECT ---
@@ -289,71 +302,87 @@ const BlacktailDeer = () => {
     rarityVeryRare: { color: '#e74c3c', fontWeight: 'bold' },
   };
 
+  // Smooth-scroll helper for TOC links
+  function scrollToId(e, id) {
+    if (e && e.preventDefault) e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try { history.replaceState(null, '', `#${id}`); } catch (err) {}
+    }
+  }
+
   return (
     <div style={styles.container}>
       <div style={styles.innerWrapper}>
         
         {/* PAGE HEADER */}
         <div style={styles.mainHeader}>
-          <span>Blacktail Deer</span>
+          <span>Blue Sheep</span>
         </div>
 
         <div style={styles.layout}>
           
           {/* --- RIGHT SIDEBAR (General Information) --- */}
           <aside style={styles.sidebarColumn}>
-            <div style={styles.sidebarHeader}>Blacktail Deer</div>
+            <div style={styles.sidebarHeader}>Blue Sheep</div>
             <div style={styles.sidebarImage}>
-              <img src={BlacktailDeerMain} alt="Blacktail Deer" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
+              <img src={BlueSheepMain} alt="Blue Sheep" style={{width:'100%', height: '100%', objectFit: 'cover'}} />
             </div>
             
             <div style={styles.sidebarHeader}>General Information</div>
             
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Class</span>
+              {/* Cited from screenshot 135710/135717 */}
               <span><img src={class4Icon} alt="Class 4" style={{width:'24px', height:'24px', verticalAlign: 'middle', marginRight: '6px'}}/>4</span>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Difficulty</span>
+              {/* Cited from screenshot 135710/135717 */}
               <span>1: Trivial — 5: Medium</span>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Trophy Type</span>
-              <span>Antlers</span>
+              <span>Horns</span>
               <div style={styles.trophyGrid}>
+                {/* Cited from screenshot 135710/135717 */}
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.silver}}>◆ Silver</span>
-                  <span>76.90</span>
+                  <span>67.37</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.gold}}>☗ Gold</span>
-                  <span>134.40</span>
+                  <span>116.92</span>
                 </div>
                 <div style={styles.trophyItem}>
                   <span style={{...styles.trophyLabel, ...styles.diamond}}>☗ Diamond</span>
-                  <span>177.50</span>
+                  <span>154.08</span>
                 </div>
               </div>
             </div>
 
             <div style={styles.sidebarSection}>
               <span style={styles.sidebarLabel}>Weight</span>
-              40kg — 95kg<br/>
-              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>88lbs — 209lbs</span>
+              {/* Cited from screenshot 135710/135717 - transcribed exactly as shown */}
+              0kg — 75kg<br/>
+              <span style={{color: '#88a0b8', fontSize: '0.85rem'}}>0lbs — 165lbs</span>
             </div>
 
             <div style={styles.sidebarSection}>
                <span style={styles.sidebarLabel}>Fur</span>
+               {/* Cited from screenshot 135710/135717 */}
                <span style={{fontSize:'0.85rem'}}>
-                 Albino, Dark Grey, Grey, Grey-Brown, Melanistic, Piebald, Tan
+                 Albino, Blue Gray, Brown, Leucistic, Melanistic, Slate Gray, Yellow
                </span>
             </div>
 
             <div style={styles.sidebarHeader}>Locations</div>
             <div style={styles.sidebarSection}>
-               <div style={{marginBottom:'4px'}}><span style={styles.link}>Layton Lake District</span></div>
+               {/* Cited from screenshot 135710/135717 */}
+               <div style={{marginBottom:'4px'}}><span style={styles.link}>Sundarpatan</span></div>
             </div>
           </aside>
 
@@ -362,47 +391,46 @@ const BlacktailDeer = () => {
 
             {/* Quote Block */}
             <div style={styles.quoteBox}>
-              "The blacktail deer is generally considered a subspecies of the mule deer and native to the western part of North American continent although new science suggests it could be its own species and not a subspecies. The blacktail thrives around the edges of forests that are typically rich with foliage and grass which they feed on. They tend to avoid open areas that lack hiding spots, especially during harsh weather. The blacktail is a medium-sized deer, comparable to the whitetail deer, but blacktail bucks' antlers take different patterns that are more similar to the mule deer's. The blacktail's antlers grow from a spike into a distinctive double-fork shape."
+              "The Blue Sheep, named for its bluish-gray fur, possesses remarkable camouflage that allows it to blend seamlessly with the rocks and cliffs in its natural habitat. When faced with danger, this species remains still, making it even harder to detect. If noticed, it swiftly leaps towards steep cliffs and once again assumes a motionless stance. The Blue Sheep inhabits the mid-Himalayas, specifically elevations ranging from 2500 to 6000 meters. In this high-altitude environment, it faces predation primarily from Snow Leopards. Both males and females of this species possess horns, up to 80 cm in length for males, and a maximum length of 20 cm for the females."
               <br/><br/>
               — In-Game Description
             </div>
 
             {/* Intro Text */}
             <p style={{marginBottom:'20px'}}>
-              The <strong>Blacktail Deer</strong> is a medium-sized deer species. It can be hunted in the <span style={styles.link}>Layton Lake District</span>.
+              The <strong>Blue Sheep</strong> is a <span style={styles.link}>class 4</span> sheep species that can be hunted on <span style={styles.link}>Sundarpatan</span>.
             </p>
 
-            {/* Table of Contents (numbered; Fur Variants has sub-topics) */}
+            {/* Table of Contents */}
             <div style={{
                 border: '1px solid #3a5a75',
                 backgroundColor: '#0f2e48',
                 display: 'inline-block',
                 padding: '10px 20px',
                 borderRadius: '4px',
-                minWidth: '260px',
+                minWidth: '200px',
                 marginBottom: '30px'
             }}>
               <div style={{fontWeight:'bold', borderBottom: '1px solid #3a5a75', marginBottom: '5px'}}>
-                🔢 Contents <span style={{float:'right', color: '#6fb2e6', fontSize: '0.8rem', cursor: 'pointer'}}>[hide]</span>
+                🔢 Contents <span style={{float:'right', color: '#6fb2e6', fontSize:'0.8rem', cursor: 'pointer'}}>[hide]</span>
               </div>
               <ol style={{margin:'0', paddingLeft: '20px', color: '#6fb2e6'}}>
-                <li><a href="#features" style={styles.link}>Features</a></li>
-                <li><a href="#need-zones" style={styles.link}>Need Zone Times</a></li>
-                <li><a href="#shot-scheme" style={styles.link}>Shot scheme</a></li>
-                <li>
-                  <a href="#fur-variants" style={styles.link}>Fur Variants</a>
-                  <ol style={{margin:'6px 0 0 14px', padding:'0', color:'#9ed3f5', listStyle: 'none'}}>
-                    <li><a href="#fur-male" style={styles.link}>4.1 Male</a></li>
-                    <li><a href="#fur-female" style={styles.link}>4.2 Female</a></li>
+                <li><a href="#features" onClick={(e)=>scrollToId(e,'features')} style={styles.link}>Features</a></li>
+                <li><a href="#need-zones" onClick={(e)=>scrollToId(e,'need-zones')} style={styles.link}>Need Zone Times</a></li>
+                <li><a href="#shot-scheme" onClick={(e)=>scrollToId(e,'shot-scheme')} style={styles.link}>Shot scheme</a></li>
+                <li><a href="#fur-variants" onClick={(e)=>scrollToId(e,'fur-variants')} style={styles.link}>Fur Variants</a></li>
+                    <ol style={{marginTop:'6px', marginLeft:'-30px', listStyleType: 'none'}}>
+                    <li><a href="#fur-male" onClick={(e)=>scrollToId(e,'fur-male')} style={styles.link}>4.1 Male</a></li>
+                    <li><a href="#fur-female" onClick={(e)=>scrollToId(e,'fur-female')} style={styles.link}>4.2 Female</a></li>
                   </ol>
-                </li>
-                <li><a href="#variant-rarity" style={styles.link}>Fur Variant Rarity</a></li>
-                <li><a href="#trivia" style={styles.link}>Trivia</a></li>
+                <li><a href="#variant-rarity" onClick={(e)=>scrollToId(e,'variant-rarity')} style={styles.link}>Fur Variant Rarity</a></li>
+                <li><a href="#trivia" onClick={(e)=>scrollToId(e,'trivia')} style={styles.link}>Trivia</a></li>
+                <li><a href="#references" onClick={(e)=>scrollToId(e,'references')} style={styles.link}>References</a></li>
               </ol>
             </div>
 
             {/* FEATURES */}
-            <h2 id="features" style={styles.h2}>Features</h2>
+            <h2 style={styles.h2} id="features">Features</h2>
             <table style={styles.table}>
               <thead>
                 <tr>
@@ -423,11 +451,11 @@ const BlacktailDeer = () => {
             </table>
             
             {/* NEED ZONE TIMES */}
-            <h2 id="need-zones" style={styles.h2}>Need Zone Times</h2>
+            <h2 style={styles.h2} id="need-zones">Need Zone Times</h2>
             <div style={{display:'inline-block'}}>
                 <table style={{...styles.table, width: '300px'}}>
                     <thead>
-                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Layton Lake District</th></tr>
+                        <tr><th colSpan="2" style={{...styles.th, textAlign: 'center'}}>Sundarpatan</th></tr>
                         <tr>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Times</th>
                             <th style={{...styles.th, backgroundColor: '#0f2e48'}}>Activity</th>
@@ -449,42 +477,42 @@ const BlacktailDeer = () => {
                 </table>
             </div>
 
-             {/* SHOT SCHEME */}
-             <h2 id="shot-scheme" style={styles.h2}>Shot scheme</h2>
+            {/* SHOT SCHEME */}
+            <h2 style={styles.h2} id="shot-scheme">Shot scheme</h2>
             <div style={styles.shotContainer}>
-                <div style={styles.shotImageWrapper}>
-                   <img src={ShotSchemeImage} alt="Shot Scheme" style={{width: '100%', height: 'auto', maxHeight:'350px', objectFit: 'contain'}} />
-                </div>
-                <div style={styles.shotLegend}>
-                   <div style={styles.legendHeader}>Color code</div>
-                   <div style={styles.legendItem}>Red - Kills immediately</div>
-                   <div style={styles.legendItem}>Blue - Kills very quick</div>
-                   <div style={styles.legendItem}>Orange - Kills slowly</div>
-                   <div style={{...styles.legendItem, borderBottom: 'none'}}>No Color - Unlikely to kill</div>
-                </div>
+               <div style={styles.shotImageWrapper}>
+                 <img src={ShotSchemeImg} alt="Shot Scheme" style={{width: '100%', height: 'auto', maxHeight:'350px', objectFit: 'contain'}} />
+               </div>
+               <div style={styles.shotLegend}>
+                 <div style={styles.legendHeader}>Color code</div>
+                 <div style={styles.legendItem}>Red - Kills immediately</div>
+                 <div style={styles.legendItem}>Blue - Kills very quick</div>
+                 <div style={styles.legendItem}>Orange - Kills slowly</div>
+                 <div style={{...styles.legendItem, borderBottom: 'none'}}>No Color - Unlikely to kill</div>
+               </div>
             </div>
 
             {/* FUR VARIANTS (Gallery) */}
             <h2 id="fur-variants" style={styles.h2}>Fur Variants</h2>
 
-            <h3 id="fur-male" style={{color: '#6fb2e6', marginTop: '12px'}}>Male</h3>
+            <h3 id="fur-male" style={{marginTop:'10px', marginBottom:'8px', color: '#6fb2e6'}}>Male</h3>
             <div style={styles.galleryGrid}>
               {maleGallery.map((item, i) => (
-                <div key={`m-${i}`} style={styles.galleryItem}>
+                <div key={i} style={styles.galleryItem}>
                   <div style={styles.galleryImgPlaceholder}>
-                    <img src={item.src} alt={item.name} style={{maxWidth: '100%', maxHeight: '100%', objectFit: 'contain'}} />
+                    <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
                   </div>
                   <span style={styles.galleryLabel}>{item.name}</span>
                 </div>
               ))}
             </div>
 
-            <h3 id="fur-female" style={{color: '#6fb2e6', marginTop: '18px'}}>Female</h3>
+            <h3 id="fur-female" style={{marginTop:'20px', marginBottom:'8px', color: '#6fb2e6'}}>Female</h3>
             <div style={styles.galleryGrid}>
               {femaleGallery.map((item, i) => (
-                <div key={`f-${i}`} style={styles.galleryItem}>
+                <div key={i} style={styles.galleryItem}>
                   <div style={styles.galleryImgPlaceholder}>
-                    <img src={item.src} alt={item.name} style={{maxWidth: '100%', maxHeight: '100%', objectFit: 'contain'}} />
+                    <img src={item.src} alt={item.name} style={{width:'100%', height: '100%', objectFit: 'contain'}} />
                   </div>
                   <span style={styles.galleryLabel}>{item.name}</span>
                 </div>
@@ -505,40 +533,25 @@ const BlacktailDeer = () => {
                         </tr>
                     </thead>
                     <tbody>
+                        {/* Combined Male/Female Row pattern used in source, split here for clarity if percentages same */}
                         <tr>
                             <td style={{...styles.td, color: '#3498db', fontStyle: 'italic', fontWeight: 'bold'}}>
-                                Male
+                                Male<span style={{color: '#dbe4eb'}}>/</span><span style={{color: '#d63384'}}>Female</span>
                             </td>
                             <td style={styles.td}>
-                                Grey (33.23%)<br/>
-                                Grey Brown (33.23%)<br/>
-                                Dark Grey (33.23%)
-                            </td>
-                            <td style={styles.td}>X</td>
-                            <td style={styles.td}>
-                                Piebald (0.20%)
+                                Brown (37.38%)<br/>
+                                Slate Grey (37.38%)
                             </td>
                             <td style={styles.td}>
-                                Albino (0.05%)<br/>
-                                Melanistic (0.05%)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style={{...styles.td, color: '#d63384', fontStyle: 'italic', fontWeight: 'bold'}}>
-                                Female
+                                Blue Grey (12.50%)<br/>
+                                Yellow (12.50%)
                             </td>
                             <td style={styles.td}>
-                                Grey (33.23%)<br/>
-                                Grey Brown (33.23%)<br/>
-                                Tan (33.23%)
-                            </td>
-                            <td style={styles.td}>X</td>
-                            <td style={styles.td}>
-                                Piebald (0.20%)
+                                Leucistic (0.10%)<br/>
+                                Melanistic (0.10%)
                             </td>
                             <td style={styles.td}>
-                                Albino (0.05%)<br/>
-                                Melanistic (0.05%)
+                                Albino (0.05%)
                             </td>
                         </tr>
                     </tbody>
@@ -553,6 +566,16 @@ const BlacktailDeer = () => {
                 ))}
             </ul>
 
+            {/* REFERENCES */}
+            <h2 id="references" style={styles.h2}>References</h2>
+            <ol style={{fontSize: '0.95rem', paddingLeft: '20px', color: '#6fb2e6'}}>
+                {referencesData.map((ref, idx) => (
+                     <li key={idx} style={{marginBottom: '5px'}}>
+                        <span style={{color: '#dbe4eb'}}>↑</span> <span style={styles.link}>{ref}</span>
+                     </li>
+                ))}
+            </ol>
+
             <div style={{marginTop: '40px'}}>
                 <AnimalsTableMini />
             </div>
@@ -564,4 +587,4 @@ const BlacktailDeer = () => {
   );
 };
 
-export default BlacktailDeer;
+export default BlueSheep;
