@@ -275,6 +275,23 @@ import RondaIbexPage from '../pages/animals/class4/RondaIbex';
 import SoutheasternSpanishIbexPage from '../pages/animals/class4/SoutheasternSpanishIbex';
 import IberianMouflonPage from '../pages/animals/class4/IberianMouflon';
 import WarthogPage from '../pages/animals/class4/Warthog';
+import JavanRusaPage from '../pages/animals/class5/JavanRusa';
+import WildBoarPage from '../pages/animals/class5/WildBoar';
+import FeralPigPage from '../pages/animals/class5/FeralPig';
+import WildHogPage from '../pages/animals/class5/WildHog';
+import MuleDeerPage from '../pages/animals/class5/MuleDeer';
+import DesertBighornSheepPage from '../pages/animals/class5/DesertBighornSheep';
+import RockyMountainBighornSheepPage from '../pages/animals/class5/RockyMountainBighornSheep';
+import MountainLionPage from '../pages/animals/class5/MountainLion';
+import PumaPage from '../pages/animals/class5/Puma';
+import RedDeerPage from '../pages/animals/class6/RedDeer';
+import MountainReindeerPage from '../pages/animals/class6/MountainReindeer';
+import GrantCaribouPage from '../pages/animals/class6/GrantCaribou';
+import WoodlandCaribouPage from '../pages/animals/class6/WoodlandCaribou';
+import BlueWildebeestPage from '../pages/animals/class6/BlueWildebeest';
+import GemsbokPage from '../pages/animals/class6/Gemsbok';
+import BarasinghaPage from '../pages/animals/class6/Barasingha';
+import NilgaiPage from '../pages/animals/class6/Nilgai';
 
 export default function AppRouter() {
   return (
@@ -476,6 +493,18 @@ export default function AppRouter() {
       <Route path="/animals/Hog-Deer" element={<HogDeerPage />} />
       <Route path="/animals/RoeDeer" element={<RoeDeerPage />} />
       <Route path="/animals/Roe-Deer" element={<RoeDeerPage />} />
+      <Route path="/animals/RedDeer" element={<RedDeerPage />} />
+      <Route path="/animals/Red-Deer" element={<RedDeerPage />} />
+      <Route path="/animals/WoodlandCaribou" element={<WoodlandCaribouPage />} />
+      <Route path="/animals/Woodland-Caribou" element={<WoodlandCaribouPage />} />
+      <Route path="/animals/BlueWildebeest" element={<BlueWildebeestPage />} />
+      <Route path="/animals/Blue-Wildebeest" element={<BlueWildebeestPage />} />
+      <Route path="/animals/Gemsbok" element={<GemsbokPage />} />
+      <Route path="/animals/Gemsbok" element={<GemsbokPage />} />
+      <Route path="/animals/Barasingha" element={<BarasinghaPage />} />
+      <Route path="/animals/Barasingha" element={<BarasinghaPage />} />
+      <Route path="/animals/Nilgai" element={<NilgaiPage />} />
+      <Route path="/animals/Nilgai" element={<NilgaiPage />} />
       <Route path="/animals/BlacktailDeer" element={<BlacktailDeerPage />} />
       <Route path="/animals/Blacktail-Deer" element={<BlacktailDeerPage />} />
       <Route path="/animals/WhitetailDeer" element={<WhitetailDeerPage />} />
@@ -484,7 +513,28 @@ export default function AppRouter() {
       <Route path="/animals/Fallow-Deer" element={<FallowDeerPage />} />
       <Route path="/animals/Warthog" element={<WarthogPage />} />
       <Route path="/animals/Warthog" element={<WarthogPage />} />
+      <Route path="/animals/JavanRusa" element={<JavanRusaPage />} />
+      <Route path="/animals/Javan-Rusa" element={<JavanRusaPage />} />
+      <Route path="/animals/WildBoar" element={<WildBoarPage />} />
+      <Route path="/animals/Wild-Boar" element={<WildBoarPage />} />
+      <Route path="/animals/WildHog" element={<WildHogPage />} />
+      <Route path="/animals/Wild-Hog" element={<WildHogPage />} />
+      <Route path="/animals/FeralPig" element={<FeralPigPage />} />
+      <Route path="/animals/Feral-Pig" element={<FeralPigPage />} />
+      <Route path="/animals/MuleDeer" element={<MuleDeerPage />} />
+      <Route path="/animals/Mule-Deer" element={<MuleDeerPage />} />
+      <Route path="/animals/DesertBighornSheep" element={<DesertBighornSheepPage />} />
+      <Route path="/animals/Desert-Bighorn-Sheep" element={<DesertBighornSheepPage />} />
+      <Route path="/animals/RockyMountainBighornSheep" element={<RockyMountainBighornSheepPage />} />
+      <Route path="/animals/Rocky-Mountain-Bighorn-Sheep" element={<RockyMountainBighornSheepPage />} />
+      <Route path="/animals/MountainLion" element={<MountainLionPage />} />
+      <Route path="/animals/Mountain-Lion" element={<MountainLionPage />} />
+      <Route path="/animals/Puma" element={<PumaPage />} />
       <Route path="/animals/BlueSheep" element={<BlueSheepPage />} />
+      <Route path="/animals/MountainReindeer" element={<MountainReindeerPage />} />
+      <Route path="/animals/Mountain-Reindeer" element={<MountainReindeerPage />} />
+      <Route path="/animals/GrantCaribou" element={<GrantCaribouPage />} />
+      <Route path="/animals/Grant-Caribou" element={<GrantCaribouPage />} />
       <Route path="/animals/Blue-Sheep" element={<BlueSheepPage />} />
       <Route path="/animals/SikaDeer" element={<SikaDeerPage />} />
       <Route path="/animals/Sika-Deer" element={<SikaDeerPage />} />
