@@ -2,25 +2,143 @@ import Card from '../../components/Card';
 import { maps } from '../../data/maps';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import worldMap from '../../assets/world-map-vector-removebg-preview.png';
-import reserveLogo from '../../assets/Layton_Lake-removebg-preview.png';
-import hirschLogo from '../../assets/Hirschfelden_reserve_logo-removebg-preview.png';
-import yukonLogo from '../../assets/Yukon_Valley-removebg-preview.png';
 import './Maps.css';
-import cuatroLogo from '../../assets/Cuatro_Collinas-removebg-preview.png';
-import silverLogo from '../../assets/Silver_Ridge_Peaks-removebg-preview (1).png';
-import teAwaroaLogo from '../../assets/Te_Awaroa-removebg-preview (1).png';
-import ranchoLogo from '../../assets/Rancho_Del_Arroyo-removebg-preview.png';
-import askiyLogo from '../../assets/Aisky_Ridge-removebg-preview.png';
-import mississippiLogo from '../../assets/Mississippi_Acres-removebg-preview.png';
-import salzwiesenLogo from '../../assets/Salzwiesen-removebg-preview.png';
-import newEnglandLogo from '../../assets/New_England-removebg-preview.png';
-import sundarLogo from '../../assets/Sundarpartan-removebg-preview.png';
-import medvedLogo from '../../assets/Medved_taiga-removebg-preview.png';
-import parqueFernandoLogo from '../../assets/Parque_Fernando-removebg-preview.png';
-import revontuliLogo from '../../assets/Revontuli_Coast-removebg-preview.png';
-import geminiLogo from '../../assets/Gemini_Generated_Image_do1hjzdo1hjzdo1h-removebg-preview.png';
-import emeraldLogo from '../../assets/Emerald_coast-removebg-preview (1).png';
+import WorldMap from '../../components/WorldMap';
+
+const Reserves = () => {
+
+  // --- DATA SOURCES ---
+
+  const baseGameReserves = [
+    "Hirschfelden Hunting Reserve",
+    "Layton Lake District"
+  ];
+
+  const dlcReserves = [
+    "Medved-Taiga National Park",
+    "Vurhonga Savanna",
+    "Parque Fernando",
+    "Yukon Valley",
+    "Cuatro Colinas Game Reserve",
+    "Silver Ridge Peaks",
+    "Te Awaroa National Park",
+    "Rancho del Arroyo",
+    "Mississippi Acres Preserve",
+    "Revontuli Coast",
+    "New England Mountains",
+    "Emerald Coast",
+    "Sundarpatan",
+    "Salzwiesen Park",
+    "Askiy Ridge Hunting Preserve",
+    "Tòrr nan Sithean"
+  ];
+
+  // --- STYLES OBJECT (Copied and adapted from CapeBuffalo) ---
+  const styles = {
+    container: {
+      backgroundColor: '#0b1a26',
+      color: '#dbe4eb',
+      fontFamily: '"Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+      padding: '40px',
+      minHeight: '100vh',
+      lineHeight: '1.6',
+    },
+    innerWrapper: {
+      maxWidth: '1200px',
+      margin: '0 auto',
+    },
+    mainHeader: {
+      fontSize: '2.5rem',
+      fontWeight: '400',
+      borderBottom: '1px solid #3a5a75',
+      paddingBottom: '15px',
+      marginBottom: '20px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    mainColumn: {
+      flex: 1,
+      maxWidth: '900px', // Restricted width for better readability on text-heavy pages
+    },
+    link: {
+      color: '#6fb2e6',
+      textDecoration: 'none',
+      cursor: 'pointer',
+      fontWeight: '500',
+    },
+    // Adapted H2 for list headers
+    sectionHeader: {
+        fontSize: '1.2rem',
+        color: '#dbe4eb',
+        marginTop: '25px',
+        marginBottom: '10px',
+        fontWeight: 'bold',
+    },
+    list: {
+        listStyleType: 'disc',
+        paddingLeft: '25px',
+        marginBottom: '20px',
+    },
+    listItem: {
+        marginBottom: '5px',
+        color: '#6fb2e6', // Using the link color for list items as they appear to be links in the screenshot
+        cursor: 'pointer',
+    },
+    paragraph: {
+        marginBottom: '20px',
+        color: '#dbe4eb',
+    }
+  };
+
+  return (
+    <div style={styles.container}>
+      <div style={styles.innerWrapper}>
+        
+        {/* PAGE HEADER */}
+        <div style={styles.mainHeader}>
+          <span>Reserves</span>
+        </div>
+
+        {/* --- MAIN CONTENT --- */}
+        <main style={styles.mainColumn}>
+
+          {/* Intro Text */}
+          <p style={styles.paragraph}>
+            <strong>Reserves</strong> are game maps/worlds which are available for players to hunt on. Including <span style={styles.link}>DLCs</span>, there are currently 18 reserves to play on.
+          </p>
+
+          {/* Base Game List */}
+          <div style={styles.sectionHeader}>Base game:</div>
+          <ul style={styles.list}>
+            {baseGameReserves.map((reserve, index) => (
+                <li key={index} style={styles.listItem}>{reserve}</li>
+            ))}
+          </ul>
+
+          {/* DLC List */}
+          <div style={styles.sectionHeader}>DLCs:</div>
+          <ul style={styles.list}>
+            {dlcReserves.map((reserve, index) => (
+                <li key={index} style={styles.listItem}>{reserve}</li>
+            ))}
+          </ul>
+
+          {/* Multiplayer Info */}
+          <p style={styles.paragraph}>
+            While Layton Lake District and Hirschfelden Hunting Reserve are available with the base game, the other reserves have to be bought as DLCs. However, these reserves can be played even if a player does not own the DLC if they join a <span style={styles.link}>Multiplayer</span> session in which the host owns the DLC.
+          </p>
+
+          {/* Animals Info */}
+          <p style={styles.paragraph}>
+            Reserves are located all around the world and each reserve has its own group of huntable <span style={styles.link}>animals</span>. Accordingly, the animals in a reserve reflect the wildlife that lives in the real-life counterpart of the reserve.
+          </p>
+
+        </main>
+      </div>
+    </div>
+  );
+};
 
 const Map = () => {
   return (
@@ -102,52 +220,16 @@ const Map = () => {
 }
 
 export default function MapsList() {
-  const baseMaps = maps.filter((m) => !m.dlc);
-  const dlcMaps = maps.filter((m) => m.dlc);
-
-  return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6 text-green-800">All Hunting Reserves</h1>
-      <p className="text-gray-700 mb-4">Reserves are game maps/worlds which are available for players to hunt on. Including <Link to="/dlc" className="text-green-800 hover:underline">DLCs</Link>, there are currently 17 reserves to play on.</p>
-
-      <section className="mb-6">
-        <h2 className="text-2xl font-semibold mb-3">Base Game Reserves:</h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {baseMaps.map((map) => (
-            <Card
-              key={map.id}
-              title={map.name}
-              image={map.image}
-              badge={map.dlc ? "DLC" : null}
-              link={`/maps/${map.id}`}
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-8 text-gray-700">
-        <p className="mb-2">While Layton Lake District and Hirschfelden Hunting Reserve are available with the base game, the other reserves have to be bought as DLCs. However, these reserves can be played even if a player does not own the DLC if they join a <Link to="/multiplayer" className="text-green-800 hover:underline">Multiplayer</Link> session in which the host owns the DLC.</p>
-
-        <p>Reserves are located all around the world and each reserve has its own group of huntable <Link to="/animals" className="text-green-800 hover:underline">animals</Link>. Accordingly, the animals in a reserve reflect the wildlife that lives in the real-life counterpart of the reserve. A new reserve is planned to release in Winter 2025.</p>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-3">DLCs:</h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {dlcMaps.map((map) => (
-            <Card
-              key={map.id}
-              title={map.name}
-              image={map.image}
-              badge={map.dlc ? "DLC" : null}
-              link={`/maps/${map.id}`}
-            />
-          ))}
-        </div>
-      </section>
+  return ( 
+    <div>
 
       <section className="mt-8">
-        <Map />
+        <Reserves />
+          <div style={{ margin: '20px 0', maxWidth: '1200px', marginLeft: 'auto', marginRight: 'auto', color: '#dbe4eb' }}>
+            <h2 style={{ fontSize: '1.5rem', margin: '0 0 8px 0' }}>Map</h2>
+            <p style={{ margin: 0 }}>Click on the reserve icon on the interactive map to get directed to the wiki page of the respective reserve:</p>
+          </div>
+          <WorldMap />
       </section>
     </div>
   );
