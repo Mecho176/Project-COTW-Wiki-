@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import MapsList from '../pages/maps/MapList';
-import MapPage from '../pages/maps/Map';
-import RegionPage from '../pages/maps/RegionPage';
-import SubregionPage from '../pages/maps/SubregionPage';
+import MapsList from '../pages/reserves/ReserveList';
+import MapPage from '../pages/reserves/Map';
+import RegionPage from '../pages/reserves/RegionPage';
+import HirschfeldenHuntingReserve from '../pages/reserves/reservePages/HirschfeldenHuntingReserve';
+import SubregionPage from '../pages/reserves/SubregionPage';
 import WeaponsComparison from '../pages/loadouts/weapons/WeaponsComparison';
 import WeaponsList from '../pages/loadouts/weapons/Weapons';
 import Docent223 from '../pages/loadouts/weapons/rifles/223Docent';
@@ -328,6 +329,7 @@ export default function AppRouter() {
       <Route path="/hunting-lodge" element={<HuntingLodgePage />} />
       <Route path="/multi-mounts" element={<MultiTrophyMountsPage />} />
       <Route path="/maps" element={<MapsList />} />
+      <Route path="/maps/hirschfelden" element={<HirschfeldenHuntingReserve />} />
       <Route path="/maps/:regionId" element={<RegionPage />} />
       <Route path="/maps/:regionId/:subregionId" element={<SubregionPage />} />
       <Route path="/weapons" element={<WeaponsList />} />
